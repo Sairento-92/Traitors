@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
-    <name>New project</name>
+    <name>Sneaky Traitor</name>
     <description></description>
-    <version>1.0.0.0</version>
+    <version>1.3</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -12,11 +12,15 @@
     <used-plugins>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -52,6 +56,35 @@
                 <plugin id="TextBox" />
             </object-type>
         </object-folder>
+        <object-folder expanded="1" name="Game">
+            <object-type name="Gracz" sid="1975657082452686">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="mouse.x" name="aimX" sid="5128615385114151" type="number" />
+                    <instance-variable comment="mouse.y" name="aimY" sid="3677709921922647" type="number" />
+                    <instance-variable comment="id peera" name="peerid" sid="4490441530007475" type="string" />
+                    <instance-variable comment="Prawda/falsz do ruchow itp. 1/0" name="Input" sid="7698917940797387" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Platform" sid="5383615171695661">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="57793966180149" speed="5">
+                        <frame duration="1" hotspotX="0.03125" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="0.0625" y="0.5" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="Multiplayer" sid="5798874729658294">
             <plugin id="Multiplayer" />
         </object-type>
@@ -63,6 +96,9 @@
         </object-type>
         <object-type name="Browser" sid="8692302114350189">
             <plugin id="Browser" />
+        </object-type>
+        <object-type name="Mouse" sid="4708735635596248">
+            <plugin id="Mouse" />
         </object-type>
     </object-folder>
     <families />
@@ -77,6 +113,7 @@
     <global-instances>
         <global-instance type="Multiplayer" uid="2" />
         <global-instance type="Browser" uid="4" />
+        <global-instance type="Mouse" uid="6" />
     </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />
