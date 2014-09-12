@@ -229,7 +229,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-group collapsed="1" description="Ruch hosta" sid="6275370267556177" title="Hosty">
+                        <event-group description="Ruch hosta" sid="6275370267556177" title="Hosty">
                             <sub-events>
                                 <event-block sid="389482945461162">
                                     <conditions>
@@ -472,6 +472,77 @@
                                 <action id="14" name="Set client state" sid="11818117809603" type="Multiplayer">
                                     <param id="0" name="Tag">&quot;input&quot;</param>
                                     <param id="1" name="Value">Gracz.Input</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4757546875917115">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2483077182694131" type="Gracz">
+                            <param id="0" name="Instance variable">peerid</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Multiplayer.MyID</param>
+                        </condition>
+                        <condition id="-11" name="For Each" sid="295958144435149" type="System">
+                            <param id="0" name="Object">Gracz</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1360988098798886">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="3610620540549325" type="System">
+                                    <param id="0" name="First value">getbit(Gracz.Input,0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="1282342777912539" type="Gracz">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="137527574737482">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="8151857852668013" type="System">
+                                    <param id="0" name="First value">getbit(Gracz.Input,1)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="1494610636250228" type="Gracz">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6015842769367274">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1123825706425082" type="System">
+                                    <param id="0" name="First value">getbit(Gracz.Input,2)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="8702682193636572" type="Gracz">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8933384553790972">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="9324827815121562" type="System">
+                                    <param id="0" name="First value">getbit(Gracz.Input,3)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="4471421765916017" type="Gracz">
+                                    <param id="0" name="Control">1</param>
                                 </action>
                             </actions>
                         </event-block>
