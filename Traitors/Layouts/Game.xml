@@ -41,14 +41,13 @@
                         <Input>0</Input>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Platform">
+                        <behavior-instance type="8Direction">
                             <properties>
-                                <max-speed>330</max-speed>
-                                <acceleration>1500</acceleration>
-                                <deceleration>1500</deceleration>
-                                <jump-strength>650</jump-strength>
-                                <gravity>1500</gravity>
-                                <max-fall-speed>1000</max-fall-speed>
+                                <max-speed>200</max-speed>
+                                <acceleration>600</acceleration>
+                                <deceleration>500</deceleration>
+                                <directions>8 directions</directions>
+                                <set-angle>360 degree (smooth)</set-angle>
                                 <default-controls>Yes</default-controls>
                                 <initial-state>Disabled</initial-state>
                             </properties>

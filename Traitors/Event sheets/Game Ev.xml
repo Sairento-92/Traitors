@@ -115,6 +115,130 @@
         </event-group>
         <event-group description="" inactive="1" sid="3011960123564868" title="Host">
             <sub-events>
+                <event-group description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
+                    <sub-events>
+                        <event-group description="Ruch hosta" sid="6275370267556177" title="Hosty">
+                            <sub-events>
+                                <event-block sid="389482945461162">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="64218287107948" type="Gracz">
+                                            <param id="0" name="Instance variable">peerid</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Multiplayer.MyID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="9484846228786165">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="2361175124359656" type="Keyboard">
+                                                    <param id="0" name="Key">87 (W)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="8Direction" id="7" name="Simulate control" sid="6845135585047225" type="Gracz">
+                                                    <param id="0" name="Control">2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2732731896977899">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="5858201937823349" type="Keyboard">
+                                                    <param id="0" name="Key">83 (S)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="8Direction" id="7" name="Simulate control" sid="8870658364342078" type="Gracz">
+                                                    <param id="0" name="Control">3</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2071929129464796">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="7296444707458113" type="Keyboard">
+                                                    <param id="0" name="Key">65 (A)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="8Direction" id="7" name="Simulate control" sid="112384967291749" type="Gracz">
+                                                    <param id="0" name="Control">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="4921967320659783">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="8688285478837894" type="Keyboard">
+                                                    <param id="0" name="Key">68 (D)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="8Direction" id="7" name="Simulate control" sid="3802608171998102" type="Gracz">
+                                                    <param id="0" name="Control">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-block sid="8660530557031895">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="8000568296397095" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">getbit(0,1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="3432166388235771" type="Gracz">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7974832778512376">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3818611653322289" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">getbit(1,1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="7449600177217908" type="Gracz">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2891249431112053">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2217803118847939" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">getbit(2,1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="4287823857203347" type="Gracz">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3158143048361213">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4575837801057997" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">getbit(3,1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="2574942123381803" type="Gracz">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <event-block sid="3797964670126116">
                     <conditions>
                         <condition id="11" name="On peer connected" sid="8301668725243685" type="Multiplayer" />
@@ -126,11 +250,174 @@
                             <param id="2" name="X">50</param>
                             <param id="3" name="Y">50</param>
                         </action>
+                        <action id="-10" name="Set value" sid="6205407216498941" type="Gracz">
+                            <param id="0" name="Instance variable">peerid</param>
+                            <param id="1" name="Value">Multiplayer.PeerID</param>
+                        </action>
+                        <action id="13" name="Associate object with peer" sid="8427513241266863" type="Multiplayer">
+                            <param id="0" name="Object">Gracz</param>
+                            <param id="1" name="Peer ID">Multiplayer.PeerID</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" inactive="1" sid="9642298604554555" title="Peer" />
+        <event-group description="" inactive="1" sid="9642298604554555" title="Peer">
+            <sub-events>
+                <comment>0 - falsz, 1 - prawda&#x0D;&#x0A;0 - w gore&#x0D;&#x0A;1 - w dol&#x0D;&#x0A;2 - w lewo&#x0D;&#x0A;3 - w prawo&#x0D;&#x0A;4 - lmb</comment>
+                <event-block sid="6133589175984286">
+                    <conditions>
+                        <condition id="17" name="On client update" sid="5666513683723343" type="Multiplayer" />
+                        <condition id="-7" name="Compare instance variable" sid="8968518402942169" type="Gracz">
+                            <param id="0" name="Instance variable">peerid</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Multiplayer.MyID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Set client state" sid="3829156783388833" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;aimx&quot;</param>
+                            <param id="1" name="Value">mouse.X</param>
+                        </action>
+                        <action id="14" name="Set client state" sid="1610671376060228" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;aimy&quot;</param>
+                            <param id="1" name="Value">mouse.y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="1279851491812152">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="5679838641477071" type="Keyboard">
+                                    <param id="0" name="Key">87 (W)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="6111137074898019" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Value">setbit(Self.Input, 0, 1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4076192863152426">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="7243241968999907" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="2708749059795466" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Value">setbit(Self.Input, 0, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5244407260577878">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="3533485028321829" type="Keyboard">
+                                    <param id="0" name="Key">83 (S)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="2555950550767469" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Value">setbit(Self.Input, 1, 1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7600514397627048">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4825851626532611" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="3009930249713137" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Value">setbit(Self.Input, 1, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6275297999552206">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="6111593048616115" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="2174900303626267" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Value">setbit(Self.Input, 2, 1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6355572441574712">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4199821655600983" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="7179248814452946" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Value">setbit(Self.Input, 2, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9341115960818796">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="6028829684744777" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="5330942027721472" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Value">setbit(Self.Input, 3, 1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2708013364932198">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8583043563363985" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="2671070330793416" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Value">setbit(Self.Input, 3, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="475178189653526">
+                            <conditions>
+                                <condition id="2" name="Mouse button is down" sid="2713227798064338" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="3557528611114232" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Value">setbit(Self.Input, 4, 1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7353925610352213">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="979225308023159" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="3568837070481165" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Value">setbit(Self.Input, 4, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8685617278059015">
+                            <conditions />
+                            <actions>
+                                <action id="14" name="Set client state" sid="11818117809603" type="Multiplayer">
+                                    <param id="0" name="Tag">&quot;input&quot;</param>
+                                    <param id="1" name="Value">Gracz.Input</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="Peer i Host" sid="9395126084642041" title="Both" />
     </events>
 </c2eventsheet>
