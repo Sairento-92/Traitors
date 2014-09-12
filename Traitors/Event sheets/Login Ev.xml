@@ -5,7 +5,7 @@
     <events>
         <variable comment="Instancja, przed room" constant="1" name="GAME_INSTANCE" sid="8908236026876263" static="0" type="text">main</variable>
         <variable comment="Najmniejszy podzial" constant="0" name="GAME_ROOM" sid="8515977161225578" static="0" type="text">room1</variable>
-        <variable comment="Alias peera" constant="0" name="PeerName" sid="70604546823099" static="0" type="text">test</variable>
+        <variable comment="Alias peera" constant="0" name="PeerName" sid="70604546823099" static="0" type="text"></variable>
         <event-group collapsed="1" description="" sid="7958908982740431" title="Update">
             <sub-events>
                 <event-block sid="8694326175520233">
