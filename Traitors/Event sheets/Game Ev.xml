@@ -628,6 +628,36 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="1809201189188983">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6477927097713094" type="Gracz">
+                            <param id="0" name="Instance variable">peerid</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">Multiplayer.MyID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="4365843097114144" type="Gracz">
+                            <param id="0" name="X">self.aimX</param>
+                            <param id="1" name="Y">self.aimY</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7121044135488576">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3461431782096944" type="Gracz">
+                            <param id="0" name="Instance variable">peerid</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Multiplayer.MyID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="5892543746152468" type="Gracz">
+                            <param id="0" name="X">mouse.X</param>
+                            <param id="1" name="Y">mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
     </events>
