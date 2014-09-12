@@ -131,15 +131,16 @@
                                     <param id="0" name="Group name">&quot;Peer&quot;</param>
                                     <param id="1" name="State">1</param>
                                 </action>
+                                <action id="-9" name="Destroy" sid="2397124828600547" type="Gracz" />
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" inactive="1" sid="3011960123564868" title="Host">
+        <event-group description="" inactive="1" sid="3011960123564868" title="Host">
             <sub-events>
-                <event-group collapsed="1" description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
+                <event-group description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
                     <sub-events>
                         <event-block sid="2012949872586218">
                             <conditions>
@@ -169,10 +170,10 @@
                             <sub-events>
                                 <event-block sid="8660530557031895">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="8000568296397095" type="Gracz">
-                                            <param id="0" name="Instance variable">Input</param>
+                                        <condition id="-8" name="Compare two values" sid="8000568296397095" type="System">
+                                            <param id="0" name="First value">getbit(Gracz.Input,0)</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">getbit(0,1)</param>
+                                            <param id="2" name="Second value">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -183,10 +184,10 @@
                                 </event-block>
                                 <event-block sid="7974832778512376">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="3818611653322289" type="Gracz">
-                                            <param id="0" name="Instance variable">Input</param>
+                                        <condition id="-8" name="Compare two values" sid="9562635199197843" type="System">
+                                            <param id="0" name="First value">getbit(Gracz.Input,1)</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">getbit(1,1)</param>
+                                            <param id="2" name="Second value">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -197,10 +198,10 @@
                                 </event-block>
                                 <event-block sid="2891249431112053">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="2217803118847939" type="Gracz">
-                                            <param id="0" name="Instance variable">Input</param>
+                                        <condition id="-8" name="Compare two values" sid="3717790533887267" type="System">
+                                            <param id="0" name="First value">getbit(Gracz.Input,2)</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">getbit(2,1)</param>
+                                            <param id="2" name="Second value">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -211,10 +212,10 @@
                                 </event-block>
                                 <event-block sid="3158143048361213">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="4575837801057997" type="Gracz">
-                                            <param id="0" name="Instance variable">Input</param>
+                                        <condition id="-8" name="Compare two values" sid="2592078402378965" type="System">
+                                            <param id="0" name="First value">getbit(Gracz.Input,3)</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">getbit(3,1)</param>
+                                            <param id="2" name="Second value">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -472,6 +473,21 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="6657550015144266">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="8376816120441055" type="Gracz" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="160660037543519" type="Gracz">
+                            <param id="0" name="Instance variable">peerid</param>
+                            <param id="1" name="Value">Multiplayer.PeerID</param>
+                        </action>
+                        <action id="13" name="Associate object with peer" sid="3707647655909611" type="Multiplayer">
+                            <param id="0" name="Object">Gracz</param>
+                            <param id="1" name="Peer ID">Multiplayer.PeerID</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
