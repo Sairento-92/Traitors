@@ -8,50 +8,53 @@
                 <condition id="-2" name="On start of layout" sid="7806081716080559" type="System" />
             </conditions>
             <actions>
-                <action id="15" name="Add client input value" sid="3638183912684628" type="Multiplayer">
+                <action id="1" name="Connect" sid="8675285541643237" type="Multiplayer">
+                    <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
+                </action>
+                <action id="1" name="Append text" sid="747727241958499" type="Text">
+                    <param id="0" name="Text">&quot;Laczenie z &quot; &amp;multiplayer.SignallingURL</param>
+                </action>
+                <action id="15" name="Add client input value" sid="3547463492851685" type="Multiplayer">
                     <param id="0" name="Tag">&quot;aimx&quot;</param>
                     <param id="1" name="Precision">2</param>
                     <param id="2" name="Interpolation">1</param>
                 </action>
-                <action id="15" name="Add client input value" sid="4046948388724191" type="Multiplayer">
+                <action id="15" name="Add client input value" sid="6005104961656681" type="Multiplayer">
                     <param id="0" name="Tag">&quot;aimy&quot;</param>
                     <param id="1" name="Precision">2</param>
                     <param id="2" name="Interpolation">1</param>
                 </action>
-                <action id="15" name="Add client input value" sid="5458068623872939" type="Multiplayer">
+                <action id="15" name="Add client input value" sid="167538176477478" type="Multiplayer">
                     <param id="0" name="Tag">&quot;input&quot;</param>
                     <param id="1" name="Precision">3</param>
                     <param id="2" name="Interpolation">0</param>
                 </action>
-                <action id="11" name="Sync object" sid="928393260800298" type="Multiplayer">
+                <action id="11" name="Sync object" sid="9791612112439642" type="Multiplayer">
                     <param id="0" name="Object">Gracz</param>
                     <param id="1" name="Data">1</param>
                     <param id="2" name="Precision">2</param>
                     <param id="3" name="Bandwidth">0</param>
                 </action>
-                <action id="12" name="Sync instance variable" sid="6324027465911262" type="Multiplayer">
+                <action id="12" name="Sync instance variable" sid="5848349262294856" type="Multiplayer">
                     <param id="0" name="Object">Gracz</param>
                     <param id="1" name="Instance variable">Gracz|aimX</param>
                     <param id="2" name="Precision">2</param>
                     <param id="3" name="Interpolation">1</param>
                     <param id="4" name="Client value tag">&quot;aimx&quot;</param>
                 </action>
-                <action id="12" name="Sync instance variable" sid="4299997791641097" type="Multiplayer">
+                <action id="12" name="Sync instance variable" sid="9977460682524711" type="Multiplayer">
                     <param id="0" name="Object">Gracz</param>
                     <param id="1" name="Instance variable">Gracz|aimY</param>
                     <param id="2" name="Precision">2</param>
                     <param id="3" name="Interpolation">1</param>
                     <param id="4" name="Client value tag">&quot;aimy&quot;</param>
                 </action>
-                <action id="12" name="Sync instance variable" sid="2295786666806865" type="Multiplayer">
+                <action id="12" name="Sync instance variable" sid="4288332717452617" type="Multiplayer">
                     <param id="0" name="Object">Gracz</param>
                     <param id="1" name="Instance variable">Gracz|Input</param>
                     <param id="2" name="Precision">3</param>
                     <param id="3" name="Interpolation">1</param>
                     <param id="4" name="Client value tag">&quot;input&quot;</param>
-                </action>
-                <action id="1" name="Connect" sid="8675285541643237" type="Multiplayer">
-                    <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -65,11 +68,24 @@
                         <action id="4" name="Log in" sid="5944486919282338" type="Multiplayer">
                             <param id="0" name="Alias">Myname</param>
                         </action>
+                        <action id="1" name="Append text" sid="1596908784167686" type="Text">
+                            <param id="0" name="Text">&quot;Dolaczono do serwera sygnalowego&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6348815117946897">
+                    <conditions>
+                        <condition id="4" name="On logged in" sid="6228505236407368" type="Multiplayer" />
+                    </conditions>
+                    <actions>
                         <action id="5" name="Join room" sid="6049399753342357" type="Multiplayer">
                             <param id="0" name="Game">GAME_NAME</param>
                             <param id="1" name="Instance">GAME_INSTANCE</param>
                             <param id="2" name="Room">GAME_ROOM</param>
                             <param id="3" name="Max peers">0</param>
+                        </action>
+                        <action id="1" name="Append text" sid="6351834164268233" type="Text">
+                            <param id="0" name="Text">&quot;Zalogowano do serwera sygnalowego&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -77,7 +93,11 @@
                     <conditions>
                         <condition id="5" name="On joined room" sid="8268686203064732" type="Multiplayer" />
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="1" name="Append text" sid="3419042922269531" type="Text">
+                            <param id="0" name="Text">&quot;Dolaczono do pokoju&quot;</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="2692538713677893">
                             <conditions>
@@ -117,7 +137,91 @@
             <sub-events>
                 <event-group description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
                     <sub-events>
-                        <event-group description="Ruch hosta" sid="6275370267556177" title="Hosty">
+                        <event-block sid="2012949872586218">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6657810605553687" type="Gracz">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">Multiplayer.MyID</param>
+                                </condition>
+                                <condition id="-11" name="For Each" sid="4411139588083535" type="System">
+                                    <param id="0" name="Object">Gracz</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="1693904004374316" type="Gracz">
+                                    <param id="0" name="Instance variable">aimX</param>
+                                    <param id="1" name="Value">Multiplayer.PeerState(Gracz.peerid, &quot;aimx&quot;)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="6055225388416653" type="Gracz">
+                                    <param id="0" name="Instance variable">aimY</param>
+                                    <param id="1" name="Value">Multiplayer.PeerState(Gracz.peerid, &quot;aimy&quot;)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="4823320412468678" type="Gracz">
+                                    <param id="0" name="Instance variable">Input</param>
+                                    <param id="1" name="Value">Multiplayer.PeerState(Gracz.peerid, &quot;input&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="8660530557031895">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="8000568296397095" type="Gracz">
+                                            <param id="0" name="Instance variable">Input</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">getbit(0,1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="3432166388235771" type="Gracz">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7974832778512376">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3818611653322289" type="Gracz">
+                                            <param id="0" name="Instance variable">Input</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">getbit(1,1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="7449600177217908" type="Gracz">
+                                            <param id="0" name="Control">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2891249431112053">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2217803118847939" type="Gracz">
+                                            <param id="0" name="Instance variable">Input</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">getbit(2,1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="4287823857203347" type="Gracz">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3158143048361213">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4575837801057997" type="Gracz">
+                                            <param id="0" name="Instance variable">Input</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">getbit(3,1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="2574942123381803" type="Gracz">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-group collapsed="1" description="Ruch hosta" sid="6275370267556177" title="Hosty">
                             <sub-events>
                                 <event-block sid="389482945461162">
                                     <conditions>
@@ -127,7 +231,12 @@
                                             <param id="2" name="Value">Multiplayer.MyID</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action id="-22" name="Set angle toward position" sid="8143256211532381" type="Gracz">
+                                            <param id="0" name="X">mouse.X</param>
+                                            <param id="1" name="Y">mouse.Y</param>
+                                        </action>
+                                    </actions>
                                     <sub-events>
                                         <event-block sid="9484846228786165">
                                             <conditions>
@@ -181,62 +290,6 @@
                                 </event-block>
                             </sub-events>
                         </event-group>
-                        <event-block sid="8660530557031895">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="8000568296397095" type="Gracz">
-                                    <param id="0" name="Instance variable">Input</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">getbit(0,1)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="3432166388235771" type="Gracz">
-                                    <param id="0" name="Control">2</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="7974832778512376">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="3818611653322289" type="Gracz">
-                                    <param id="0" name="Instance variable">Input</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">getbit(1,1)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="7449600177217908" type="Gracz">
-                                    <param id="0" name="Control">3</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="2891249431112053">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="2217803118847939" type="Gracz">
-                                    <param id="0" name="Instance variable">Input</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">getbit(2,1)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="4287823857203347" type="Gracz">
-                                    <param id="0" name="Control">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="3158143048361213">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="4575837801057997" type="Gracz">
-                                    <param id="0" name="Instance variable">Input</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">getbit(3,1)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="2574942123381803" type="Gracz">
-                                    <param id="0" name="Control">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
                     </sub-events>
                 </event-group>
                 <event-block sid="3797964670126116">

@@ -2,7 +2,7 @@
 <c2layout>
     <name>Game</name>
     <sid>7484884754377944</sid>
-    <event-sheet>Login Ev</event-sheet>
+    <event-sheet>Game Ev</event-sheet>
     <size>
         <width>800</width>
         <height>600</height>
@@ -49,21 +49,51 @@
                                 <directions>8 directions</directions>
                                 <set-angle>360 degree (smooth)</set-angle>
                                 <default-controls>Yes</default-controls>
-                                <initial-state>Disabled</initial-state>
+                                <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>198.571075439</x>
-                        <y>112.455245972</y>
+                        <x>225.891387939</x>
+                        <y>125.432342529</y>
                         <z>0</z>
                         <width>32</width>
                         <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0.03125</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Text" uid="8">
+                    <properties>
+                        <text></text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-15,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <instance-variables>
+                        <ID>2</ID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>344.755493164</x>
+                        <y>0.802597046</y>
+                        <z>0</z>
+                        <width>426</width>
+                        <height>597</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
