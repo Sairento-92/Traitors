@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game Ev</name>
+    <events>
+        <variable comment="Nazwa gry / nie zmieniac" constant="1" name="GAME_NAME" sid="3900292607440977" static="0" type="text">rexu-cyckidupachuj</variable>
+    </events>
+</c2eventsheet>

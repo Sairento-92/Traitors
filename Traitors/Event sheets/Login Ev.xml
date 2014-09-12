@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Login Ev</name>
+    <events>
+        <variable comment="Instancja, przed room" constant="1" name="GAME_INSTANCE" sid="8908236026876263" static="0" type="text">main</variable>
+        <variable comment="Najmniejszy podzial" constant="0" name="GAME_ROOM" sid="8515977161225578" static="0" type="text">room1</variable>
+        <variable comment="Alias peera" constant="0" name="PeerName" sid="70604546823099" static="0" type="text"></variable>
+        <event-group collapsed="1" description="" sid="7958908982740431" title="Update">
+            <sub-events>
+                <event-block sid="8694326175520233">
+                    <conditions>
+                        <condition id="6" name="On update ready" sid="5442031632344279" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Reload" sid="761791427100138" type="Browser" />
+                    </actions>
+                </event-block>
+                <event-block sid="8756053232646894">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="5123125761881134" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4600342787767975">
+                            <conditions>
+                                <condition id="5" name="Is downloading update" sid="7661467506009288" type="Browser" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="5340582197375223" type="System">
+                                    <param id="0" name="Layer">&quot;Update&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="3758493812076573" type="System">
+                                    <param id="0" name="Layer">&quot;All&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="224227376540237">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7657553098843838" type="Text">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="9843696857196599" type="Text">
+                                            <param id="0" name="Text">&quot;Downloading update.&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="4200737092551787">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is downloading update" sid="974012193521402" type="Browser" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="513573760594443" type="System">
+                                    <param id="0" name="Layer">&quot;Update&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="7212408818240187" type="System">
+                                    <param id="0" name="Layer">&quot;All&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="5540972687482414">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="864841098768593" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="6151052412241322" type="MynameBox">
+                    <param id="0" name="Text">choose(&quot;Silnet&quot;,&quot;Yazri&quot;) &amp;&quot; &quot; &amp;random(100)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8456296776163715">
+            <conditions>
+                <condition id="0" name="On clicked" sid="8451603248737384" type="LoginButton" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6021183742084033" type="System">
+                    <param id="0" name="Variable">PeerName</param>
+                    <param id="1" name="Value">MynameBox.Text</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="8778027990815567" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
