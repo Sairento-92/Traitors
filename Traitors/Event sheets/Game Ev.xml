@@ -11,9 +11,6 @@
                 <action id="1" name="Connect" sid="8675285541643237" type="Multiplayer">
                     <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
                 </action>
-                <action id="1" name="Append text" sid="747727241958499" type="Text">
-                    <param id="0" name="Text">&quot;Laczenie z &quot; &amp;multiplayer.SignallingURL</param>
-                </action>
                 <action id="15" name="Add client input value" sid="3547463492851685" type="Multiplayer">
                     <param id="0" name="Tag">&quot;aimx&quot;</param>
                     <param id="1" name="Precision">2</param>
@@ -56,6 +53,10 @@
                     <param id="3" name="Interpolation">1</param>
                     <param id="4" name="Client value tag">&quot;input&quot;</param>
                 </action>
+                <action id="0" name="Call function" sid="9905248541542429" type="Function">
+                    <param id="0" name="Name">&quot;chat&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;Laczenie z serwerem &quot; &amp;multiplayer.SignallingName</param>
+                </action>
             </actions>
         </event-block>
         <event-group description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
@@ -68,8 +69,9 @@
                         <action id="4" name="Log in" sid="5944486919282338" type="Multiplayer">
                             <param id="0" name="Alias">Myname</param>
                         </action>
-                        <action id="1" name="Append text" sid="1596908784167686" type="Text">
-                            <param id="0" name="Text">&quot;Dolaczono do serwera sygnalowego&quot;</param>
+                        <action id="0" name="Call function" sid="5184068822326509" type="Function">
+                            <param id="0" name="Name">&quot;chat&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Dolaczono do serwera sygnalowego&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -84,8 +86,9 @@
                             <param id="2" name="Room">GAME_ROOM</param>
                             <param id="3" name="Max peers">0</param>
                         </action>
-                        <action id="1" name="Append text" sid="6351834164268233" type="Text">
-                            <param id="0" name="Text">&quot;Zalogowano do serwera sygnalowego&quot;</param>
+                        <action id="0" name="Call function" sid="8270916677914994" type="Function">
+                            <param id="0" name="Name">&quot;chat&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Zalogowano do serwera sygnalowego&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -94,8 +97,9 @@
                         <condition id="5" name="On joined room" sid="8268686203064732" type="Multiplayer" />
                     </conditions>
                     <actions>
-                        <action id="1" name="Append text" sid="3419042922269531" type="Text">
-                            <param id="0" name="Text">&quot;Dolaczono do pokoju&quot;</param>
+                        <action id="0" name="Call function" sid="9481341803581336" type="Function">
+                            <param id="0" name="Name">&quot;chat&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Dolaczono do pokoju, alias: &quot; &amp;multiplayer.MyAlias</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -133,9 +137,9 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" inactive="1" sid="3011960123564868" title="Host">
+        <event-group collapsed="1" description="" inactive="1" sid="3011960123564868" title="Host">
             <sub-events>
-                <event-group description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
+                <event-group collapsed="1" description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
                     <sub-events>
                         <event-block sid="2012949872586218">
                             <conditions>
@@ -471,6 +475,43 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Peer i Host" sid="9395126084642041" title="Both" />
+        <event-group description="Peer i Host" sid="9395126084642041" title="Both">
+            <sub-events>
+                <event-block sid="2414182989916798">
+                    <conditions>
+                        <condition id="0" name="On function" sid="7220101698433719" type="Function">
+                            <param id="0" name="Name">&quot;log&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Append text" sid="3501570727657279" type="Text">
+                            <param id="0" name="Text">function.param(0) &amp;newline</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6409330453651282">
+                    <conditions>
+                        <condition id="11" name="On peer connected" sid="3720463476085611" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="7135109484119264" type="Function">
+                            <param id="0" name="Name">&quot;chat&quot;</param>
+                            <param id="1" name="Parameter {n}">multiplayer.peeralias &amp;&quot; wszedl do pokoju&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3638534115438381">
+                    <conditions>
+                        <condition id="13" name="On peer disconnected" sid="7986204831371365" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="9627028363585656" type="Function">
+                            <param id="0" name="Name">&quot;chat&quot;</param>
+                            <param id="1" name="Parameter {n}">multiplayer.peeralias &amp;&quot; wyszedl z pokoju&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
