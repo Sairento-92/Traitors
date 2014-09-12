@@ -3,9 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Login Ev</name>
     <events>
+        <variable comment="Nazwa gry / nie zmieniac" constant="1" name="GAME_NAME" sid="7260834246364596" static="0" type="text">rexu-cyckidupachuj</variable>
         <variable comment="Instancja, przed room" constant="1" name="GAME_INSTANCE" sid="8908236026876263" static="0" type="text">main</variable>
         <variable comment="Najmniejszy podzial" constant="0" name="GAME_ROOM" sid="8515977161225578" static="0" type="text">room1</variable>
-        <variable comment="Alias peera" constant="0" name="PeerName" sid="70604546823099" static="0" type="text">cycki</variable>
+        <variable comment="Alias peera" constant="0" name="Myname" sid="70604546823099" static="0" type="text"></variable>
         <event-group collapsed="1" description="" sid="7958908982740431" title="Update">
             <sub-events>
                 <event-block sid="8694326175520233">
@@ -90,7 +91,7 @@
             </conditions>
             <actions>
                 <action id="-9" name="Set value" sid="6021183742084033" type="System">
-                    <param id="0" name="Variable">PeerName</param>
+                    <param id="0" name="Variable">Myname</param>
                     <param id="1" name="Value">MynameBox.Text</param>
                 </action>
                 <action id="-2" name="Go to layout" sid="8778027990815567" type="System">
