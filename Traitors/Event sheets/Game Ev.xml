@@ -96,18 +96,17 @@
                     <conditions>
                         <condition id="5" name="On joined room" sid="8268686203064732" type="Multiplayer" />
                     </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="9481341803581336" type="Function">
-                            <param id="0" name="Name">&quot;chat&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;Dolaczono do pokoju, alias: &quot; &amp;multiplayer.MyAlias</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <event-block sid="2692538713677893">
                             <conditions>
                                 <condition id="10" name="Is host" sid="478796509255011" type="Multiplayer" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Call function" sid="9481341803581336" type="Function">
+                                    <param id="0" name="Name">&quot;chat&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Dolaczono do pokoju jako host, alias: &quot; &amp;multiplayer.MyAlias</param>
+                                </action>
                                 <action id="-12" name="Set group active" sid="5004302565812575" type="System">
                                     <param id="0" name="Group name">&quot;Host&quot;</param>
                                     <param id="1" name="State">1</param>
@@ -127,6 +126,10 @@
                                 <condition id="10" inverted="1" name="Is host" sid="15933177712766" type="Multiplayer" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Call function" sid="7679772599809676" type="Function">
+                                    <param id="0" name="Name">&quot;chat&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Dolaczono do pokoju jako peer, alias: &quot; &amp;multiplayer.MyAlias</param>
+                                </action>
                                 <action id="-12" name="Set group active" sid="6689301689991077" type="System">
                                     <param id="0" name="Group name">&quot;Peer&quot;</param>
                                     <param id="1" name="State">1</param>
@@ -323,7 +326,7 @@
         <event-group description="" inactive="1" sid="9642298604554555" title="Peer">
             <sub-events>
                 <comment>0 - falsz, 1 - prawda&#x0D;&#x0A;0 - w gore&#x0D;&#x0A;1 - w dol&#x0D;&#x0A;2 - w lewo&#x0D;&#x0A;3 - w prawo&#x0D;&#x0A;4 - lmb</comment>
-                <event-block sid="6133589175984286">
+                <event-block collapsed="1" sid="6133589175984286">
                     <conditions>
                         <condition id="17" name="On client update" sid="5666513683723343" type="Multiplayer" />
                         <condition id="-7" name="Compare instance variable" sid="8968518402942169" type="Gracz">
@@ -488,15 +491,42 @@
                             <param id="1" name="Peer ID">Multiplayer.PeerID</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="3921070448518829">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5389821419989616" type="Gracz">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.MyID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="16" name="Enable local input prediction" sid="8681226637590897" type="Multiplayer">
+                                    <param id="0" name="Object">Gracz</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
         <event-group description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
+                <event-block sid="4894480022830383">
+                    <conditions>
+                        <condition id="1" name="On error" sid="2295020180271574" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="7403479351388321" type="Function">
+                            <param id="0" name="Name">&quot;chat&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;ERROR: &quot; &amp;Multiplayer.ErrorMessage</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="2414182989916798">
                     <conditions>
                         <condition id="0" name="On function" sid="7220101698433719" type="Function">
-                            <param id="0" name="Name">&quot;log&quot;</param>
+                            <param id="0" name="Name">&quot;chat&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
