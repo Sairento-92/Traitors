@@ -59,19 +59,13 @@
                     <param id="2" name="Precision">2</param>
                     <param id="3" name="Bandwidth">0</param>
                 </action>
-                <action id="11" name="Sync object" sid="2214433191121339" type="Multiplayer">
-                    <param id="0" name="Object">Boostbox</param>
-                    <param id="1" name="Data">1</param>
-                    <param id="2" name="Precision">2</param>
-                    <param id="3" name="Bandwidth">2</param>
-                </action>
                 <action id="0" name="Call function" sid="9905248541542429" type="Function">
                     <param id="0" name="Name">&quot;chat&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;Laczenie z serwerem &quot; &amp;multiplayer.SignallingName</param>
                 </action>
             </actions>
         </event-block>
-        <event-group collapsed="1" description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
+        <event-group description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
             <sub-events>
                 <event-block sid="6270828135115465">
                     <conditions>
@@ -146,7 +140,7 @@
                                     <param id="0" name="Group name">&quot;Peer&quot;</param>
                                     <param id="1" name="State">1</param>
                                 </action>
-                                <action id="-9" name="Destroy" sid="2397124828600547" type="Gracz" />
+                                <action id="-9" name="Destroy" sid="6887843430496935" type="joindestr" />
                             </actions>
                         </event-block>
                     </sub-events>
