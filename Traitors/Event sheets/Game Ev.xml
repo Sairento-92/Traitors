@@ -53,6 +53,12 @@
                     <param id="3" name="Interpolation">1</param>
                     <param id="4" name="Client value tag">&quot;input&quot;</param>
                 </action>
+                <action id="11" name="Sync object" sid="3233935066729546" type="Multiplayer">
+                    <param id="0" name="Object">Sprite</param>
+                    <param id="1" name="Data">3</param>
+                    <param id="2" name="Precision">2</param>
+                    <param id="3" name="Bandwidth">0</param>
+                </action>
                 <action id="0" name="Call function" sid="9905248541542429" type="Function">
                     <param id="0" name="Name">&quot;chat&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;Laczenie z serwerem &quot; &amp;multiplayer.SignallingName</param>
@@ -145,6 +151,109 @@
             <sub-events>
                 <event-group description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
                     <sub-events>
+                        <event-group description="Ruch hosta" sid="6275370267556177" title="Hosty">
+                            <sub-events>
+                                <event-block sid="389482945461162">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="64218287107948" type="Gracz">
+                                            <param id="0" name="Instance variable">peerid</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Multiplayer.MyID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-22" name="Set angle toward position" sid="8143256211532381" type="Gracz">
+                                            <param id="0" name="X">mouse.X</param>
+                                            <param id="1" name="Y">mouse.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="7729960927888922" type="Gracz">
+                                            <param id="0" name="Instance variable">aimX</param>
+                                            <param id="1" name="Value">mouse.X</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="1615466147648191" type="Gracz">
+                                            <param id="0" name="Instance variable">aimY</param>
+                                            <param id="1" name="Value">mouse.y</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="9484846228786165">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="2361175124359656" type="Keyboard">
+                                                    <param id="0" name="Key">87 (W)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="8Direction" id="7" name="Simulate control" sid="6845135585047225" type="Gracz">
+                                                    <param id="0" name="Control">2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2732731896977899">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="5858201937823349" type="Keyboard">
+                                                    <param id="0" name="Key">83 (S)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="8Direction" id="7" name="Simulate control" sid="8870658364342078" type="Gracz">
+                                                    <param id="0" name="Control">3</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2071929129464796">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="7296444707458113" type="Keyboard">
+                                                    <param id="0" name="Key">65 (A)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="8Direction" id="7" name="Simulate control" sid="112384967291749" type="Gracz">
+                                                    <param id="0" name="Control">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="4921967320659783">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="8688285478837894" type="Keyboard">
+                                                    <param id="0" name="Key">68 (D)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="8Direction" id="7" name="Simulate control" sid="3802608171998102" type="Gracz">
+                                                    <param id="0" name="Control">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="7869062004883721">
+                                            <conditions>
+                                                <condition id="2" name="Mouse button is down" sid="142758440873787" type="Mouse">
+                                                    <param id="0" name="Mouse button">0</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="6236738319069908" type="Gracz">
+                                                    <param id="0" name="Instance variable">shootcd</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="1313499584921557" type="Gracz">
+                                                    <param id="0" name="Object">Sprite</param>
+                                                    <param id="1" name="Layer">&quot;Main&quot;</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="6108786550910809" type="Gracz">
+                                                    <param id="0" name="Instance variable">shootcd</param>
+                                                    <param id="1" name="Value">100</param>
+                                                </action>
+                                                <action behavior="Bullet" id="5" name="Set enabled" sid="948821805576117" type="Sprite">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
                         <event-block sid="2012949872586218">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="6657810605553687" type="Gracz">
@@ -227,77 +336,49 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-group description="Ruch hosta" sid="6275370267556177" title="Hosty">
-                            <sub-events>
-                                <event-block sid="389482945461162">
+                                <event-block sid="5561338801269104">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="64218287107948" type="Gracz">
-                                            <param id="0" name="Instance variable">peerid</param>
+                                        <condition id="-8" name="Compare two values" sid="8133160700860326" type="System">
+                                            <param id="0" name="First value">getbit(Gracz.Input,4)</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">Multiplayer.MyID</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="6462417548728437" type="Gracz">
+                                            <param id="0" name="Instance variable">shootcd</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-22" name="Set angle toward position" sid="8143256211532381" type="Gracz">
-                                            <param id="0" name="X">mouse.X</param>
-                                            <param id="1" name="Y">mouse.Y</param>
+                                        <action id="0" name="Spawn another object" sid="3695029097087959" type="Gracz">
+                                            <param id="0" name="Object">Sprite</param>
+                                            <param id="1" name="Layer">&quot;Main&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="4366485943782589" type="Gracz">
+                                            <param id="0" name="Instance variable">shootcd</param>
+                                            <param id="1" name="Value">100</param>
+                                        </action>
+                                        <action behavior="Bullet" id="5" name="Set enabled" sid="3421653673944225" type="Sprite">
+                                            <param id="0" name="State">1</param>
                                         </action>
                                     </actions>
-                                    <sub-events>
-                                        <event-block sid="9484846228786165">
-                                            <conditions>
-                                                <condition id="2" name="Key is down" sid="2361175124359656" type="Keyboard">
-                                                    <param id="0" name="Key">87 (W)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action behavior="8Direction" id="7" name="Simulate control" sid="6845135585047225" type="Gracz">
-                                                    <param id="0" name="Control">2</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="2732731896977899">
-                                            <conditions>
-                                                <condition id="2" name="Key is down" sid="5858201937823349" type="Keyboard">
-                                                    <param id="0" name="Key">83 (S)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action behavior="8Direction" id="7" name="Simulate control" sid="8870658364342078" type="Gracz">
-                                                    <param id="0" name="Control">3</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="2071929129464796">
-                                            <conditions>
-                                                <condition id="2" name="Key is down" sid="7296444707458113" type="Keyboard">
-                                                    <param id="0" name="Key">65 (A)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action behavior="8Direction" id="7" name="Simulate control" sid="112384967291749" type="Gracz">
-                                                    <param id="0" name="Control">0</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="4921967320659783">
-                                            <conditions>
-                                                <condition id="2" name="Key is down" sid="8688285478837894" type="Keyboard">
-                                                    <param id="0" name="Key">68 (D)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action behavior="8Direction" id="7" name="Simulate control" sid="3802608171998102" type="Gracz">
-                                                    <param id="0" name="Control">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
                                 </event-block>
                             </sub-events>
-                        </event-group>
+                        </event-block>
+                        <event-block sid="338671262397665">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="314956746240867" type="System">
+                                    <param id="0" name="Interval (seconds)">0.01</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="2614567404601863" type="Gracz">
+                                    <param id="0" name="Instance variable">shootcd</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-group>
                 <event-block sid="3797964670126116">
@@ -307,7 +388,7 @@
                     <actions>
                         <action id="-3" name="Create object" sid="1584353909267468" type="System">
                             <param id="0" name="Object to create">Gracz</param>
-                            <param id="1" name="Layer">0</param>
+                            <param id="1" name="Layer">&quot;Main&quot;</param>
                             <param id="2" name="X">50</param>
                             <param id="3" name="Y">50</param>
                         </action>
@@ -326,7 +407,7 @@
         <event-group description="" inactive="1" sid="9642298604554555" title="Peer">
             <sub-events>
                 <comment>0 - falsz, 1 - prawda&#x0D;&#x0A;0 - w gore&#x0D;&#x0A;1 - w dol&#x0D;&#x0A;2 - w lewo&#x0D;&#x0A;3 - w prawo&#x0D;&#x0A;4 - lmb</comment>
-                <event-block collapsed="1" sid="6133589175984286">
+                <event-block sid="6133589175984286">
                     <conditions>
                         <condition id="17" name="On client update" sid="5666513683723343" type="Multiplayer" />
                         <condition id="-7" name="Compare instance variable" sid="8968518402942169" type="Gracz">
@@ -655,6 +736,9 @@
                         <action id="-22" name="Set angle toward position" sid="5892543746152468" type="Gracz">
                             <param id="0" name="X">mouse.X</param>
                             <param id="1" name="Y">mouse.Y</param>
+                        </action>
+                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="8679125371688505" type="Gracz">
+                            <param id="0" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>

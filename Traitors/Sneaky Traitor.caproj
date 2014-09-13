@@ -21,7 +21,10 @@
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -66,10 +69,14 @@
                     <instance-variable comment="mouse.y" name="aimY" sid="3677709921922647" type="number" />
                     <instance-variable comment="id peera" name="peerid" sid="4490441530007475" type="string" />
                     <instance-variable comment="Prawda/falsz do ruchow itp. 1/0" name="Input" sid="7698917940797387" type="number" />
+                    <instance-variable comment="cooldown miedzy strzalami 1 = 1ms" name="shootcd" sid="6688213690616353" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="5670686406564721">
                         <behavior id="EightDir" />
+                    </behavior-type>
+                    <behavior-type name="ScrollTo" sid="6557087968074052">
+                        <behavior id="scrollto" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder expanded="1">
@@ -107,6 +114,22 @@
         </object-type>
         <object-type name="Function" sid="2526662655557374">
             <plugin id="Function" />
+        </object-type>
+        <object-type name="Sprite" sid="2012607136126764">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="5976189701811724">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="3409692042624632">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3812723870168" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
