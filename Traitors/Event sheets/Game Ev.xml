@@ -140,6 +140,17 @@
                                     <param id="0" name="Instance variable">PeerName</param>
                                     <param id="1" name="Value">Multiplayer.MyAlias</param>
                                 </action>
+                                <action id="4" name="Set animation" sid="6999806351793207" type="Gracz">
+                                    <param id="0" name="Animation">&quot;gania&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="8891145326459971" type="Gracz">
+                                    <param id="0" name="Max Speed">250</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9938196462538829" type="System">
+                                    <param id="0" name="Variable">Gania</param>
+                                    <param id="1" name="Value">multiplayer.myalias</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="5355030244958892">
@@ -550,16 +561,6 @@
                                 <condition id="1" name="Is overlapping another object" sid="9292956385979514" type="Gracz">
                                     <param id="0" name="Object">Gracz</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="4042409312030532" type="Gracz">
-                                    <param id="0" name="Instance variable">PeerName</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">Gania</param>
-                                </condition>
-                                <condition id="-7" inverted="1" name="Compare instance variable" sid="6215556084969176" type="Gracz">
-                                    <param id="0" name="Instance variable">PeerName</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">Gania</param>
-                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -587,6 +588,11 @@
                                             <param id="0" name="Instance variable">PeerName</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">Gania</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="8316051487904122" type="Text">
+                                            <param id="0" name="Instance variable">tag</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">5</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -916,7 +922,7 @@
                         <condition id="-7" name="Compare instance variable" sid="1631581270089165" type="Text">
                             <param id="0" name="Instance variable">tag</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">4</param>
+                            <param id="2" name="Value">5</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -927,7 +933,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Peer i Host" sid="9395126084642041" title="Both">
+        <event-group description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
                 <event-block sid="4894480022830383">
                     <conditions>
@@ -944,6 +950,11 @@
                     <conditions>
                         <condition id="0" name="On function" sid="7220101698433719" type="Function">
                             <param id="0" name="Name">&quot;chat&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6439727329763047" type="Text">
+                            <param id="0" name="Instance variable">tag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
                         </condition>
                     </conditions>
                     <actions>
