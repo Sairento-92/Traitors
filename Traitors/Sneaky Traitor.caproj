@@ -2,7 +2,7 @@
 <c2project>
     <name>Sneaky Traitor</name>
     <description></description>
-    <version>1.7</version>
+    <version>2.0</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -100,7 +100,7 @@
         <object-type name="Text" sid="9302962398470874">
             <plugin id="Text" />
             <instance-variables>
-                <instance-variable name="ID" sid="6541907839893541" type="number" />
+                <instance-variable name="tag" sid="6541907839893541" type="number" />
             </instance-variables>
         </object-type>
         <object-type name="Browser" sid="8692302114350189">

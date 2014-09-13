@@ -43,7 +43,7 @@
                                 <event-block sid="224227376540237">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="7657553098843838" type="Text">
-                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="0" name="Instance variable">tag</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
@@ -81,7 +81,7 @@
             </conditions>
             <actions>
                 <action id="0" name="Set text" sid="6151052412241322" type="MynameBox">
-                    <param id="0" name="Text">choose(&quot;Silnet&quot;,&quot;Yazri&quot;) &amp;&quot; &quot; &amp;random(100)</param>
+                    <param id="0" name="Text">choose(&quot;Am&quot;,&quot;Em&quot;,&quot;An&quot;,&quot;En&quot;,&quot;Om&quot;,&quot;On&quot;,&quot;N&quot;,&quot;M&quot;,&quot;Pi&quot;,&quot;Li&quot;,&quot;Mi&quot;,&quot;Ci&quot;) &amp;choose(&quot;cha&quot;,&quot;tr&quot;,&quot;en&quot;,&quot;am&quot;,&quot;ug&quot;,&quot;dek&quot;) &amp;choose(&quot;en&quot;,&quot;un&quot;,&quot;ek&quot;,&quot;tyl&quot;,&quot;met&quot;,&quot;kin&quot;,&quot;on&quot;) &amp;choose(&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;len&quot;,&quot;es&quot;,&quot;ul&quot;,&quot;hen&quot;,&quot;bun&quot;)</param>
                 </action>
             </actions>
         </event-block>
@@ -96,6 +96,20 @@
                 </action>
                 <action id="-2" name="Go to layout" sid="8778027990815567" type="System">
                     <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9822604952689224">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8046428133265557" type="Text">
+                    <param id="0" name="Instance variable">tag</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="4308899035323784" type="Text">
+                    <param id="0" name="Text">&quot;Sneaky Traitor &quot; &amp;projectversion</param>
                 </action>
             </actions>
         </event-block>

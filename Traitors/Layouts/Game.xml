@@ -4029,7 +4029,7 @@
             <instances>
                 <instance type="Text" uid="8">
                     <properties>
-                        <text></text>
+                        <text>Chatlog tag: 2</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-15,400,0</font>
                         <color>0,0,0</color>
@@ -4040,7 +4040,7 @@
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
-                        <ID>2</ID>
+                        <tag>3</tag>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
