@@ -54,10 +54,16 @@
                     <param id="4" name="Client value tag">&quot;input&quot;</param>
                 </action>
                 <action id="11" name="Sync object" sid="3233935066729546" type="Multiplayer">
-                    <param id="0" name="Object">Sprite</param>
+                    <param id="0" name="Object">Pocisk</param>
                     <param id="1" name="Data">3</param>
                     <param id="2" name="Precision">2</param>
                     <param id="3" name="Bandwidth">0</param>
+                </action>
+                <action id="11" name="Sync object" sid="2214433191121339" type="Multiplayer">
+                    <param id="0" name="Object">Boostbox</param>
+                    <param id="1" name="Data">1</param>
+                    <param id="2" name="Precision">2</param>
+                    <param id="3" name="Bandwidth">2</param>
                 </action>
                 <action id="0" name="Call function" sid="9905248541542429" type="Function">
                     <param id="0" name="Name">&quot;chat&quot;</param>
@@ -65,7 +71,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-group description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
+        <event-group collapsed="1" description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
             <sub-events>
                 <event-block sid="6270828135115465">
                     <conditions>
@@ -151,9 +157,9 @@
             <sub-events>
                 <event-group description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
                     <sub-events>
-                        <event-group description="Ruch hosta" sid="6275370267556177" title="Hosty">
+                        <event-group collapsed="1" description="Ruch hosta" sid="6275370267556177" title="Hosty">
                             <sub-events>
-                                <event-block sid="389482945461162">
+                                <event-block collapsed="1" sid="389482945461162">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="64218287107948" type="Gracz">
                                             <param id="0" name="Instance variable">peerid</param>
@@ -224,7 +230,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="7869062004883721">
+                                        <event-block collapsed="1" sid="7869062004883721">
                                             <conditions>
                                                 <condition id="2" name="Mouse button is down" sid="142758440873787" type="Mouse">
                                                     <param id="0" name="Mouse button">0</param>
@@ -235,26 +241,84 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="0" name="Spawn another object" sid="1313499584921557" type="Gracz">
-                                                    <param id="0" name="Object">Sprite</param>
-                                                    <param id="1" name="Layer">&quot;Main&quot;</param>
-                                                    <param id="2" name="Image point">0</param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="6108786550910809" type="Gracz">
-                                                    <param id="0" name="Instance variable">shootcd</param>
-                                                    <param id="1" name="Value">100</param>
-                                                </action>
-                                                <action behavior="Bullet" id="5" name="Set enabled" sid="948821805576117" type="Sprite">
-                                                    <param id="0" name="State">1</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="8834881842241882">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="4565774578662038" type="Gracz">
+                                                            <param id="0" name="Instance variable">weapon</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Spawn another object" sid="1313499584921557" type="Gracz">
+                                                            <param id="0" name="Object">Pocisk</param>
+                                                            <param id="1" name="Layer">&quot;Main&quot;</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="6108786550910809" type="Gracz">
+                                                            <param id="0" name="Instance variable">shootcd</param>
+                                                            <param id="1" name="Value">20</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="5" name="Set enabled" sid="948821805576117" type="Pocisk">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="6724373171974649">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="5757832623366832" type="Gracz">
+                                                            <param id="0" name="Instance variable">weapon</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Spawn another object" sid="6145996289139616" type="Gracz">
+                                                            <param id="0" name="Object">Pocisk</param>
+                                                            <param id="1" name="Layer">&quot;Main&quot;</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="6214637451126111" type="Gracz">
+                                                            <param id="0" name="Instance variable">shootcd</param>
+                                                            <param id="1" name="Value">40</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="5" name="Set enabled" sid="9484208530810403" type="Pocisk">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="7029440120611872">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="8464884745699532" type="Gracz">
+                                                            <param id="0" name="Instance variable">weapon</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Spawn another object" sid="8822732733711895" type="Gracz">
+                                                            <param id="0" name="Object">Pocisk</param>
+                                                            <param id="1" name="Layer">&quot;Main&quot;</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="3355425763466919" type="Gracz">
+                                                            <param id="0" name="Instance variable">shootcd</param>
+                                                            <param id="1" name="Value">60</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="5" name="Set enabled" sid="6088106662242874" type="Pocisk">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-group>
-                        <event-block sid="2012949872586218">
+                        <event-block collapsed="1" sid="2012949872586218">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="6657810605553687" type="Gracz">
                                     <param id="0" name="Instance variable">peerid</param>
@@ -336,7 +400,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="5561338801269104">
+                                <event-block collapsed="1" sid="5561338801269104">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="8133160700860326" type="System">
                                             <param id="0" name="First value">getbit(Gracz.Input,4)</param>
@@ -349,20 +413,78 @@
                                             <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="0" name="Spawn another object" sid="3695029097087959" type="Gracz">
-                                            <param id="0" name="Object">Sprite</param>
-                                            <param id="1" name="Layer">&quot;Main&quot;</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="4366485943782589" type="Gracz">
-                                            <param id="0" name="Instance variable">shootcd</param>
-                                            <param id="1" name="Value">100</param>
-                                        </action>
-                                        <action behavior="Bullet" id="5" name="Set enabled" sid="3421653673944225" type="Sprite">
-                                            <param id="0" name="State">1</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="2959297492241057">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2496660935790035" type="Gracz">
+                                                    <param id="0" name="Instance variable">weapon</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="7533882054264911" type="Gracz">
+                                                    <param id="0" name="Object">Pocisk</param>
+                                                    <param id="1" name="Layer">&quot;Main&quot;</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="5868074687391946" type="Gracz">
+                                                    <param id="0" name="Instance variable">shootcd</param>
+                                                    <param id="1" name="Value">20</param>
+                                                </action>
+                                                <action behavior="Bullet" id="5" name="Set enabled" sid="7634787315496994" type="Pocisk">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="9140840271926133">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="6889712083326386" type="Gracz">
+                                                    <param id="0" name="Instance variable">weapon</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="855880642962454" type="Gracz">
+                                                    <param id="0" name="Object">Pocisk</param>
+                                                    <param id="1" name="Layer">&quot;Main&quot;</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="653373855482299" type="Gracz">
+                                                    <param id="0" name="Instance variable">shootcd</param>
+                                                    <param id="1" name="Value">40</param>
+                                                </action>
+                                                <action behavior="Bullet" id="5" name="Set enabled" sid="7875683619436393" type="Pocisk">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="9955509367769852">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2906977028511768" type="Gracz">
+                                                    <param id="0" name="Instance variable">weapon</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="1757426827207555" type="Gracz">
+                                                    <param id="0" name="Object">Pocisk</param>
+                                                    <param id="1" name="Layer">&quot;Main&quot;</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="4324187213406203" type="Gracz">
+                                                    <param id="0" name="Instance variable">shootcd</param>
+                                                    <param id="1" name="Value">60</param>
+                                                </action>
+                                                <action behavior="Bullet" id="5" name="Set enabled" sid="6302815978181038" type="Pocisk">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -664,6 +786,30 @@
         </event-group>
         <event-group description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
+                <event-block sid="3236911070260071">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="7414896488575666" type="Gracz">
+                            <param id="0" name="Object">Boostbox</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2818449277541774" type="Boostbox">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="4996532589232888" type="Gracz">
+                            <param id="0" name="Instance variable">weapon</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">Boostbox.wepid</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="6841415028850949" type="Gracz">
+                            <param id="0" name="Instance variable">weapon</param>
+                            <param id="1" name="Value">boostbox.wepid</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="3482435233308417" type="Boostbox" />
+                    </actions>
+                </event-block>
                 <event-block sid="4894480022830383">
                     <conditions>
                         <condition id="1" name="On error" sid="2295020180271574" type="Multiplayer" />

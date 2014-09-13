@@ -2,7 +2,7 @@
 <c2project>
     <name>Sneaky Traitor</name>
     <description></description>
-    <version>2.0</version>
+    <version>2.2</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -70,6 +70,7 @@
                     <instance-variable comment="id peera" name="peerid" sid="4490441530007475" type="string" />
                     <instance-variable comment="Prawda/falsz do ruchow itp. 1/0" name="Input" sid="7698917940797387" type="number" />
                     <instance-variable comment="cooldown miedzy strzalami 1 = 1ms" name="shootcd" sid="6688213690616353" type="number" />
+                    <instance-variable name="weapon" sid="5444542903930593" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="5670686406564721">
@@ -90,6 +91,35 @@
                                 <point x="0" y="1" />
                             </collision-poly>
                         </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Pocisk" sid="2012607136126764">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="5976189701811724">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="3409692042624632">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3812723870168" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Boostbox" sid="6068766544188565">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="type" sid="8962115785467136" type="number" />
+                    <instance-variable name="wepid" sid="7474165661899121" type="number" />
+                    <instance-variable name="id" sid="8479166556431876" type="number" />
+                </instance-variables>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="904146525367862" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -114,22 +144,6 @@
         </object-type>
         <object-type name="Function" sid="2526662655557374">
             <plugin id="Function" />
-        </object-type>
-        <object-type name="Sprite" sid="2012607136126764">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Bullet" sid="5976189701811724">
-                    <behavior id="Bullet" />
-                </behavior-type>
-                <behavior-type name="DestroyOutsideLayout" sid="3409692042624632">
-                    <behavior id="destroy" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3812723870168" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
     </object-folder>
     <families />
