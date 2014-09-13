@@ -576,14 +576,14 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" sid="6011107902282835">
+                <event-block sid="6011107902282835">
                     <conditions />
                     <actions />
                     <sub-events>
                         <variable constant="0" name="Gan" sid="1609029864615634" static="0" type="number">0</variable>
                         <event-block sid="2920737819404643">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="9292956385979514" type="Gracz">
+                                <condition id="0" name="On collision with another object" sid="9292956385979514" type="Gracz">
                                     <param id="0" name="Object">Gracz</param>
                                 </condition>
                                 <condition id="-14" name="Compare variable" sid="5283894497502648" type="System">
@@ -655,6 +655,21 @@
                                         <action id="-9" name="Set value" sid="8109948770007615" type="System">
                                             <param id="0" name="Variable">GaniaLicz</param>
                                             <param id="1" name="Value">5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7541958938571496">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="6610486998513235" type="System">
+                                            <param id="0" name="Variable">Gan</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="6652224396517249" type="System">
+                                            <param id="0" name="Variable">Gan</param>
+                                            <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1070,16 +1085,49 @@
                                     <param id="0" name="Animation">&quot;gania1&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
-                                <action behavior="8Direction" id="4" name="Set max speed" sid="1848270207942228" type="Gracz">
-                                    <param id="0" name="Max Speed">250</param>
-                                </action>
-                                <action behavior="8Direction" id="6" name="Set deceleration" sid="3553368012142052" type="Gracz">
-                                    <param id="0" name="Deceleration">30</param>
-                                </action>
-                                <action behavior="8Direction" id="5" name="Set acceleration" sid="7462435425072018" type="Gracz">
-                                    <param id="0" name="Acceleration">400</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="7551016410290447">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="3310747611026951" type="System">
+                                            <param id="0" name="Variable">GaniaLicz</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="4" name="Set max speed" sid="3980908130479444" type="Gracz">
+                                            <param id="0" name="Max Speed">0</param>
+                                        </action>
+                                        <action behavior="8Direction" id="6" name="Set deceleration" sid="2804213555315366" type="Gracz">
+                                            <param id="0" name="Deceleration">30</param>
+                                        </action>
+                                        <action behavior="8Direction" id="5" name="Set acceleration" sid="1337982861781272" type="Gracz">
+                                            <param id="0" name="Acceleration">400</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2202878355837851">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="4843513328500975" type="System">
+                                            <param id="0" name="Variable">GaniaLicz</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="4" name="Set max speed" sid="6083730251673698" type="Gracz">
+                                            <param id="0" name="Max Speed">250</param>
+                                        </action>
+                                        <action behavior="8Direction" id="6" name="Set deceleration" sid="7276232073874148" type="Gracz">
+                                            <param id="0" name="Deceleration">30</param>
+                                        </action>
+                                        <action behavior="8Direction" id="5" name="Set acceleration" sid="1572862906463668" type="Gracz">
+                                            <param id="0" name="Acceleration">400</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="3110286071465212">
                             <conditions>
