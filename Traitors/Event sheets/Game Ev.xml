@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Ev</name>
     <events>
+        <variable constant="0" name="Gania" sid="540333493553737" static="0" type="text"></variable>
         <event-block sid="9039691141819464">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="7806081716080559" type="System" />
@@ -85,6 +86,10 @@
                             <param id="0" name="Name">&quot;chat&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;Dolaczono do serwera sygnalowego&quot;</param>
                         </action>
+                        <action id="-10" name="Set value" sid="8478045271777329" type="Gracz">
+                            <param id="0" name="Instance variable">PeerName</param>
+                            <param id="1" name="Value">Multiplayer.PeerAlias</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="6348815117946897">
@@ -131,6 +136,10 @@
                                     <param id="0" name="Object">Gracz</param>
                                     <param id="1" name="Peer ID">Multiplayer.MyID</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="1435865414746887" type="Gracz">
+                                    <param id="0" name="Instance variable">PeerName</param>
+                                    <param id="1" name="Value">Multiplayer.MyAlias</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="5355030244958892">
@@ -155,7 +164,7 @@
         </event-group>
         <event-group description="" inactive="1" sid="3011960123564868" title="Host">
             <sub-events>
-                <event-group description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
+                <event-group collapsed="1" description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
                     <sub-events>
                         <event-group collapsed="1" description="Ruch hosta" sid="6275370267556177" title="Hosty">
                             <sub-events>
@@ -522,6 +531,123 @@
                             <param id="0" name="Object">Gracz</param>
                             <param id="1" name="Peer ID">Multiplayer.PeerID</param>
                         </action>
+                        <action id="-10" name="Set value" sid="7731879902522471" type="Gracz">
+                            <param id="0" name="Instance variable">PeerName</param>
+                            <param id="1" name="Value">Multiplayer.PeerAlias</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6011107902282835">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="3629313358806124" type="System">
+                            <param id="0" name="Object">Gracz</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2920737819404643">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="9292956385979514" type="Gracz">
+                                    <param id="0" name="Object">Gracz</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="4042409312030532" type="Gracz">
+                                    <param id="0" name="Instance variable">PeerName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Gania</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="6215556084969176" type="Gracz">
+                                    <param id="0" name="Instance variable">PeerName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Gania</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="7180890095249858">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5931087821213499" type="Gracz">
+                                            <param id="0" name="Instance variable">PeerName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Gania</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="5793862987134918" type="Gracz">
+                                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="8Direction" id="4" name="Set max speed" sid="477949420985245" type="Gracz">
+                                            <param id="0" name="Max Speed">200</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3046385922178406">
+                                    <conditions>
+                                        <condition id="-7" inverted="1" name="Compare instance variable" sid="2645531682225828" type="Gracz">
+                                            <param id="0" name="Instance variable">PeerName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Gania</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2535028583035713" type="System">
+                                            <param id="0" name="Variable">Gania</param>
+                                            <param id="1" name="Value">&quot;&quot;</param>
+                                        </action>
+                                        <action id="9" name="Broadcast message" sid="4130082372292361" type="Multiplayer">
+                                            <param id="0" name="From ID">&quot;&quot;</param>
+                                            <param id="1" name="Tag">&quot;gania&quot;</param>
+                                            <param id="2" name="Message">gracz.PeerName</param>
+                                            <param id="3" name="Mode">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="1581192094701187" type="Text">
+                                            <param id="0" name="Text">Gania &amp;&quot; was gania!&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="286865664004732" type="Gracz">
+                                            <param id="0" name="Animation">&quot;gania&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="8Direction" id="8" name="Set enabled" sid="6632565714462548" type="Gracz">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="9442281312965598" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                        <action behavior="8Direction" id="8" name="Set enabled" sid="794675892184733" type="Gracz">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action behavior="8Direction" id="4" name="Set max speed" sid="8795355141331394" type="Gracz">
+                                            <param id="0" name="Max Speed">250</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8075475833478784" type="System">
+                                            <param id="0" name="Variable">Gania</param>
+                                            <param id="1" name="Value">gracz.peername</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5905954764264581">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="4405683278168245" type="Boostbox" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9122397287774496" type="System">
+                            <param id="0" name="Object to create">Boostbox</param>
+                            <param id="1" name="Layer">&quot;Main&quot;</param>
+                            <param id="2" name="X">random(LayoutWidth)</param>
+                            <param id="3" name="Y">random(LayoutHeight)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8125618309432512" type="Boostbox">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1526179776690636" type="Boostbox">
+                            <param id="0" name="Instance variable">wepid</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -529,7 +655,7 @@
         <event-group description="" inactive="1" sid="9642298604554555" title="Peer">
             <sub-events>
                 <comment>0 - falsz, 1 - prawda&#x0D;&#x0A;0 - w gore&#x0D;&#x0A;1 - w dol&#x0D;&#x0A;2 - w lewo&#x0D;&#x0A;3 - w prawo&#x0D;&#x0A;4 - lmb</comment>
-                <event-block sid="6133589175984286">
+                <event-block collapsed="1" sid="6133589175984286">
                     <conditions>
                         <condition id="17" name="On client update" sid="5666513683723343" type="Multiplayer" />
                         <condition id="-7" name="Compare instance variable" sid="8968518402942169" type="Gracz">
@@ -680,7 +806,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="4757546875917115">
+                <event-block collapsed="1" sid="4757546875917115">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="2483077182694131" type="Gracz">
                             <param id="0" name="Instance variable">peerid</param>
@@ -751,7 +877,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="6657550015144266">
+                <event-block collapsed="1" sid="6657550015144266">
                     <conditions>
                         <condition id="-18" name="On created" sid="8376816120441055" type="Gracz" />
                     </conditions>
@@ -782,9 +908,26 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="5372040579352737">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="7449364120140521" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;gania&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1631581270089165" type="Text">
+                            <param id="0" name="Instance variable">tag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="2455033755545356" type="Text">
+                            <param id="0" name="Text">Multiplayer.Message &amp;&quot; was gania!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Peer i Host" sid="9395126084642041" title="Both">
+        <event-group collapsed="1" description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
                 <event-block sid="4894480022830383">
                     <conditions>

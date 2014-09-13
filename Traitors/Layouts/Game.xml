@@ -73,6 +73,7 @@
                         <Input>0</Input>
                         <shootcd>0</shootcd>
                         <weapon>0</weapon>
+                        <PeerName></PeerName>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -5107,6 +5108,36 @@
                         <z>0</z>
                         <width>424</width>
                         <height>600</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Text" uid="66">
+                    <properties>
+                        <text>Gania tag: 4</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-27,400,0</font>
+                        <color>135,135,135</color>
+                        <horizontal-alignment>Right</horizontal-alignment>
+                        <vertical-alignment>Bottom</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <instance-variables>
+                        <tag>4</tag>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>56</x>
+                        <y>8</y>
+                        <z>0</z>
+                        <width>328</width>
+                        <height>56</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
