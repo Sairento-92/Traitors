@@ -74,6 +74,7 @@
                         <shootcd>0</shootcd>
                         <weapon>0</weapon>
                         <PeerName></PeerName>
+                        <Gania>false</Gania>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -5085,7 +5086,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Text" uid="8">
+                <instance type="GaniaTag" uid="8">
                     <properties>
                         <text>Chatlog tag: 2</text>
                         <initial-visibility>Visible</initial-visibility>
@@ -5115,7 +5116,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Text" uid="66">
+                <instance type="GaniaTag" uid="66">
                     <properties>
                         <text>Gania tag: 4</text>
                         <initial-visibility>Visible</initial-visibility>

@@ -77,7 +77,7 @@
                         <hotspotY>0</hotspotY>
                     </world>
                 </instance>
-                <instance type="Text" uid="94">
+                <instance type="GaniaTag" uid="94">
                     <properties>
                         <text>Version tag: 3</text>
                         <initial-visibility>Visible</initial-visibility>
@@ -124,7 +124,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Text" uid="3">
+                <instance type="GaniaTag" uid="3">
                     <properties>
                         <text>Checking for updates...</text>
                         <initial-visibility>Visible</initial-visibility>
