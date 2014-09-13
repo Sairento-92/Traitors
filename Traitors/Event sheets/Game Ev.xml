@@ -92,7 +92,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
+        <event-group collapsed="1" description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
             <sub-events>
                 <event-block sid="6270828135115465">
                     <conditions>
@@ -197,7 +197,147 @@
         </event-group>
         <event-group description="" inactive="1" sid="3011960123564868" title="Host">
             <sub-events>
-                <event-group description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
+                <event-group description="" sid="8985332030257512" title="Czat2">
+                    <sub-events>
+                        <event-block sid="4782737071514977">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="4190430335783433" type="Keyboard">
+                                    <param id="0" name="Key">13 (Return)</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6252650577686714" type="Text">
+                                    <param id="0" name="Instance variable">tag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="0" inverted="1" name="Compare text" sid="5968721515435502" type="TextBox">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                    <param id="1" name="Case">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="8" name="Set unfocused" sid="2544903997671081" type="TextBox" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4151237833326802">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="1112950450472823" type="System">
+                                            <param id="0" name="First value">left(textbox.text,1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;/&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="5589352670492041">
+                                            <conditions>
+                                                <condition id="0" name="Compare text" sid="6952547311939694" type="TextBox">
+                                                    <param id="0" name="Text">&quot;/clear&quot;</param>
+                                                    <param id="1" name="Case">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="4174301245483836" type="Text">
+                                                    <param id="0" name="Text">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8221289407688484">
+                                            <conditions>
+                                                <condition id="0" name="Compare text" sid="1165624950894154" type="TextBox">
+                                                    <param id="0" name="Text">&quot;/host&quot;</param>
+                                                    <param id="1" name="Case">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="1" name="Append text" sid="9667391978079192" type="Text">
+                                                    <param id="0" name="Text">&quot;Nazwa hosta to: &quot; &amp;Multiplayer.Myalias &amp;newline</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2675603912881404">
+                                            <conditions>
+                                                <condition id="0" name="Compare text" sid="267926820046121" type="TextBox">
+                                                    <param id="0" name="Text">&quot;/who&quot;</param>
+                                                    <param id="1" name="Case">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="1" name="Append text" sid="699038737301651" type="Text">
+                                                    <param id="0" name="Text">&quot;Lista graczy: &quot;</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="6053345073447597">
+                                                    <conditions>
+                                                        <condition id="-24" name="For Each (ordered)" sid="2747508200873044" type="System">
+                                                            <param id="0" name="Object">Gracz</param>
+                                                            <param id="1" name="Expression">gracz.PeerName</param>
+                                                            <param id="2" name="Order">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="1" name="Append text" sid="404761290151019" type="Text">
+                                                            <param id="0" name="Text">gracz.PeerName &amp;&quot; ,&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="6477183151814049">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="1" name="Append text" sid="1559719715939564" type="Text">
+                                                            <param id="0" name="Text">newline</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="2200641669888917">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="3157967105405689" type="System">
+                                            <param id="0" name="First value">left(textbox.text,1)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">&quot;/&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Broadcast message" sid="1048743663127629" type="Multiplayer">
+                                            <param id="0" name="From ID">&quot;&quot;</param>
+                                            <param id="1" name="Tag">&quot;chatget&quot;</param>
+                                            <param id="2" name="Message">multiplayer.MyAlias &amp;&quot; : &quot; &amp;textbox.Text</param>
+                                            <param id="3" name="Mode">0</param>
+                                        </action>
+                                        <action id="1" name="Append text" sid="1892749092260206" type="Text">
+                                            <param id="0" name="Text">multiplayer.MyAlias &amp;&quot; : &quot; &amp;textbox.Text &amp;newline</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5594485015940802">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Set text" sid="9819114555191611" type="TextBox">
+                                            <param id="0" name="Text">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6345949685439812">
+                            <conditions>
+                                <condition id="15" name="On peer message" sid="4566136339634134" type="Multiplayer">
+                                    <param id="0" name="Tag">&quot;chatget&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="2618583258760675" type="Text">
+                                    <param id="0" name="Text">Multiplayer.Message &amp;newline</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
                     <sub-events>
                         <event-group collapsed="1" description="Ruch hosta" sid="6275370267556177" title="Hosty">
                             <sub-events>
@@ -716,12 +856,199 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="403185854925921">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="9251908148196309" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;whatname&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Send message" sid="3996416392593798" type="Multiplayer">
+                            <param id="0" name="Peer ID">Multiplayer.FromID</param>
+                            <param id="1" name="Tag">&quot;whatnamerep&quot;</param>
+                            <param id="2" name="Message">Multiplayer.myalias</param>
+                            <param id="3" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7700588824405324">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="2354828635272247" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;chatmess&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Broadcast message" sid="5948949542983065" type="Multiplayer">
+                            <param id="0" name="From ID">&quot;&quot;</param>
+                            <param id="1" name="Tag">&quot;chatget&quot;</param>
+                            <param id="2" name="Message">Multiplayer.Message</param>
+                            <param id="3" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" inactive="1" sid="9642298604554555" title="Peer">
             <sub-events>
+                <event-group description="" sid="48844505906105" title="Czat">
+                    <sub-events>
+                        <event-block sid="86603210027042">
+                            <conditions>
+                                <condition id="15" name="On peer message" sid="6817356712266643" type="Multiplayer">
+                                    <param id="0" name="Tag">&quot;chatget&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="8993681027367386" type="Text">
+                                    <param id="0" name="Text">Multiplayer.Message &amp;newline</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4782737071514977">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="4190430335783433" type="Keyboard">
+                                    <param id="0" name="Key">13 (Return)</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6252650577686714" type="Text">
+                                    <param id="0" name="Instance variable">tag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="0" inverted="1" name="Compare text" sid="9343572813876918" type="TextBox">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                    <param id="1" name="Case">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="8" name="Set unfocused" sid="2544903997671081" type="TextBox" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4151237833326802">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="1112950450472823" type="System">
+                                            <param id="0" name="First value">left(textbox.text,1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;/&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="5589352670492041">
+                                            <conditions>
+                                                <condition id="0" name="Compare text" sid="6952547311939694" type="TextBox">
+                                                    <param id="0" name="Text">&quot;/clear&quot;</param>
+                                                    <param id="1" name="Case">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="4174301245483836" type="Text">
+                                                    <param id="0" name="Text">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8221289407688484">
+                                            <conditions>
+                                                <condition id="0" name="Compare text" sid="1165624950894154" type="TextBox">
+                                                    <param id="0" name="Text">&quot;/host&quot;</param>
+                                                    <param id="1" name="Case">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="8" name="Send message" sid="9044325472094963" type="Multiplayer">
+                                                    <param id="0" name="Peer ID">&quot;&quot;</param>
+                                                    <param id="1" name="Tag">&quot;whatname&quot;</param>
+                                                    <param id="2" name="Message">&quot;&quot;</param>
+                                                    <param id="3" name="Mode">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2675603912881404">
+                                            <conditions>
+                                                <condition id="0" name="Compare text" sid="267926820046121" type="TextBox">
+                                                    <param id="0" name="Text">&quot;/who&quot;</param>
+                                                    <param id="1" name="Case">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="1" name="Append text" sid="699038737301651" type="Text">
+                                                    <param id="0" name="Text">&quot;Lista graczy: &quot;</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="6053345073447597">
+                                                    <conditions>
+                                                        <condition id="-24" name="For Each (ordered)" sid="2747508200873044" type="System">
+                                                            <param id="0" name="Object">Gracz</param>
+                                                            <param id="1" name="Expression">gracz.PeerName</param>
+                                                            <param id="2" name="Order">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="1" name="Append text" sid="404761290151019" type="Text">
+                                                            <param id="0" name="Text">gracz.PeerName &amp;&quot; ,&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="6477183151814049">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="1" name="Append text" sid="1559719715939564" type="Text">
+                                                            <param id="0" name="Text">newline</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="2200641669888917">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="3157967105405689" type="System">
+                                            <param id="0" name="First value">left(textbox.text,1)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">&quot;/&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="8" name="Send message" sid="1048743663127629" type="Multiplayer">
+                                            <param id="0" name="Peer ID">&quot;&quot;</param>
+                                            <param id="1" name="Tag">&quot;chatmess&quot;</param>
+                                            <param id="2" name="Message">multiplayer.MyAlias &amp;&quot; : &quot; &amp;textbox.Text &amp;newline</param>
+                                            <param id="3" name="Mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2798296680457444">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Set text" sid="8844672266725559" type="TextBox">
+                                            <param id="0" name="Text">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="8581526631429634">
+                            <conditions>
+                                <condition id="15" name="On peer message" sid="3534527394988226" type="Multiplayer">
+                                    <param id="0" name="Tag">&quot;whatnamerep&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6787018755814434" type="Text">
+                                    <param id="0" name="Instance variable">tag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Append text" sid="9667391978079192" type="Text">
+                                    <param id="0" name="Text">&quot;Nazwa hosta to: &quot; &amp;Multiplayer.Message &amp;newline</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <comment>0 - falsz, 1 - prawda&#x0D;&#x0A;0 - w gore&#x0D;&#x0A;1 - w dol&#x0D;&#x0A;2 - w lewo&#x0D;&#x0A;3 - w prawo&#x0D;&#x0A;4 - lmb</comment>
-                <event-block sid="6133589175984286">
+                <event-block collapsed="1" sid="6133589175984286">
                     <conditions>
                         <condition id="17" name="On client update" sid="5666513683723343" type="Multiplayer" />
                         <condition id="-7" name="Compare instance variable" sid="8968518402942169" type="Gracz">
@@ -872,7 +1199,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="4757546875917115">
+                <event-block collapsed="1" sid="4757546875917115">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="2483077182694131" type="Gracz">
                             <param id="0" name="Instance variable">peerid</param>
@@ -943,7 +1270,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="6657550015144266">
+                <event-block collapsed="1" sid="6657550015144266">
                     <conditions>
                         <condition id="-18" name="On created" sid="8376816120441055" type="Gracz" />
                     </conditions>
@@ -995,7 +1322,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="5058787321557961">
+                <event-block collapsed="1" sid="5058787321557961">
                     <conditions>
                         <condition id="15" name="On peer message" sid="82285394097046" type="Multiplayer">
                             <param id="0" name="Tag">&quot;Gania&quot;</param>
@@ -1055,8 +1382,28 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Peer i Host" sid="9395126084642041" title="Both">
+        <event-group collapsed="1" description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
+                <event-block sid="4430291448621087">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9521749781306602" type="Text">
+                            <param id="0" name="Instance variable">tag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="7333749603633072" type="Text">
+                            <param id="0" name="Text">&quot;Licz: &quot;&amp;GaniaLicz</param>
+                        </action>
+                        <action id="9" name="Broadcast message" sid="3482564390950986" type="Multiplayer">
+                            <param id="0" name="From ID">&quot;&quot;</param>
+                            <param id="1" name="Tag">&quot;GaniaLicz&quot;</param>
+                            <param id="2" name="Message">str(GaniaLicz)</param>
+                            <param id="3" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="4894480022830383">
                     <conditions>
                         <condition id="1" name="On error" sid="2295020180271574" type="Multiplayer" />
@@ -1253,25 +1600,5 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="4430291448621087">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="9521749781306602" type="Text">
-                    <param id="0" name="Instance variable">tag</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">5</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="7333749603633072" type="Text">
-                    <param id="0" name="Text">&quot;Licz: &quot;&amp;GaniaLicz</param>
-                </action>
-                <action id="9" name="Broadcast message" sid="3482564390950986" type="Multiplayer">
-                    <param id="0" name="From ID">&quot;&quot;</param>
-                    <param id="1" name="Tag">&quot;GaniaLicz&quot;</param>
-                    <param id="2" name="Message">str(GaniaLicz)</param>
-                    <param id="3" name="Mode">0</param>
-                </action>
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>

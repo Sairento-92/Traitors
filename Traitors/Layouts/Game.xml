@@ -5093,11 +5093,11 @@
             <instances>
                 <instance type="Text" uid="8">
                     <properties>
-                        <text>Chatlog tag: 2</text>
+                        <text>Chatlog tag: 3</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-15,400,0</font>
                         <color>0,0,0</color>
-                        <horizontal-alignment>Center</horizontal-alignment>
+                        <horizontal-alignment>Right</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
@@ -5109,11 +5109,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>376</x>
+                        <x>464</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>424</width>
-                        <height>600</height>
+                        <width>336</width>
+                        <height>560</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -5149,6 +5149,32 @@
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="TextBox" uid="67">
+                    <properties>
+                        <text></text>
+                        <placeholder>/clear - czysci czat </placeholder>
+                        <tooltip>msg easter egg hunter award</tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <read-only>No</read-only>
+                        <spell-check>No</spell-check>
+                        <type>Text</type>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>464</x>
+                        <y>568</y>
+                        <z>0</z>
+                        <width>328</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                     </world>
                 </instance>
             </instances>

@@ -2,7 +2,7 @@
 <c2project>
     <name>Sneaky Traitor</name>
     <description></description>
-    <version>2.2</version>
+    <version>2.4</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -58,6 +58,9 @@
         <object-folder expanded="1" name="Login">
             <object-type name="LoginButton" sid="4816300478550558">
                 <plugin id="Button" />
+                <instance-variables>
+                    <instance-variable name="pokoj" sid="2540726239829726" type="string" />
+                </instance-variables>
             </object-type>
             <object-type name="MynameBox" sid="1888923195614809">
                 <plugin id="TextBox" />
@@ -165,6 +168,9 @@
         </object-type>
         <object-type name="Function" sid="2526662655557374">
             <plugin id="Function" />
+        </object-type>
+        <object-type name="TextBox" sid="545559784302837">
+            <plugin id="TextBox" />
         </object-type>
     </object-folder>
     <families>

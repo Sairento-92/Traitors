@@ -94,6 +94,10 @@
                     <param id="0" name="Variable">Myname</param>
                     <param id="1" name="Value">MynameBox.Text</param>
                 </action>
+                <action id="-9" name="Set value" sid="9870622881429596" type="System">
+                    <param id="0" name="Variable">GAME_ROOM</param>
+                    <param id="1" name="Value">loginbutton.pokoj</param>
+                </action>
                 <action id="1" name="Connect" sid="4847676803580863" type="Multiplayer">
                     <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
                 </action>
