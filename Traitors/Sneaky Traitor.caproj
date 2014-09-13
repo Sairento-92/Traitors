@@ -24,6 +24,7 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
@@ -81,6 +82,9 @@
                     </behavior-type>
                     <behavior-type name="ScrollTo" sid="6557087968074052">
                         <behavior id="scrollto" />
+                    </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="6664954341351363">
+                        <behavior id="bound" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder expanded="1">
@@ -144,7 +148,7 @@
         <object-type name="Multiplayer" sid="5798874729658294">
             <plugin id="Multiplayer" />
         </object-type>
-        <object-type name="GaniaTag" sid="9302962398470874">
+        <object-type name="Text" sid="9302962398470874">
             <plugin id="Text" />
             <instance-variables>
                 <instance-variable name="tag" sid="6541907839893541" type="number" />

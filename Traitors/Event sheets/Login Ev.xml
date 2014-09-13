@@ -42,14 +42,14 @@
                             <sub-events>
                                 <event-block sid="224227376540237">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="7657553098843838" type="GaniaTag">
+                                        <condition id="-7" name="Compare instance variable" sid="7657553098843838" type="Text">
                                             <param id="0" name="Instance variable">tag</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Set text" sid="9843696857196599" type="GaniaTag">
+                                        <action id="0" name="Set text" sid="9843696857196599" type="Text">
                                             <param id="0" name="Text">&quot;Downloading update.&quot;</param>
                                         </action>
                                     </actions>
@@ -111,14 +111,14 @@
         </event-block>
         <event-block sid="9822604952689224">
             <conditions>
-                <condition id="-7" name="Compare instance variable" sid="8046428133265557" type="GaniaTag">
+                <condition id="-7" name="Compare instance variable" sid="8046428133265557" type="Text">
                     <param id="0" name="Instance variable">tag</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">3</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="4308899035323784" type="GaniaTag">
+                <action id="0" name="Set text" sid="4308899035323784" type="Text">
                     <param id="0" name="Text">&quot;Sneaky Traitor &quot; &amp;projectversion</param>
                 </action>
             </actions>

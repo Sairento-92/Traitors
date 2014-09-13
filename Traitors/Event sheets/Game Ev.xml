@@ -75,6 +75,22 @@
                     <param id="3" name="Max peers">0</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="2237696085079543">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3685210086948074" type="Text">
+                            <param id="0" name="Instance variable">tag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="5288299479109739" type="Text">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-group description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
             <sub-events>
@@ -183,7 +199,7 @@
             <sub-events>
                 <event-group description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
                     <sub-events>
-                        <event-group description="Ruch hosta" sid="6275370267556177" title="Hosty">
+                        <event-group collapsed="1" description="Ruch hosta" sid="6275370267556177" title="Hosty">
                             <sub-events>
                                 <event-block sid="389482945461162">
                                     <conditions>
@@ -344,7 +360,7 @@
                                 </event-block>
                             </sub-events>
                         </event-group>
-                        <event-block sid="2012949872586218">
+                        <event-block collapsed="1" sid="2012949872586218">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="6657810605553687" type="Gracz">
                                     <param id="0" name="Instance variable">peerid</param>
@@ -426,7 +442,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="5561338801269104">
+                                <event-block collapsed="1" sid="5561338801269104">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="8133160700860326" type="System">
                                             <param id="0" name="First value">getbit(Gracz.Input,4)</param>
@@ -560,7 +576,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="6011107902282835">
+                <event-block collapsed="1" sid="6011107902282835">
                     <conditions />
                     <actions />
                     <sub-events>
@@ -663,7 +679,7 @@
                         </action>
                         <action id="-10" name="Set value" sid="1526179776690636" type="Boostbox">
                             <param id="0" name="Instance variable">wepid</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="1" name="Value">int(random(3))</param>
                         </action>
                     </actions>
                 </event-block>
@@ -952,14 +968,14 @@
                         <condition id="15" name="On peer message" sid="7449364120140521" type="Multiplayer">
                             <param id="0" name="Tag">&quot;gania&quot;</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="1631581270089165" type="GaniaTag">
+                        <condition id="-7" name="Compare instance variable" sid="1631581270089165" type="Text">
                             <param id="0" name="Instance variable">tag</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">5</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="2455033755545356" type="GaniaTag">
+                        <action id="0" name="Set text" sid="2455033755545356" type="Text">
                             <param id="0" name="Text">Multiplayer.Message &amp;&quot; was gania!&quot;</param>
                         </action>
                     </actions>
@@ -1054,6 +1070,15 @@
                                     <param id="0" name="Animation">&quot;gania1&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="1848270207942228" type="Gracz">
+                                    <param id="0" name="Max Speed">250</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="3553368012142052" type="Gracz">
+                                    <param id="0" name="Deceleration">30</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="7462435425072018" type="Gracz">
+                                    <param id="0" name="Acceleration">400</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="3110286071465212">
@@ -1069,6 +1094,15 @@
                                     <param id="0" name="Animation">&quot;gania0&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="3235806073209006" type="Gracz">
+                                    <param id="0" name="Deceleration">500</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="5602392111234051" type="Gracz">
+                                    <param id="0" name="Max Speed">200</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="8462993509915187" type="Gracz">
+                                    <param id="0" name="Acceleration">500</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -1078,14 +1112,14 @@
                         <condition id="0" name="On function" sid="7220101698433719" type="Function">
                             <param id="0" name="Name">&quot;chat&quot;</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="6439727329763047" type="GaniaTag">
+                        <condition id="-7" name="Compare instance variable" sid="6439727329763047" type="Text">
                             <param id="0" name="Instance variable">tag</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">3</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="1" name="Append text" sid="3501570727657279" type="GaniaTag">
+                        <action id="1" name="Append text" sid="3501570727657279" type="Text">
                             <param id="0" name="Text">function.param(0) &amp;newline</param>
                         </action>
                     </actions>
@@ -1173,14 +1207,14 @@
         </event-group>
         <event-block sid="4430291448621087">
             <conditions>
-                <condition id="-7" name="Compare instance variable" sid="9521749781306602" type="GaniaTag">
+                <condition id="-7" name="Compare instance variable" sid="9521749781306602" type="Text">
                     <param id="0" name="Instance variable">tag</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">5</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="7333749603633072" type="GaniaTag">
+                <action id="0" name="Set text" sid="7333749603633072" type="Text">
                     <param id="0" name="Text">&quot;Licz: &quot;&amp;GaniaLicz</param>
                 </action>
                 <action id="9" name="Broadcast message" sid="3482564390950986" type="Multiplayer">
