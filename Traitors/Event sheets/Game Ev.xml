@@ -523,55 +523,10 @@
                             <param id="1" name="Peer ID">Multiplayer.PeerID</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="9171245922058917">
-                            <conditions />
-                            <actions>
-                                <action id="0" name="Clear" sid="6466371223936908" type="ArrWysylanie" />
-                                <action id="1" name="Set size" sid="4297330207302916" type="ArrWysylanie">
-                                    <param id="0" name="Width">0</param>
-                                    <param id="1" name="Height">0</param>
-                                    <param id="2" name="Depth">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="1708300485030627">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="709762509110383" type="System">
-                                    <param id="0" name="Object">Boostbox</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="6566085816193782">
-                    <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="7162559798688556" type="Gracz">
-                            <param id="0" name="Object">Boostbox</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="7027699480010848" type="Boostbox">
-                            <param id="0" name="Instance variable">type</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="3996467079529113" type="Gracz">
-                            <param id="0" name="Instance variable">weapon</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Value">Boostbox.wepid</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="1792214888519719" type="Gracz">
-                            <param id="0" name="Instance variable">weapon</param>
-                            <param id="1" name="Value">boostbox.wepid</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="8242259227342252" type="Boostbox" />
-                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" inactive="1" sid="9642298604554555" title="Peer">
+        <event-group description="" inactive="1" sid="9642298604554555" title="Peer">
             <sub-events>
                 <comment>0 - falsz, 1 - prawda&#x0D;&#x0A;0 - w gore&#x0D;&#x0A;1 - w dol&#x0D;&#x0A;2 - w lewo&#x0D;&#x0A;3 - w prawo&#x0D;&#x0A;4 - lmb</comment>
                 <event-block sid="6133589175984286">
@@ -907,6 +862,30 @@
                         <action behavior="ScrollTo" id="1" name="Set enabled" sid="8679125371688505" type="Gracz">
                             <param id="0" name="State">1</param>
                         </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7506766362425705">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="9228584046231003" type="Gracz">
+                            <param id="0" name="Object">Boostbox</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="8142633079815227" type="Boostbox">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="4565721831298399" type="Gracz">
+                            <param id="0" name="Instance variable">weapon</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">Boostbox.wepid</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="6014480116106864" type="Gracz">
+                            <param id="0" name="Instance variable">weapon</param>
+                            <param id="1" name="Value">boostbox.wepid</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9141465432849499" type="Boostbox" />
                     </actions>
                 </event-block>
             </sub-events>
