@@ -18,6 +18,8 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
         <plugin author="Rex.Rainbow" id="Rex_CSV" version="1">CSV</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_MPsyncfunction" version="0.100000001">MP Sync function</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_MPwrap" version="0.100000001">MP wrap</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
@@ -85,8 +87,22 @@
                     </instance-variables>
                     <animation-folder expanded="1">
                         <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7978043530571874" speed="0">
-                            <frame duration="1" hotspotX="0" hotspotY="0" />
-                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <collision-poly>
+                                    <point x="0.0625" y="0.0625" />
+                                    <point x="0.9375" y="0.0625" />
+                                    <point x="0.9375" y="0.9375" />
+                                    <point x="0.0625" y="0.9375" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <collision-poly>
+                                    <point x="0.0625" y="0.0625" />
+                                    <point x="0.9375" y="0.0625" />
+                                    <point x="0.9375" y="0.9375" />
+                                    <point x="0.0625" y="0.9375" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -244,6 +260,12 @@
         <object-type global="1" name="CSV" sid="459613131107509">
             <plugin id="Rex_CSV" />
         </object-type>
+        <object-type name="MPSyncFunction" sid="4075115424626847">
+            <plugin id="Rex_MPsyncfunction" />
+        </object-type>
+        <object-type name="MPWrap" sid="3475937140397312">
+            <plugin id="Rex_MPwrap" />
+        </object-type>
     </object-folder>
     <families>
         <family name="joindestr" plugin-id="Sprite" sid="1081447628885826">
@@ -268,6 +290,14 @@
         <global-instance type="Mouse" uid="6" />
         <global-instance type="Keyboard" uid="7" />
         <global-instance type="Function" uid="9" />
+        <global-instance type="MPSyncFunction" uid="82">
+            <properties>
+                <tag-prefix>_syncfn</tag-prefix>
+                <response>Immediate</response>
+                <pending-mode>No</pending-mode>
+            </properties>
+        </global-instance>
+        <global-instance type="MPWrap" uid="83" />
     </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />
