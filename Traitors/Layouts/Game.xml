@@ -2074,13 +2074,6 @@
                 <depth>1</depth>
             </properties>
         </instance>
-        <instance type="Mapa" uid="71">
-            <properties>
-                <width>0</width>
-                <height>1</height>
-                <depth>3</depth>
-            </properties>
-        </instance>
         <instance type="CSV" uid="72">
             <properties>
                 <delimiter>,</delimiter>
