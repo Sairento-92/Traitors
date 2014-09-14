@@ -2399,10 +2399,6 @@
                                             <param id="2" name="Message">klocek.id&amp;&quot; &quot;&amp;klocek.klocekid&amp;&quot; &quot;&amp;klocek.X&amp;&quot; &quot;&amp;klocek.Y</param>
                                             <param id="3" name="Mode">0</param>
                                         </action>
-                                        <action id="0" name="Call function" sid="3759142941354274" type="Function">
-                                            <param id="0" name="Name">&quot;chat&quot;</param>
-                                            <param id="1" name="Parameter {n}">klocek.id&amp;&quot; &quot;&amp;klocek.klocekid&amp;&quot; &quot;&amp;klocek.X&amp;&quot; &quot;&amp;klocek.Y</param>
-                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="3066147480497954">
