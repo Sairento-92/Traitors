@@ -253,7 +253,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="4782737071514977">
+                        <event-block disabled="1" sid="4782737071514977">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="4190430335783433" type="Keyboard">
                                     <param id="0" name="Key">13 (Return)</param>
@@ -272,7 +272,7 @@
                                 <action id="8" name="Set unfocused" sid="2544903997671081" type="TextBox" />
                             </actions>
                             <sub-events>
-                                <event-block sid="4151237833326802">
+                                <event-block disabled="1" sid="4151237833326802">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="1112950450472823" type="System">
                                             <param id="0" name="First value">left(textbox.text,1)</param>
@@ -280,9 +280,14 @@
                                             <param id="2" name="Second value">&quot;/&quot;</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action id="0" name="Call function" sid="8329006997292067" type="Function">
+                                            <param id="0" name="Name">&quot;komendy&quot;</param>
+                                            <param id="1" name="Parameter {n}">TextBox.Text</param>
+                                        </action>
+                                    </actions>
                                     <sub-events>
-                                        <event-block sid="5589352670492041">
+                                        <event-block disabled="1" sid="5589352670492041">
                                             <conditions>
                                                 <condition id="0" name="Compare text" sid="6952547311939694" type="TextBox">
                                                     <param id="0" name="Text">&quot;/clear&quot;</param>
@@ -295,7 +300,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="8221289407688484">
+                                        <event-block disabled="1" sid="8221289407688484">
                                             <conditions>
                                                 <condition id="0" name="Compare text" sid="1165624950894154" type="TextBox">
                                                     <param id="0" name="Text">&quot;/host&quot;</param>
@@ -309,7 +314,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block collapsed="1" sid="7713610334161598">
+                                        <event-block disabled="1" sid="7713610334161598">
                                             <conditions>
                                                 <condition id="-8" name="Compare two values" sid="2001758289153235" type="System">
                                                     <param id="0" name="First value">left(TextBox.Text,5)</param>
@@ -333,7 +338,7 @@
                                             <sub-events>
                                                 <variable constant="0" name="gracz" sid="7422456791130375" static="0" type="text"></variable>
                                                 <variable constant="0" name="powod" sid="857103994605091" static="0" type="text"></variable>
-                                                <event-block sid="1002390064156551">
+                                                <event-block disabled="1" sid="1002390064156551">
                                                     <conditions>
                                                         <condition id="-8" name="Compare two values" sid="817050557827236" type="System">
                                                             <param id="0" name="First value">CSV.ColCnt</param>
@@ -344,13 +349,13 @@
                                                     <actions />
                                                     <sub-events>
                                                         <variable constant="0" name="index" sid="7159774996405941" static="0" type="number">0</variable>
-                                                        <event-block sid="3147699411036837">
+                                                        <event-block disabled="1" sid="3147699411036837">
                                                             <conditions>
                                                                 <condition id="0" name="For each col" sid="3539604439032117" type="CSV" />
                                                             </conditions>
                                                             <actions />
                                                             <sub-events>
-                                                                <event-block sid="5343015308143994">
+                                                                <event-block disabled="1" sid="5343015308143994">
                                                                     <conditions>
                                                                         <condition id="-8" name="Compare two values" sid="6261657251572681" type="System">
                                                                             <param id="0" name="First value">index</param>
@@ -365,7 +370,7 @@
                                                                         </action>
                                                                     </actions>
                                                                 </event-block>
-                                                                <event-block sid="4244563627689242">
+                                                                <event-block disabled="1" sid="4244563627689242">
                                                                     <conditions>
                                                                         <condition id="-8" name="Compare two values" sid="7682642947098534" type="System">
                                                                             <param id="0" name="First value">index</param>
@@ -380,7 +385,7 @@
                                                                         </action>
                                                                     </actions>
                                                                 </event-block>
-                                                                <event-block sid="2630600046955778">
+                                                                <event-block disabled="1" sid="2630600046955778">
                                                                     <conditions>
                                                                         <condition id="-7" name="Compare instance variable" sid="688923813507159" type="Gracz">
                                                                             <param id="0" name="Instance variable">PeerName</param>
@@ -399,7 +404,7 @@
                                                                         </action>
                                                                     </actions>
                                                                 </event-block>
-                                                                <event-block sid="9715622376791343">
+                                                                <event-block disabled="1" sid="9715622376791343">
                                                                     <conditions />
                                                                     <actions>
                                                                         <action id="-10" name="Add to" sid="1389658523939878" type="System">
@@ -412,13 +417,13 @@
                                                         </event-block>
                                                     </sub-events>
                                                 </event-block>
-                                                <event-block sid="5386220940861357">
+                                                <event-block disabled="1" sid="5386220940861357">
                                                     <conditions />
                                                     <actions />
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
-                                        <event-block sid="2675603912881404">
+                                        <event-block disabled="1" sid="2675603912881404">
                                             <conditions>
                                                 <condition id="0" name="Compare text" sid="267926820046121" type="TextBox">
                                                     <param id="0" name="Text">&quot;/who&quot;</param>
@@ -432,7 +437,7 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block sid="6053345073447597">
+                                                <event-block disabled="1" sid="6053345073447597">
                                                     <conditions>
                                                         <condition id="-24" name="For Each (ordered)" sid="2747508200873044" type="System">
                                                             <param id="0" name="Object">Gracz</param>
@@ -446,7 +451,7 @@
                                                         </action>
                                                     </actions>
                                                 </event-block>
-                                                <event-block sid="6477183151814049">
+                                                <event-block disabled="1" sid="6477183151814049">
                                                     <conditions />
                                                     <actions>
                                                         <action id="1" name="Append text" sid="1559719715939564" type="Text">
@@ -458,7 +463,7 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="2200641669888917">
+                                <event-block disabled="1" sid="2200641669888917">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="3157967105405689" type="System">
                                             <param id="0" name="First value">left(textbox.text,1)</param>
@@ -478,7 +483,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="5594485015940802">
+                                <event-block disabled="1" sid="5594485015940802">
                                     <conditions />
                                     <actions>
                                         <action id="0" name="Set text" sid="9819114555191611" type="TextBox">
@@ -1042,131 +1047,6 @@
                                     <param id="1" name="Parameter {n}">Multiplayer.Message</param>
                                 </action>
                             </actions>
-                        </event-block>
-                        <event-block sid="4782737071514977">
-                            <conditions>
-                                <condition id="0" name="On key pressed" sid="4190430335783433" type="Keyboard">
-                                    <param id="0" name="Key">13 (Return)</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="6252650577686714" type="Text">
-                                    <param id="0" name="Instance variable">tag</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">3</param>
-                                </condition>
-                                <condition id="0" inverted="1" name="Compare text" sid="9343572813876918" type="TextBox">
-                                    <param id="0" name="Text">&quot;&quot;</param>
-                                    <param id="1" name="Case">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="8" name="Set unfocused" sid="2544903997671081" type="TextBox" />
-                            </actions>
-                            <sub-events>
-                                <event-block sid="4151237833326802">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="1112950450472823" type="System">
-                                            <param id="0" name="First value">left(textbox.text,1)</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;/&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="5589352670492041">
-                                            <conditions>
-                                                <condition id="0" name="Compare text" sid="6952547311939694" type="TextBox">
-                                                    <param id="0" name="Text">&quot;/clear&quot;</param>
-                                                    <param id="1" name="Case">0</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Set text" sid="4174301245483836" type="Text">
-                                                    <param id="0" name="Text">&quot;&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="8221289407688484">
-                                            <conditions>
-                                                <condition id="0" name="Compare text" sid="1165624950894154" type="TextBox">
-                                                    <param id="0" name="Text">&quot;/host&quot;</param>
-                                                    <param id="1" name="Case">0</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="8" name="Send message" sid="9044325472094963" type="Multiplayer">
-                                                    <param id="0" name="Peer ID">&quot;&quot;</param>
-                                                    <param id="1" name="Tag">&quot;whatname&quot;</param>
-                                                    <param id="2" name="Message">&quot;&quot;</param>
-                                                    <param id="3" name="Mode">0</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="2675603912881404">
-                                            <conditions>
-                                                <condition id="0" name="Compare text" sid="267926820046121" type="TextBox">
-                                                    <param id="0" name="Text">&quot;/who&quot;</param>
-                                                    <param id="1" name="Case">0</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="6840890169249575" type="Function">
-                                                    <param id="0" name="Name">&quot;chat&quot;</param>
-                                                    <param id="1" name="Parameter {n}">&quot;Lista graczy: &quot;</param>
-                                                </action>
-                                            </actions>
-                                            <sub-events>
-                                                <event-block sid="6053345073447597">
-                                                    <conditions>
-                                                        <condition id="-24" name="For Each (ordered)" sid="2747508200873044" type="System">
-                                                            <param id="0" name="Object">Gracz</param>
-                                                            <param id="1" name="Expression">gracz.PeerName</param>
-                                                            <param id="2" name="Order">0</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="1" name="Append text" sid="404761290151019" type="Text">
-                                                            <param id="0" name="Text">gracz.PeerName &amp;&quot; ,&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="6477183151814049">
-                                                    <conditions />
-                                                    <actions>
-                                                        <action id="1" name="Append text" sid="1559719715939564" type="Text">
-                                                            <param id="0" name="Text">newline</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="2200641669888917">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="3157967105405689" type="System">
-                                            <param id="0" name="First value">left(textbox.text,1)</param>
-                                            <param id="1" name="Comparison">1</param>
-                                            <param id="2" name="Second value">&quot;/&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="8" name="Send message" sid="1048743663127629" type="Multiplayer">
-                                            <param id="0" name="Peer ID">&quot;&quot;</param>
-                                            <param id="1" name="Tag">&quot;chatmess&quot;</param>
-                                            <param id="2" name="Message">multiplayer.MyAlias &amp;&quot; : &quot; &amp;textbox.Text</param>
-                                            <param id="3" name="Mode">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="2798296680457444">
-                                    <conditions />
-                                    <actions>
-                                        <action id="0" name="Set text" sid="8844672266725559" type="TextBox">
-                                            <param id="0" name="Text">&quot;&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
                         <event-block sid="8581526631429634">
                             <conditions>
@@ -1777,6 +1657,279 @@
                                     <param id="0" name="Angle">0</param>
                                 </action>
                             </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="291881474607767" title="Komendy">
+                    <sub-events>
+                        <event-block sid="3941391713268148">
+                            <conditions>
+                                <condition id="0" name="On function" sid="2290253767135787" type="Function">
+                                    <param id="0" name="Name">&quot;komendy&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Clear" sid="5112700898378945" type="CSV" />
+                                <action id="11" name="Set delimiter" sid="5564296197327332" type="CSV">
+                                    <param id="0" name="Delimiter">&quot; &quot;</param>
+                                </action>
+                                <action id="1" name="Load table" sid="1906042008239" type="CSV">
+                                    <param id="0" name="CSV string">TextBox.Text</param>
+                                </action>
+                                <action id="0" name="Clear" sid="4522581231497386" type="Arrkomenda" />
+                                <action id="1" name="Set size" sid="9472926100378629" type="Arrkomenda">
+                                    <param id="0" name="Width">0</param>
+                                    <param id="1" name="Height">1</param>
+                                    <param id="2" name="Depth">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="6976761887532595">
+                                    <conditions>
+                                        <condition id="0" name="For each col" sid="7290280402156397" type="CSV" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Push" sid="6405534813367897" type="Arrkomenda">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Value">CSV.CurCol</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="2655589619483119">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="7259403887402863" type="Keyboard">
+                                    <param id="0" name="Key">13 (Return)</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="1719839912693638" type="Text">
+                                    <param id="0" name="Instance variable">tag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="0" inverted="1" name="Compare text" sid="6105892160361388" type="TextBox">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                    <param id="1" name="Case">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="8" name="Set unfocused" sid="2080580569820928" type="TextBox" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="3731938404470995">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="6594219871411868" type="System">
+                                            <param id="0" name="First value">left(textbox.text,1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;/&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="2775558825648978" type="Function">
+                                            <param id="0" name="Name">&quot;komendy&quot;</param>
+                                            <param id="1" name="Parameter {n}">TextBox.Text</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="7206048487115169">
+                                            <conditions>
+                                                <condition id="0" name="Compare at X" sid="7741271041688285" type="Arrkomenda">
+                                                    <param id="0" name="X">0</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;/clear&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="8479253902519396" type="Text">
+                                                    <param id="0" name="Text">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="1356534702725507">
+                                            <conditions>
+                                                <condition id="0" name="Compare at X" sid="4175423988576281" type="Arrkomenda">
+                                                    <param id="0" name="X">0</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;/host&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="2711070723085237" type="Function">
+                                                    <param id="0" name="Name">&quot;chat&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Nazwa hosta to: &quot; &amp;Multiplayer.HostAlias</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <variable constant="0" name="whotemp" sid="2312906779051614" static="0" type="text"></variable>
+                                        <variable constant="0" name="index" sid="7035963730877144" static="0" type="number">0</variable>
+                                        <event-block sid="3595922090045896">
+                                            <conditions>
+                                                <condition id="0" name="Compare at X" sid="2360515948328929" type="Arrkomenda">
+                                                    <param id="0" name="X">0</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;/who&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="6860084668259322" type="System">
+                                                    <param id="0" name="Variable">index</param>
+                                                    <param id="1" name="Value">Gracz.Count</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="127613560381364" type="System">
+                                                    <param id="0" name="Variable">whotemp</param>
+                                                    <param id="1" name="Value">&quot;Lista graczy: &quot;</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="9791578299073911">
+                                                    <conditions>
+                                                        <condition id="-24" name="For Each (ordered)" sid="4906433964128292" type="System">
+                                                            <param id="0" name="Object">Gracz</param>
+                                                            <param id="1" name="Expression">gracz.PeerName</param>
+                                                            <param id="2" name="Order">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-11" name="Subtract from" sid="3071988400927465" type="System">
+                                                            <param id="0" name="Variable">index</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-10" name="Add to" sid="5602237362148419" type="System">
+                                                            <param id="0" name="Variable">whotemp</param>
+                                                            <param id="1" name="Value">gracz.PeerName</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="3658841153803313">
+                                                            <conditions>
+                                                                <condition id="-14" name="Compare variable" sid="6487628363557572" type="System">
+                                                                    <param id="0" name="Variable">index</param>
+                                                                    <param id="1" name="Comparison">4</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Add to" sid="7733474277106042" type="System">
+                                                                    <param id="0" name="Variable">whotemp</param>
+                                                                    <param id="1" name="Value">&quot;, &quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="3048035183522312">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="572929401799991" type="Function">
+                                                            <param id="0" name="Name">&quot;chat&quot;</param>
+                                                            <param id="1" name="Parameter {n}">whotemp</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="7508160237657646">
+                                    <conditions>
+                                        <condition id="0" name="Compare at X" sid="9578201129692252" type="Arrkomenda">
+                                            <param id="0" name="X">0</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;/kick&quot;</param>
+                                        </condition>
+                                        <condition id="10" name="Is host" sid="9362279510937057" type="Multiplayer" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="3" name="Clear" sid="8378338275281931" type="CSV" />
+                                        <action id="11" name="Set delimiter" sid="8803911503856429" type="CSV">
+                                            <param id="0" name="Delimiter">&quot; &quot;</param>
+                                        </action>
+                                        <action id="1" name="Load table" sid="6998557188632158" type="CSV">
+                                            <param id="0" name="CSV string">TextBox.Text</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="7083364577587625" type="System">
+                                            <param id="0" name="Variable">colcount</param>
+                                            <param id="1" name="Value">CSV.ColCnt</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <variable constant="0" name="gracz" sid="750497494778792" static="0" type="text"></variable>
+                                        <variable constant="0" name="powod" sid="8007516054633538" static="0" type="text"></variable>
+                                        <event-block sid="9219046589471988">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="1417806555219777" type="System">
+                                                    <param id="0" name="First value">Arrkomenda.Width</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="564245612603751">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="8879846890347249" type="System">
+                                                            <param id="0" name="First value">Arrkomenda.At(2)</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="2" name="Set at X" sid="9721621111035822" type="Arrkomenda">
+                                                            <param id="0" name="X">2</param>
+                                                            <param id="1" name="Value">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="5230049078522709">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="1607028054560362" type="Gracz">
+                                                            <param id="0" name="Instance variable">PeerName</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Arrkomenda.At(1)</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="5515009882001976" type="Function">
+                                                            <param id="0" name="Name">&quot;chat&quot;</param>
+                                                            <param id="1" name="Parameter {n}">&quot;Wyrzucono gracza: &quot; &amp;Arrkomenda.At(1)&amp;&quot;. Powód: &quot;&amp;Arrkomenda.At(2)</param>
+                                                        </action>
+                                                        <action id="21" name="Kick peer" sid="63563086809291" type="Multiplayer">
+                                                            <param id="0" name="Peer ID">Gracz.peerid</param>
+                                                            <param id="1" name="Reason">Arrkomenda.At(2)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="2964668974586195">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="9480950338306594" type="System">
+                                            <param id="0" name="First value">left(textbox.text,1)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">&quot;/&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="8" name="Send message" sid="7515000811304017" type="Multiplayer">
+                                            <param id="0" name="Peer ID">&quot;&quot;</param>
+                                            <param id="1" name="Tag">&quot;chatmess&quot;</param>
+                                            <param id="2" name="Message">multiplayer.MyAlias &amp;&quot; : &quot; &amp;textbox.Text</param>
+                                            <param id="3" name="Mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2047167937769659">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Set text" sid="5378701478396131" type="TextBox">
+                                            <param id="0" name="Text">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>

@@ -147,7 +147,7 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type global="1" name="ArrWysylanie" sid="2010230981207893">
+            <object-type global="1" name="Arrkomenda" sid="2010230981207893">
                 <plugin id="Arr" />
             </object-type>
             <object-type name="Laser" sid="2144590174856228">
