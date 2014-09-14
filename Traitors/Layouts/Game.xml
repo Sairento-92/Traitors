@@ -1686,10 +1686,6 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <instance-variables>
-                        <anglet>0</anglet>
-                        <uidg>0</uidg>
-                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1701,6 +1697,40 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0.600000024</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Text" uid="72">
+                    <properties>
+                        <text>NName tag: 4</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Narrow,-13,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <instance-variables>
+                        <tag>4</tag>
+                        <nickname></nickname>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>80</x>
+                        <y>144</y>
+                        <z>0</z>
+                        <width>208</width>
+                        <height>56</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -1728,7 +1758,7 @@
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-15,400,0</font>
                         <color>0,0,0</color>
-                        <horizontal-alignment>Right</horizontal-alignment>
+                        <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
@@ -1736,11 +1766,15 @@
                     </properties>
                     <instance-variables>
                         <tag>3</tag>
+                        <nickname></nickname>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>464</x>
+                        <x>0</x>
                         <y>0</y>
                         <z>0</z>
                         <width>336</width>
@@ -1754,7 +1788,7 @@
                 </instance>
                 <instance type="Text" uid="66">
                     <properties>
-                        <text>Gania tag: 4</text>
+                        <text>Gania tag: 5</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-27,400,0</font>
                         <color>135,135,135</color>
@@ -1766,7 +1800,11 @@
                     </properties>
                     <instance-variables>
                         <tag>5</tag>
+                        <nickname></nickname>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1798,10 +1836,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>464</x>
+                        <x>0</x>
                         <y>568</y>
                         <z>0</z>
-                        <width>328</width>
+                        <width>336</width>
                         <height>24</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>

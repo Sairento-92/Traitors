@@ -24,6 +24,7 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
@@ -149,10 +150,6 @@
             </object-type>
             <object-type name="Laser" sid="2144590174856228">
                 <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="anglet" sid="9932692089438999" type="number" />
-                    <instance-variable name="uidg" sid="7277263738461938" type="number" />
-                </instance-variables>
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3591143347969149" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0.6">
@@ -172,7 +169,13 @@
             <plugin id="Text" />
             <instance-variables>
                 <instance-variable name="tag" sid="6541907839893541" type="number" />
+                <instance-variable comment="Do wyswietlania nickow" name="nickname" sid="9982832082398668" type="string" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="4826707246456352">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
         </object-type>
         <object-type name="Browser" sid="8692302114350189">
             <plugin id="Browser" />

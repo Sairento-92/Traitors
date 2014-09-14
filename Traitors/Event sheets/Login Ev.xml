@@ -92,7 +92,7 @@
             <actions>
                 <action id="-9" name="Set value" sid="6021183742084033" type="System">
                     <param id="0" name="Variable">Myname</param>
-                    <param id="1" name="Value">MynameBox.Text</param>
+                    <param id="1" name="Value">trim(MynameBox.Text)</param>
                 </action>
                 <action id="-9" name="Set value" sid="9870622881429596" type="System">
                     <param id="0" name="Variable">GAME_ROOM</param>

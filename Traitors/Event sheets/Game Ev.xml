@@ -25,6 +25,7 @@
                     <param id="1" name="Precision">3</param>
                     <param id="2" name="Interpolation">0</param>
                 </action>
+                <action id="-9" name="Destroy" sid="6696517822664558" type="Laser" />
                 <action id="11" name="Sync object" sid="9791612112439642" type="Multiplayer">
                     <param id="0" name="Object">Gracz</param>
                     <param id="1" name="Data">1</param>
@@ -92,7 +93,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group collapsed="1" description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
+        <event-group description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
             <sub-events>
                 <event-block sid="6270828135115465">
                     <conditions>
@@ -127,7 +128,13 @@
                     <conditions>
                         <condition id="5" name="On joined room" sid="8268686203064732" type="Multiplayer" />
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="4551202953382642" type="Gracz">
+                            <param id="0" name="Object">Laser</param>
+                            <param id="1" name="Layer">&quot;Main&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="2692538713677893">
                             <conditions>
@@ -154,10 +161,6 @@
                                     <param id="0" name="Instance variable">PeerName</param>
                                     <param id="1" name="Value">Multiplayer.MyAlias</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="6999806351793207" type="Gracz">
-                                    <param id="0" name="Animation">&quot;gania&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
                                 <action behavior="8Direction" id="4" name="Set max speed" sid="8891145326459971" type="Gracz">
                                     <param id="0" name="Max Speed">250</param>
                                 </action>
@@ -174,6 +177,31 @@
                                     <param id="1" name="From">1</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="5706723065171743">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="314676920313153" type="Text">
+                                            <param id="0" name="Instance variable">tag</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="6682432543639344" type="Text">
+                                            <param id="0" name="Instance variable">nickname</param>
+                                            <param id="1" name="Value">Multiplayer.myalias</param>
+                                        </action>
+                                        <action id="-4" name="Set position to another object" sid="3907150538888404" type="Text">
+                                            <param id="0" name="Object">Gracz</param>
+                                            <param id="1" name="Image point (optional)">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="6399169806441079" type="Text">
+                                            <param id="0" name="Pin to">Text</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="5355030244958892">
                             <conditions>
@@ -197,8 +225,27 @@
         </event-group>
         <event-group description="" inactive="1" sid="3011960123564868" title="Host">
             <sub-events>
-                <event-group description="" sid="8985332030257512" title="Czat2">
+                <event-group collapsed="1" description="" sid="8985332030257512" title="Czat2">
                     <sub-events>
+                        <event-block sid="7700588824405324">
+                            <conditions>
+                                <condition id="15" name="On peer message" sid="2354828635272247" type="Multiplayer">
+                                    <param id="0" name="Tag">&quot;chatmess&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Broadcast message" sid="5948949542983065" type="Multiplayer">
+                                    <param id="0" name="From ID">&quot;&quot;</param>
+                                    <param id="1" name="Tag">&quot;chatget&quot;</param>
+                                    <param id="2" name="Message">Multiplayer.Message</param>
+                                    <param id="3" name="Mode">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="2221711699933783" type="Function">
+                                    <param id="0" name="Name">&quot;chat&quot;</param>
+                                    <param id="1" name="Parameter {n}">Multiplayer.Message</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="4782737071514977">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="4190430335783433" type="Keyboard">
@@ -249,10 +296,37 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="1" name="Append text" sid="9667391978079192" type="Text">
-                                                    <param id="0" name="Text">&quot;Nazwa hosta to: &quot; &amp;Multiplayer.Myalias &amp;newline</param>
+                                                <action id="0" name="Call function" sid="4891755117274094" type="Function">
+                                                    <param id="0" name="Name">&quot;chat&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Nazwa hosta to: &quot; &amp;Multiplayer.Myalias</param>
                                                 </action>
                                             </actions>
+                                        </event-block>
+                                        <event-block sid="7713610334161598">
+                                            <conditions>
+                                                <condition id="0" name="Compare text" sid="2001758289153235" type="TextBox">
+                                                    <param id="0" name="Text">&quot;/kick &quot;</param>
+                                                    <param id="1" name="Case">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="2828709212919151" type="Function">
+                                                    <param id="0" name="Name">&quot;chat&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Wyrzucono gracza: &quot; &amp;Multiplayer.Myalias</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="1002390064156551">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="509673872761656" type="Gracz">
+                                                            <param id="0" name="Instance variable">peerid</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="2675603912881404">
                                             <conditions>
@@ -262,8 +336,9 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="1" name="Append text" sid="699038737301651" type="Text">
-                                                    <param id="0" name="Text">&quot;Lista graczy: &quot;</param>
+                                                <action id="0" name="Call function" sid="8184141752922824" type="Function">
+                                                    <param id="0" name="Name">&quot;chat&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Lista graczy: &quot;</param>
                                                 </action>
                                             </actions>
                                             <sub-events>
@@ -322,18 +397,6 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
-                        </event-block>
-                        <event-block sid="6345949685439812">
-                            <conditions>
-                                <condition id="15" name="On peer message" sid="4566136339634134" type="Multiplayer">
-                                    <param id="0" name="Tag">&quot;chatget&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="1" name="Append text" sid="2618583258760675" type="Text">
-                                    <param id="0" name="Text">Multiplayer.Message &amp;newline</param>
-                                </action>
-                            </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
@@ -412,7 +475,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="7869062004883721">
+                                        <event-block collapsed="1" sid="7869062004883721">
                                             <conditions>
                                                 <condition id="2" name="Mouse button is down" sid="142758440873787" type="Mouse">
                                                     <param id="0" name="Mouse button">0</param>
@@ -716,12 +779,12 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="6011107902282835">
+                <event-block collapsed="1" sid="6011107902282835">
                     <conditions />
                     <actions />
                     <sub-events>
                         <variable constant="0" name="Gan" sid="1609029864615634" static="0" type="number">0</variable>
-                        <event-block sid="2920737819404643">
+                        <event-block collapsed="1" sid="2920737819404643">
                             <conditions>
                                 <condition id="0" name="On collision with another object" sid="9292956385979514" type="Gracz">
                                     <param id="0" name="Object">Gracz</param>
@@ -834,7 +897,7 @@
                         </action>
                         <action id="-10" name="Set value" sid="1526179776690636" type="Boostbox">
                             <param id="0" name="Instance variable">wepid</param>
-                            <param id="1" name="Value">int(random(3))</param>
+                            <param id="1" name="Value">int(random(1,3))</param>
                         </action>
                     </actions>
                 </event-block>
@@ -871,26 +934,47 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="7700588824405324">
+                <event-block collapsed="1" sid="6386746003818696">
                     <conditions>
-                        <condition id="15" name="On peer message" sid="2354828635272247" type="Multiplayer">
-                            <param id="0" name="Tag">&quot;chatmess&quot;</param>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7715581019009672" type="Gracz">
+                            <param id="0" name="Instance variable">Gania</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="9" name="Broadcast message" sid="5948949542983065" type="Multiplayer">
-                            <param id="0" name="From ID">&quot;&quot;</param>
-                            <param id="1" name="Tag">&quot;chatget&quot;</param>
-                            <param id="2" name="Message">Multiplayer.Message</param>
-                            <param id="3" name="Mode">0</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6573052799978587">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9175823332936307" type="Gracz">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.Myid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="4231679825741749" type="Gracz">
+                                    <param id="0" name="Max Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="5951638036679976" type="System">
+                                    <param id="0" name="Variable">Gania</param>
+                                    <param id="1" name="Value">multiplayer.myalias</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="6079404868738253" type="Gracz">
+                                    <param id="0" name="Instance variable">Gania</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="6542770207574982" type="Gracz">
+                                    <param id="0" name="Animation">&quot;gania&quot;&amp;Gracz.Gania</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" inactive="1" sid="9642298604554555" title="Peer">
+        <event-group collapsed="1" description="" inactive="1" sid="9642298604554555" title="Peer">
             <sub-events>
-                <event-group description="" sid="48844505906105" title="Czat">
+                <event-group collapsed="1" description="" sid="48844505906105" title="Czat">
                     <sub-events>
                         <event-block sid="86603210027042">
                             <conditions>
@@ -899,8 +983,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="1" name="Append text" sid="8993681027367386" type="Text">
-                                    <param id="0" name="Text">Multiplayer.Message &amp;newline</param>
+                                <action id="0" name="Call function" sid="7501762863066696" type="Function">
+                                    <param id="0" name="Name">&quot;chat&quot;</param>
+                                    <param id="1" name="Parameter {n}">Multiplayer.Message</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -970,8 +1055,9 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="1" name="Append text" sid="699038737301651" type="Text">
-                                                    <param id="0" name="Text">&quot;Lista graczy: &quot;</param>
+                                                <action id="0" name="Call function" sid="6840890169249575" type="Function">
+                                                    <param id="0" name="Name">&quot;chat&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Lista graczy: &quot;</param>
                                                 </action>
                                             </actions>
                                             <sub-events>
@@ -1013,7 +1099,7 @@
                                         <action id="8" name="Send message" sid="1048743663127629" type="Multiplayer">
                                             <param id="0" name="Peer ID">&quot;&quot;</param>
                                             <param id="1" name="Tag">&quot;chatmess&quot;</param>
-                                            <param id="2" name="Message">multiplayer.MyAlias &amp;&quot; : &quot; &amp;textbox.Text &amp;newline</param>
+                                            <param id="2" name="Message">multiplayer.MyAlias &amp;&quot; : &quot; &amp;textbox.Text</param>
                                             <param id="3" name="Mode">0</param>
                                         </action>
                                     </actions>
@@ -1040,8 +1126,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="1" name="Append text" sid="9667391978079192" type="Text">
-                                    <param id="0" name="Text">&quot;Nazwa hosta to: &quot; &amp;Multiplayer.Message &amp;newline</param>
+                                <action id="0" name="Call function" sid="2060305031176753" type="Function">
+                                    <param id="0" name="Name">&quot;chat&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Nazwa hosta to: &quot; &amp;Multiplayer.Message</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1382,7 +1469,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Peer i Host" sid="9395126084642041" title="Both">
+        <event-group description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
                 <event-block sid="4430291448621087">
                     <conditions>
@@ -1464,13 +1551,13 @@
                                     </conditions>
                                     <actions>
                                         <action behavior="8Direction" id="4" name="Set max speed" sid="6083730251673698" type="Gracz">
-                                            <param id="0" name="Max Speed">250</param>
+                                            <param id="0" name="Max Speed">800</param>
                                         </action>
                                         <action behavior="8Direction" id="6" name="Set deceleration" sid="7276232073874148" type="Gracz">
-                                            <param id="0" name="Deceleration">30</param>
+                                            <param id="0" name="Deceleration">60</param>
                                         </action>
                                         <action behavior="8Direction" id="5" name="Set acceleration" sid="1572862906463668" type="Gracz">
-                                            <param id="0" name="Acceleration">400</param>
+                                            <param id="0" name="Acceleration">50</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1600,7 +1687,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5674344796479267" title="Laser">
+        <event-group collapsed="1" description="" sid="5674344796479267" title="Laser">
             <sub-events>
                 <event-block sid="1654678206894608">
                     <conditions>
@@ -1654,5 +1741,16 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="3468657705524807">
+            <conditions>
+                <condition id="0" name="On click" sid="4305822709950046" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set unfocused" sid="1256296056692011" type="TextBox" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
