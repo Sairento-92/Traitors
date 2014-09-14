@@ -69,6 +69,50 @@
             </object-type>
         </object-folder>
         <object-folder expanded="1" name="Game">
+            <object-folder expanded="1" name="Edytor">
+                <object-type name="EdytorText" sid="7903070800613441">
+                    <plugin id="TextBox" />
+                    <instance-variables>
+                        <instance-variable name="Vis" sid="1977430162583515" type="boolean" />
+                        <instance-variable name="Grid" sid="3162000711177989" type="boolean" />
+                    </instance-variables>
+                </object-type>
+                <object-type name="klocek" sid="4803796115518936">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="id" sid="8179943301171509" type="number" />
+                        <instance-variable name="klocekid" sid="179748493287424" type="number" />
+                    </instance-variables>
+                    <animation-folder expanded="1">
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7978043530571874" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="BackgroundEdit" sid="9691233938035467">
+                    <plugin id="Sprite" />
+                    <animation-folder expanded="1">
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1782328589304137" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="GridCheck" sid="1810879899457727">
+                    <plugin id="Button" />
+                </object-type>
+                <object-type name="Check" sid="2902611477857619">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="UidCheck" sid="1016829104187075" type="number" />
+                    </instance-variables>
+                    <animation-folder expanded="1">
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7461984623488022" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
             <object-type name="Gracz" sid="1975657082452686">
                 <plugin id="Sprite" />
                 <instance-variables>
