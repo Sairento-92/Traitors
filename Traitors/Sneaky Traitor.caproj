@@ -147,6 +147,23 @@
             <object-type global="1" name="ArrWysylanie" sid="2010230981207893">
                 <plugin id="Arr" />
             </object-type>
+            <object-type name="Laser" sid="2144590174856228">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="anglet" sid="9932692089438999" type="number" />
+                    <instance-variable name="uidg" sid="7277263738461938" type="number" />
+                </instance-variables>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3591143347969149" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.6">
+                            <image-point name="Imagepoint 1" x="1" y="0.6" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="Mapa" sid="6733805474178117">
+                <plugin id="Arr" />
+            </object-type>
         </object-folder>
         <object-type name="Multiplayer" sid="5798874729658294">
             <plugin id="Multiplayer" />

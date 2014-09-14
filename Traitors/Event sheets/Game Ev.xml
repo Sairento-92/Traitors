@@ -1600,5 +1600,59 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="5674344796479267" title="Laser">
+            <sub-events>
+                <event-block sid="1654678206894608">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3543019991173597" type="Gracz">
+                            <param id="0" name="Instance variable">PeerName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Multiplayer.MyAlias</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="3276406147595363" type="Laser">
+                            <param id="0" name="Angle">Gracz.Angle+(int(random(10)-5))</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="1434152830656902" type="Laser">
+                            <param id="0" name="Object">Gracz</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4651316894967865">
+                            <conditions>
+                                <condition id="-23" name="While" sid="8919846074971771" type="System" />
+                                <condition id="-8" name="Compare two values" sid="2765145220031408" type="System">
+                                    <param id="0" name="First value">Laser.ImagePointX(1)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="6765162849389604" type="System">
+                                    <param id="0" name="First value">Laser.ImagePointX(1)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">LayoutWidth</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="2691118456196586" type="System">
+                                    <param id="0" name="First value">Laser.ImagePointY(1)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="932448655392106" type="System">
+                                    <param id="0" name="First value">Laser.ImagePointY(1)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">LayoutHeight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="8824687329306585" type="Laser">
+                                    <param id="0" name="Width">Laser.Width+1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
