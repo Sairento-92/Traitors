@@ -2189,7 +2189,7 @@
                             <actions>
                                 <action id="-3" name="Set position" sid="7107328423926995" type="klocek">
                                     <param id="0" name="X">int(Mouse.X)</param>
-                                    <param id="1" name="Y">int(Mouse.X)</param>
+                                    <param id="1" name="Y">int(Mouse.Y)</param>
                                 </action>
                                 <action id="8" name="Set unfocused" sid="3567965339279803" type="GridCheck" />
                             </actions>
@@ -2470,6 +2470,74 @@
                                     <param id="0" name="Frame number">klocek.klocekid</param>
                                 </action>
                             </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8212265237539763">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="1455624939730288" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;map_cp&quot;</param>
+                        </condition>
+                        <condition id="10" name="Is host" sid="2765543563836001" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="4369836638632368" type="Function">
+                            <param id="0" name="Name">&quot;komendy&quot;</param>
+                            <param id="1" name="Parameter {n}">Multiplayer.Message</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9752657458011183">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="7173629275091845" type="System">
+                                    <param id="0" name="Object to create">klocek</param>
+                                    <param id="1" name="Layer">&quot;Map&quot;</param>
+                                    <param id="2" name="X">int(Arrkomenda.At(2))</param>
+                                    <param id="3" name="Y">int(Arrkomenda.At(3))</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="2170641225184256" type="klocek">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">Arrkomenda.At(0)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="4205774096863437" type="klocek">
+                                    <param id="0" name="Instance variable">klocekid</param>
+                                    <param id="1" name="Value">Arrkomenda.At(1)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3024227829742989" type="System">
+                                    <param id="0" name="Variable">testx</param>
+                                    <param id="1" name="Value">Arrkomenda.At(2)</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="8479091558030924" type="klocek">
+                                    <param id="0" name="Frame number">klocek.klocekid</param>
+                                </action>
+                                <action id="5" name="Push" sid="3205323954129051" type="Mapa">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">klocek.id</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="688001129496691" type="Mapa">
+                                    <param id="0" name="X">Mapa.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">klocek.klocekid</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="1749175441509896" type="Mapa">
+                                    <param id="0" name="X">Mapa.Width-1</param>
+                                    <param id="1" name="Y">2</param>
+                                    <param id="2" name="Value">klocek.x</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="4852997406486504" type="Mapa">
+                                    <param id="0" name="X">Mapa.Width-1</param>
+                                    <param id="1" name="Y">3</param>
+                                    <param id="2" name="Value">klocek.y</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="6727040505410437">
+                                    <conditions />
+                                    <actions />
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
