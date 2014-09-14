@@ -1828,7 +1828,7 @@
                 </event-group>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5674344796479267" title="Laser">
+        <event-group description="" sid="5674344796479267" title="Laser">
             <sub-events>
                 <event-block sid="1654678206894608">
                     <conditions>
@@ -1846,11 +1846,17 @@
                             <param id="0" name="Object">Gracz</param>
                             <param id="1" name="Image point (optional)">0</param>
                         </action>
+                        <action id="-5" name="Set width" sid="9403305916532438" type="Laser">
+                            <param id="0" name="Width">1</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="4651316894967865">
                             <conditions>
                                 <condition id="-23" name="While" sid="8919846074971771" type="System" />
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="1525237396061939" type="Laser">
+                                    <param id="0" name="Object">klocek</param>
+                                </condition>
                                 <condition id="-8" name="Compare two values" sid="2765145220031408" type="System">
                                     <param id="0" name="First value">Laser.ImagePointX(1)</param>
                                     <param id="1" name="Comparison">4</param>
