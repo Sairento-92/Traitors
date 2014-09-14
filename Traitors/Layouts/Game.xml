@@ -1703,7 +1703,7 @@
                 </instance>
                 <instance type="klocek" uid="76">
                     <properties>
-                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
@@ -2075,9 +2075,9 @@
         </instance>
         <instance type="Mapa" uid="71">
             <properties>
-                <width>10</width>
+                <width>0</width>
                 <height>1</height>
-                <depth>1</depth>
+                <depth>3</depth>
             </properties>
         </instance>
         <instance type="CSV" uid="72">

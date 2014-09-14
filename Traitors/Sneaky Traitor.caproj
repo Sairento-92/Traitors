@@ -112,6 +112,9 @@
                         </animation>
                     </animation-folder>
                 </object-type>
+                <object-type global="1" name="Mapa" sid="6733805474178117">
+                    <plugin id="Arr" />
+                </object-type>
             </object-folder>
             <object-type name="Gracz" sid="1975657082452686">
                 <plugin id="Sprite" />
@@ -203,9 +206,6 @@
                         </frame>
                     </animation>
                 </animation-folder>
-            </object-type>
-            <object-type global="1" name="Mapa" sid="6733805474178117">
-                <plugin id="Arr" />
             </object-type>
             <object-type name="Nick" sid="1394294591820917">
                 <plugin id="Text" />
