@@ -17,6 +17,7 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_CSV" version="1">CSV</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
@@ -94,6 +95,7 @@
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="gania0" pingpong="0" repeatcount="1" repeatto="0" sid="57793966180149" speed="5">
                         <frame duration="1" hotspotX="0.03125" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0" y="-0.375" />
                             <collision-poly>
                                 <point x="0" y="0" />
                                 <point x="1" y="0" />
@@ -161,6 +163,9 @@
             <object-type global="1" name="Mapa" sid="6733805474178117">
                 <plugin id="Arr" />
             </object-type>
+            <object-type name="Nick" sid="1394294591820917">
+                <plugin id="Text" />
+            </object-type>
         </object-folder>
         <object-type name="Multiplayer" sid="5798874729658294">
             <plugin id="Multiplayer" />
@@ -191,6 +196,9 @@
         </object-type>
         <object-type name="TextBox" sid="545559784302837">
             <plugin id="TextBox" />
+        </object-type>
+        <object-type global="1" name="CSV" sid="459613131107509">
+            <plugin id="Rex_CSV" />
         </object-type>
     </object-folder>
     <families>
