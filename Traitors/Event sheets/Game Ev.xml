@@ -2087,6 +2087,9 @@
                                             <param id="0" name="Instance variable">klocekid</param>
                                             <param id="1" name="Value">Mapa.At(Mapa.CurX,1)</param>
                                         </action>
+                                        <action id="5" name="Set frame" sid="5170565003389007" type="klocek">
+                                            <param id="0" name="Frame number">klocek.klocekid</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -2168,8 +2171,8 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="103940587920894" type="klocek">
-                                    <param id="0" name="X">int(Mouse.X/16)*16</param>
-                                    <param id="1" name="Y">int(Mouse.Y/16)*16</param>
+                                    <param id="0" name="X">int(int(Mouse.X/16)*16)</param>
+                                    <param id="1" name="Y">int(int(Mouse.Y/16)*16)</param>
                                 </action>
                                 <action id="8" name="Set unfocused" sid="1126515821157462" type="GridCheck" />
                             </actions>
@@ -2185,8 +2188,8 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="7107328423926995" type="klocek">
-                                    <param id="0" name="X">Mouse.X</param>
-                                    <param id="1" name="Y">Mouse.Y</param>
+                                    <param id="0" name="X">int(Mouse.X)</param>
+                                    <param id="1" name="Y">int(Mouse.X)</param>
                                 </action>
                                 <action id="8" name="Set unfocused" sid="3567965339279803" type="GridCheck" />
                             </actions>
@@ -2448,8 +2451,8 @@
                                 <action id="-3" name="Create object" sid="448364374886354" type="System">
                                     <param id="0" name="Object to create">klocek</param>
                                     <param id="1" name="Layer">&quot;Map&quot;</param>
-                                    <param id="2" name="X">Arrkomenda.At(2)</param>
-                                    <param id="3" name="Y">Arrkomenda.At(3)</param>
+                                    <param id="2" name="X">int(Arrkomenda.At(2))</param>
+                                    <param id="3" name="Y">int(Arrkomenda.At(3))</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="9757959348042945" type="klocek">
                                     <param id="0" name="Instance variable">id</param>
@@ -2462,6 +2465,9 @@
                                 <action id="-9" name="Set value" sid="3998754206464402" type="System">
                                     <param id="0" name="Variable">testx</param>
                                     <param id="1" name="Value">Arrkomenda.At(2)</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="7264752638690004" type="klocek">
+                                    <param id="0" name="Frame number">klocek.klocekid</param>
                                 </action>
                             </actions>
                         </event-block>
