@@ -2219,13 +2219,13 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
-                        <condition id="-17" name="Pick top/bottom" sid="1482156942733452" type="klocek">
-                            <param id="0" name="Which">0</param>
-                        </condition>
                         <condition id="-7" name="Compare instance variable" sid="6335876623533855" type="klocek">
                             <param id="0" name="Instance variable">id</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-17" name="Pick top/bottom" sid="1482156942733452" type="klocek">
+                            <param id="0" name="Which">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -2235,7 +2235,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" sid="6486616544514895">
+                <event-block sid="6486616544514895">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="4651801351358946" type="System">
                             <param id="0" name="Variable">Edit</param>
@@ -2302,11 +2302,6 @@
                             <param id="0" name="Variable">Edit</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="7482166009215717" type="Check">
-                            <param id="0" name="Instance variable">UidCheck</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions />
