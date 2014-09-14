@@ -2483,6 +2483,21 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <variable constant="0" name="idtemp2" sid="3117288375318422" static="0" type="number">1</variable>
+                        <event-block sid="3267823559097926">
+                            <conditions>
+                                <condition id="-20" name="Pick highest/lowest" sid="9128701139120521" type="klocek">
+                                    <param id="0" name="Which">1</param>
+                                    <param id="1" name="Instance variable">id</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="1030106542820099" type="System">
+                                    <param id="0" name="Variable">idtemp2</param>
+                                    <param id="1" name="Value">klocek.id</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="9752657458011183">
                             <conditions />
                             <actions>
@@ -2494,7 +2509,7 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="2170641225184256" type="klocek">
                                     <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Value">Arrkomenda.At(0)</param>
+                                    <param id="1" name="Value">idtemp2+1</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="4205774096863437" type="klocek">
                                     <param id="0" name="Instance variable">klocekid</param>
@@ -2526,6 +2541,12 @@
                                     <param id="0" name="X">Mapa.Width-1</param>
                                     <param id="1" name="Y">3</param>
                                     <param id="2" name="Value">klocek.y</param>
+                                </action>
+                                <action id="9" name="Broadcast message" sid="6245395027784251" type="Multiplayer">
+                                    <param id="0" name="From ID">&quot;&quot;</param>
+                                    <param id="1" name="Tag">&quot;map_c&quot;</param>
+                                    <param id="2" name="Message">klocek.id&amp;&quot; &quot;&amp;klocek.klocekid&amp;&quot; &quot;&amp;klocek.X&amp;&quot; &quot;&amp;klocek.Y</param>
+                                    <param id="3" name="Mode">0</param>
                                 </action>
                             </actions>
                             <sub-events>
