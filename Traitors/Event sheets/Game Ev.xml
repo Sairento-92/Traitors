@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Ev</name>
     <events>
+        <variable constant="0" name="Edit_Size" sid="4614427607518865" static="0" type="number">0</variable>
         <variable constant="0" name="LaserON" sid="5668292505350321" static="0" type="number">1</variable>
         <variable constant="0" name="testy" sid="2866331250706102" static="0" type="number">0</variable>
         <variable constant="0" name="testx" sid="3092172918500377" static="0" type="text"></variable>
@@ -266,7 +267,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" inactive="1" sid="3011960123564868" title="Host">
+        <event-group description="" inactive="1" sid="3011960123564868" title="Host">
             <sub-events>
                 <event-group collapsed="1" description="" sid="8985332030257512" title="Czat2">
                     <sub-events>
@@ -1022,7 +1023,7 @@
         </event-group>
         <event-group description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
-                <event-group description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
+                <event-group collapsed="1" description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
                     <sub-events>
                         <event-block any="1" collapsed="1" sid="6052376746430917">
                             <conditions>
@@ -2142,7 +2143,7 @@
                 </event-group>
                 <event-group description="" sid="3722825918528233" title="Wysylanie mapy">
                     <sub-events>
-                        <event-block sid="1513242409803253">
+                        <event-block collapsed="1" sid="1513242409803253">
                             <conditions>
                                 <condition id="11" name="On peer connected" sid="4681408438357224" type="Multiplayer" />
                                 <condition id="10" name="Is host" sid="4228002184995291" type="Multiplayer" />
@@ -2163,7 +2164,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="6086805035505802" type="MPSyncFunction">
                                             <param id="0" name="Name">&quot;klocek_zm&quot;</param>
-                                            <param id="1" name="Parameter {n}">Multiplayer.MyAlias{###}Multiplayer.PeerAlias{###}1{###}klocek.id{###}klocek.klocekid{###}klocek.X{###}klocek.Y</param>
+                                            <param id="1" name="Parameter {n}">Multiplayer.MyAlias{###}Multiplayer.PeerAlias{###}1{###}klocek.id{###}klocek.klocekid{###}klocek.X{###}klocek.Y{###}klocek.Width{###}klocek.Height</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2229,6 +2230,12 @@
                                                         <action id="5" name="Set frame" sid="5907634658414697" type="klocek">
                                                             <param id="0" name="Frame number">klocek.klocekid</param>
                                                         </action>
+                                                        <action id="-5" name="Set width" sid="6371719812136736" type="klocek">
+                                                            <param id="0" name="Width">Function.Param(7)</param>
+                                                        </action>
+                                                        <action id="-6" name="Set height" sid="1092595365954008" type="klocek">
+                                                            <param id="0" name="Height">Function.Param(8)</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <comment>Delete = Parametr 2 = 2</comment>
@@ -2252,6 +2259,69 @@
                                             </sub-events>
                                         </event-block>
                                     </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="2305153252919526" title="Size">
+                    <sub-events>
+                        <event-block sid="9140129871264282">
+                            <conditions>
+                                <condition id="-2" name="On start of layout" sid="7177544949027276" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9913132322384668" type="System">
+                                    <param id="0" name="Variable">Edit_Size</param>
+                                    <param id="1" name="Value">int(Edytor_scale.Text)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="7079014782221371">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5565453782360086" type="klocek">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="9865803774886386" type="klocek">
+                                            <param id="0" name="Scale">Edit_Size/100</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="2251090851292506">
+                            <conditions>
+                                <condition id="1" name="On text changed" sid="9857032788241759" type="Edytor_scale" />
+                                <condition id="-8" name="Compare two values" sid="5953762256866168" type="System">
+                                    <param id="0" name="First value">str(int(Edytor_scale.Text))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">Edytor_scale.Text</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="1773171411041743" type="System">
+                                    <param id="0" name="Variable">Edit_Size</param>
+                                    <param id="1" name="Value">int(Edytor_scale.Text)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="6954389210325557">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4355747534067816" type="klocek">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="4558745837478751" type="klocek">
+                                            <param id="0" name="Scale">Edit_Size/100</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -2295,7 +2365,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="5572666246481299">
+                <event-block collapsed="1" sid="5572666246481299">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="9474874516057616" type="System">
                             <param id="0" name="Variable">Edit</param>
@@ -2321,26 +2391,12 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="7921212207762926">
-                            <conditions>
-                                <condition id="1" name="Is checked" sid="281416415386781" type="GridCheck" />
-                                <condition id="-7" name="Compare instance variable" sid="7861682529568495" type="klocek">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">-1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Set position" sid="103940587920894" type="klocek">
-                                    <param id="0" name="X">int(int(Mouse.X/16)*16)</param>
-                                    <param id="1" name="Y">int(int(Mouse.Y/16)*16)</param>
-                                </action>
-                                <action id="8" name="Set unfocused" sid="1126515821157462" type="GridCheck" />
-                            </actions>
-                        </event-block>
                         <event-block sid="2721017858051402">
                             <conditions>
-                                <condition id="1" inverted="1" name="Is checked" sid="7077674207840528" type="GridCheck" />
+                                <condition id="0" name="Compare selection" sid="5498471121085675" type="Edytor_Grid">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Index">0</param>
+                                </condition>
                                 <condition id="-7" name="Compare instance variable" sid="2009100789781408" type="klocek">
                                     <param id="0" name="Instance variable">id</param>
                                     <param id="1" name="Comparison">0</param>
@@ -2355,9 +2411,69 @@
                                 <action id="8" name="Set unfocused" sid="3567965339279803" type="GridCheck" />
                             </actions>
                         </event-block>
+                        <event-block sid="7921212207762926">
+                            <conditions>
+                                <condition id="0" name="Compare selection" sid="281416415386781" type="Edytor_Grid">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Index">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="7861682529568495" type="klocek">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="103940587920894" type="klocek">
+                                    <param id="0" name="X">int(int(Mouse.X/16)*16)</param>
+                                    <param id="1" name="Y">int(int(Mouse.Y/16)*16)</param>
+                                </action>
+                                <action id="8" name="Set unfocused" sid="1126515821157462" type="GridCheck" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="8249901732804604">
+                            <conditions>
+                                <condition id="0" name="Compare selection" sid="3046431024084467" type="Edytor_Grid">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Index">2</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="2258127414936023" type="klocek">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="6483213948877743" type="klocek">
+                                    <param id="0" name="X">int(int(Mouse.X/32)*32)</param>
+                                    <param id="1" name="Y">int(int(Mouse.Y/32)*32)</param>
+                                </action>
+                                <action id="8" name="Set unfocused" sid="7527319048555393" type="GridCheck" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="7733025510566489">
+                            <conditions>
+                                <condition id="0" name="Compare selection" sid="3478268453267686" type="Edytor_Grid">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Index">3</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="4894979187655402" type="klocek">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="9417466550050518" type="klocek">
+                                    <param id="0" name="X">int(int(Mouse.X/klocek.Width)*klocek.Width)</param>
+                                    <param id="1" name="Y">int(int(Mouse.Y/klocek.Height)*klocek.Height)</param>
+                                </action>
+                                <action id="8" name="Set unfocused" sid="4718702883699158" type="GridCheck" />
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
-                <event-group description="" sid="8463876089156381" title="Zaznaczanie">
+                <event-group collapsed="1" description="" sid="8463876089156381" title="Zaznaczanie">
                     <sub-events>
                         <event-block sid="6514896890558996">
                             <conditions>
@@ -2619,7 +2735,7 @@
                             <actions>
                                 <action id="0" name="Call function" sid="9141563488884123" type="MPSyncFunction">
                                     <param id="0" name="Name">&quot;klocek_zm&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;&quot;{###}&quot;&quot;{###}1{###}idtemp+1{###}klocek.klocekid{###}int(klocek.X){###}int(klocek.Y)</param>
+                                    <param id="1" name="Parameter {n}">&quot;&quot;{###}&quot;&quot;{###}1{###}idtemp+1{###}klocek.klocekid{###}int(klocek.X){###}int(klocek.Y){###}klocek.Width{###}klocek.Height</param>
                                 </action>
                             </actions>
                         </event-block>
