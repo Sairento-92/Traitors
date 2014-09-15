@@ -15,7 +15,7 @@
     <layers>
         <layer name="BG" sid="6891232048196114">
             <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
+            <background-color>153,102,0</background-color>
             <transparent>0</transparent>
             <parallax>
                 <x>1</x>
@@ -50,9 +50,6 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <instance-variables>
-                        <ownerpeerid>0</ownerpeerid>
-                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -60,12 +57,12 @@
                         <y>-32</y>
                         <z>0</z>
                         <width>10</width>
-                        <height>5</height>
+                        <height>6</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
-                        <hotspotY>0.600000024</hotspotY>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>1</opacity>
+                        <opacity>0.100000001</opacity>
                     </world>
                 </instance>
             </instances>
@@ -2074,6 +2071,20 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>0.5</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <effect-instances>
+                        <effect-instance type="Screen" />
+                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>

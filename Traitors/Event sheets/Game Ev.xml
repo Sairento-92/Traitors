@@ -266,7 +266,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" inactive="1" sid="3011960123564868" title="Host">
+        <event-group collapsed="1" description="" inactive="1" sid="3011960123564868" title="Host">
             <sub-events>
                 <event-group collapsed="1" description="" sid="8985332030257512" title="Czat2">
                     <sub-events>
@@ -1044,6 +1044,16 @@
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6545833815102485" type="Gracz">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">multiplayer.MyID</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="4566502862810484" type="System">
+                                    <param id="0" name="Variable">Edit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -1135,6 +1145,18 @@
                                                     <param id="0" name="State">1</param>
                                                 </action>
                                             </actions>
+                                        </event-block>
+                                        <event-block sid="9291243704940941">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="9153303052286038" type="Laser">
+                                                    <param id="0" name="Object">Gracz</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                        <event-block sid="2028553926404624">
+                                            <conditions />
+                                            <actions />
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -1790,7 +1812,7 @@
                 </event-group>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5674344796479267" title="Laser">
+        <event-group description="" sid="5674344796479267" title="Laser">
             <sub-events>
                 <event-block sid="5529183921343798">
                     <conditions>
@@ -1830,11 +1852,11 @@
                             </conditions>
                             <actions>
                                 <action id="-8" name="Set angle" sid="3276406147595363" type="Laser">
-                                    <param id="0" name="Angle">Gracz.Angle+(int(random(10)-5))</param>
+                                    <param id="0" name="Angle">Gracz.Angle</param>
                                 </action>
                                 <action id="-4" name="Set position to another object" sid="1434152830656902" type="Laser">
                                     <param id="0" name="Object">Gracz</param>
-                                    <param id="1" name="Image point (optional)">0</param>
+                                    <param id="1" name="Image point (optional)">2</param>
                                 </action>
                                 <action id="-5" name="Set width" sid="9403305916532438" type="Laser">
                                     <param id="0" name="Width">1</param>

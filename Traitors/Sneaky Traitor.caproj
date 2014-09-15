@@ -27,12 +27,15 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Scirra" id="screen">Screen</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -158,6 +161,7 @@
                     <animation framecount="1" loop="0" name="gania0" pingpong="0" repeatcount="1" repeatto="0" sid="57793966180149" speed="5">
                         <frame duration="1" hotspotX="0.03125" hotspotY="0.5">
                             <image-point name="Imagepoint 1" x="0" y="-0.375" />
+                            <image-point name="Imagepoint 2" x="1.375" y="0.5" />
                             <collision-poly>
                                 <point x="0" y="0" />
                                 <point x="1" y="0" />
@@ -214,13 +218,10 @@
             </object-type>
             <object-type name="Laser" sid="2144590174856228">
                 <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable comment="Peerid uzytkownika" name="ownerpeerid" sid="9102296077333633" type="number" />
-                </instance-variables>
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3591143347969149" speed="5">
-                        <frame duration="1" hotspotX="0" hotspotY="0.6">
-                            <image-point name="Imagepoint 1" x="1" y="0.6" />
+                        <frame duration="1" hotspotX="0" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="1" y="0.5" />
                         </frame>
                     </animation>
                 </animation-folder>
@@ -270,6 +271,16 @@
         </object-type>
         <object-type name="Sprite" sid="7215495169240887">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="7329084294519402">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Screen">
+                    <effect id="screen" />
+                </effect-type>
+            </effects>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6978649207103551" speed="5">
                     <frame duration="1" hotspotX="-0.0078125" hotspotY="0.5" />
