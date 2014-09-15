@@ -140,6 +140,8 @@
                     <instance-variable name="weapon" sid="5444542903930593" type="number" />
                     <instance-variable name="PeerName" sid="7518730058043527" type="string" />
                     <instance-variable name="Gania" sid="4240613250711337" type="boolean" />
+                    <instance-variable comment="Recoil strzalu gracza" name="recoil" sid="5640352280897837" type="number" />
+                    <instance-variable comment="Gracz ktory go ostatnio uderzyl, peerid" name="lasthitby" sid="2395147837106518" type="string" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="5670686406564721">
@@ -212,6 +214,9 @@
             </object-type>
             <object-type name="Laser" sid="2144590174856228">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="Peerid uzytkownika" name="ownerpeerid" sid="9102296077333633" type="number" />
+                </instance-variables>
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3591143347969149" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0.6">
@@ -262,6 +267,14 @@
         </object-type>
         <object-type name="MPWrap" sid="3475937140397312">
             <plugin id="Rex_MPwrap" />
+        </object-type>
+        <object-type name="Sprite" sid="7215495169240887">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6978649207103551" speed="5">
+                    <frame duration="1" hotspotX="-0.0078125" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>
