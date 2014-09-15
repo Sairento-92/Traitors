@@ -2,7 +2,7 @@
 <c2project>
     <name>Sneaky Traitor</name>
     <description></description>
-    <version>3.0</version>
+    <version>3.1</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -88,6 +88,7 @@
                     <instance-variables>
                         <instance-variable name="id" sid="8179943301171509" type="number" />
                         <instance-variable name="klocekid" sid="179748493287424" type="number" />
+                        <instance-variable name="select" sid="8616842797496267" type="number" />
                     </instance-variables>
                     <animation-folder expanded="1">
                         <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7978043530571874" speed="0">
@@ -140,6 +141,23 @@
                 </object-type>
                 <object-type name="Edytor_Text1" sid="6839522377792049">
                     <plugin id="Text" />
+                </object-type>
+                <object-type name="Selector" sid="2270920175587467">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="x1" sid="9052881293814994" type="number" />
+                        <instance-variable name="y1" sid="465905327435881" type="number" />
+                        <instance-variable name="x2" sid="6453030983762473" type="number" />
+                        <instance-variable name="y2" sid="2095786536594495" type="number" />
+                    </instance-variables>
+                    <animation-folder expanded="1">
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7495333864847177" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Edytor_Selchange" sid="1167823090493997">
+                    <plugin id="List" />
                 </object-type>
             </object-folder>
             <object-type name="Gracz" sid="1975657082452686">
