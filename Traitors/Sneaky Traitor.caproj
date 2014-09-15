@@ -314,7 +314,7 @@
         <global-instance type="MPSyncFunction" uid="82">
             <properties>
                 <tag-prefix>_syncfn</tag-prefix>
-                <response>Immediate</response>
+                <response>Sendback</response>
                 <pending-mode>No</pending-mode>
             </properties>
         </global-instance>
