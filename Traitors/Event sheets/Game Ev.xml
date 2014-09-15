@@ -1861,6 +1861,9 @@
                                 <action id="-5" name="Set width" sid="9403305916532438" type="Laser">
                                     <param id="0" name="Width">1</param>
                                 </action>
+                                <action id="-15" name="Set visible" sid="2951235009830762" type="Laser">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="4651316894967865">
@@ -1901,6 +1904,14 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="5826774083562289">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="6148704251199536" type="Laser">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
@@ -1919,7 +1930,7 @@
                 <action id="8" name="Set unfocused" sid="932969200768215" type="EdytorText" />
             </actions>
         </event-block>
-        <event-group collapsed="1" description="" sid="3896803300090272" title="Edit">
+        <event-group description="" sid="3896803300090272" title="Edit">
             <sub-events>
                 <variable constant="0" name="klocekid" sid="4312598279193724" static="0" type="number">0</variable>
                 <event-group collapsed="1" description="" sid="7053788402416813" title="Wyswietlanie">
