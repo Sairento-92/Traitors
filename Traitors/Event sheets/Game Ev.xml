@@ -2466,8 +2466,8 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="9417466550050518" type="klocek">
-                                    <param id="0" name="X">int(int(Mouse.X/klocek.Width)*klocek.Width)</param>
-                                    <param id="1" name="Y">int(int(Mouse.Y/klocek.Height)*klocek.Height)</param>
+                                    <param id="0" name="X">int(Mouse.X/klocek.Width)*klocek.Width</param>
+                                    <param id="1" name="Y">int(Mouse.Y/klocek.Height)*klocek.Height</param>
                                 </action>
                                 <action id="8" name="Set unfocused" sid="4718702883699158" type="GridCheck" />
                             </actions>
