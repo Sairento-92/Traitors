@@ -83,6 +83,7 @@
                     <param id="3" name="Max peers">0</param>
                 </action>
                 <action id="-9" name="Destroy" sid="5276511860398541" type="Nick" />
+                <action id="-9" name="Destroy" sid="8358050325399455" type="Check" />
             </actions>
             <sub-events>
                 <event-block sid="2237696085079543">
@@ -2485,88 +2486,25 @@
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="3114947639783147" type="klocek">
+                                    <param id="0" name="Instance variable">select</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-10" name="Set value" sid="1765812217361772" type="klocek">
                                     <param id="0" name="Instance variable">select</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="4" name="Set animation" sid="6873385067699339" type="klocek">
+                                    <param id="0" name="Animation">&quot;noselect&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="5037850875367246" type="Check" />
                             </actions>
                         </event-block>
-                        <event-block sid="6514896890558996">
-                            <conditions>
-                                <condition id="0" name="On click" sid="5577408436887418" type="Mouse">
-                                    <param id="0" name="Mouse button">2</param>
-                                    <param id="1" name="Click type">0</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="7327514174832653" type="System">
-                                    <param id="0" name="Variable">Edit</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="566491663839574">
-                                    <conditions>
-                                        <condition id="0" name="Compare selection" sid="7119082174889961" type="Edytor_Selchange">
-                                            <param id="0" name="Comparison">0</param>
-                                            <param id="1" name="Index">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="6173591484908638">
-                                            <conditions>
-                                                <condition id="7" name="Cursor is over object" sid="1977772271020782" type="Mouse">
-                                                    <param id="0" name="Object">klocek</param>
-                                                </condition>
-                                                <condition id="-7" name="Compare instance variable" sid="6335876623533855" type="klocek">
-                                                    <param id="0" name="Instance variable">id</param>
-                                                    <param id="1" name="Comparison">4</param>
-                                                    <param id="2" name="Value">0</param>
-                                                </condition>
-                                                <condition id="-17" name="Pick top/bottom" sid="1482156942733452" type="klocek">
-                                                    <param id="0" name="Which">0</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="9225320307968" type="Function">
-                                                    <param id="0" name="Name">&quot;selclear&quot;</param>
-                                                    <param id="1" name="Parameter {n}"></param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="7655974299147517" type="Check">
-                                                    <param id="0" name="Instance variable">UidCheck</param>
-                                                    <param id="1" name="Value">klocek.id</param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="6214684763397447" type="klocek">
-                                                    <param id="0" name="Instance variable">select</param>
-                                                    <param id="1" name="Value">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="80672434295794">
-                                            <conditions>
-                                                <condition id="7" inverted="1" name="Cursor is over object" sid="6779807324428775" type="Mouse">
-                                                    <param id="0" name="Object">klocek</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="7917501752015998" type="Function">
-                                                    <param id="0" name="Name">&quot;selclear&quot;</param>
-                                                    <param id="1" name="Parameter {n}"></param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="2788404561144684" type="Check">
-                                                    <param id="0" name="Instance variable">UidCheck</param>
-                                                    <param id="1" name="Value">0</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-group description="" sid="9847415318349004" title="Multi">
+                        <event-group description="" sid="9847415318349004" title="Zazn">
                             <sub-events>
                                 <event-block sid="6432759067081684">
                                     <conditions>
@@ -2587,12 +2525,7 @@
                                     <actions />
                                     <sub-events>
                                         <event-block sid="6241427157405058">
-                                            <conditions>
-                                                <condition id="0" name="Compare selection" sid="6156090000420578" type="Edytor_Selchange">
-                                                    <param id="0" name="Comparison">0</param>
-                                                    <param id="1" name="Index">1</param>
-                                                </condition>
-                                            </conditions>
+                                            <conditions />
                                             <actions>
                                                 <action id="-15" name="Set visible" sid="1593974445131905" type="Selector">
                                                     <param id="0" name="Visibility">1</param>
@@ -2628,12 +2561,7 @@
                                     <actions />
                                     <sub-events>
                                         <event-block sid="9160998558690505">
-                                            <conditions>
-                                                <condition id="0" name="Compare selection" sid="5289449633383656" type="Edytor_Selchange">
-                                                    <param id="0" name="Comparison">0</param>
-                                                    <param id="1" name="Index">1</param>
-                                                </condition>
-                                            </conditions>
+                                            <conditions />
                                             <actions>
                                                 <action id="-15" name="Set visible" sid="154399175503082" type="Selector">
                                                     <param id="0" name="Visibility">1</param>
@@ -2693,12 +2621,65 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="-10" name="Set value" sid="5503646576665121" type="klocek">
-                                                    <param id="0" name="Instance variable">select</param>
-                                                    <param id="1" name="Value">1</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="8256128707874221">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="8138154091584973" type="Selector">
+                                                            <param id="0" name="Instance variable">x1</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Value">Selector.x2</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="6975832281150521" type="Selector">
+                                                            <param id="0" name="Instance variable">y1</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Value">Selector.y2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="5503646576665121" type="klocek">
+                                                            <param id="0" name="Instance variable">select</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="3729346989089445" type="klocek">
+                                                            <param id="0" name="Object">Check</param>
+                                                            <param id="1" name="Layer">klocek.LayerNumber</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                        <action id="-5" name="Set width" sid="4664643117538269" type="Check">
+                                                            <param id="0" name="Width">klocek.Width</param>
+                                                        </action>
+                                                        <action id="-6" name="Set height" sid="4052379511408002" type="Check">
+                                                            <param id="0" name="Height">klocek.Height</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="2915669512180267">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="1766743641127967" type="System" />
+                                                        <condition id="-17" name="Pick top/bottom" sid="627770580373249" type="klocek">
+                                                            <param id="0" name="Which">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="384793846608872" type="klocek">
+                                                            <param id="0" name="Instance variable">select</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="262915213575124" type="klocek">
+                                                            <param id="0" name="Object">Check</param>
+                                                            <param id="1" name="Layer">klocek.LayerNumber</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                        <action id="-5" name="Set width" sid="303906669474273" type="Check">
+                                                            <param id="0" name="Width">klocek.Width</param>
+                                                        </action>
+                                                        <action id="-6" name="Set height" sid="9604111471751656" type="Check">
+                                                            <param id="0" name="Height">klocek.Height</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="7764736024824732">
                                             <conditions />
@@ -2708,11 +2689,15 @@
                                                 </action>
                                                 <action id="-10" name="Set value" sid="4227645971403654" type="Selector">
                                                     <param id="0" name="Instance variable">x1</param>
-                                                    <param id="1" name="Value">Mouse.X</param>
+                                                    <param id="1" name="Value">-1</param>
                                                 </action>
                                                 <action id="-10" name="Set value" sid="7668009053092444" type="Selector">
                                                     <param id="0" name="Instance variable">y1</param>
-                                                    <param id="1" name="Value">Mouse.Y</param>
+                                                    <param id="1" name="Value">-1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="6938823864636205" type="Function">
+                                                    <param id="0" name="Name">&quot;select&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -2772,11 +2757,7 @@
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="7549145228623361" type="Check">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <event-block sid="5060372215465113">
                             <conditions>
@@ -2792,17 +2773,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-4" name="Set position to another object" sid="161059685882026" type="Check">
-                                    <param id="0" name="Object">klocek</param>
-                                    <param id="1" name="Image point (optional)">0</param>
-                                </action>
-                                <action id="-7" name="Set size" sid="8573189334947486" type="Check">
-                                    <param id="0" name="Width">klocek.Width</param>
-                                    <param id="1" name="Height">klocek.Height</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="9607409986449695" type="Check">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
                                 <action id="-24" name="Move to top" sid="4150804973706464" type="Check" />
                             </actions>
                         </event-block>

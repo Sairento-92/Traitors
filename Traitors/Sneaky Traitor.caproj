@@ -156,9 +156,6 @@
                         </animation>
                     </animation-folder>
                 </object-type>
-                <object-type name="Edytor_Selchange" sid="1167823090493997">
-                    <plugin id="List" />
-                </object-type>
             </object-folder>
             <object-type name="Gracz" sid="1975657082452686">
                 <plugin id="Sprite" />
