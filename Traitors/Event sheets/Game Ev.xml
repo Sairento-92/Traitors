@@ -268,7 +268,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" inactive="1" sid="3011960123564868" title="Host">
+        <event-group bookmark="1" description="" inactive="1" sid="3011960123564868" title="Host">
             <sub-events>
                 <event-group description="" sid="8985332030257512" title="Czat2">
                     <sub-events>
@@ -648,9 +648,28 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="9825125132587985">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6701223361371158" type="Gracz">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="1255659898627095" type="Gracz">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="2438398164497474" type="Gracz">
+                            <param id="0" name="X">random(LayoutWidth)</param>
+                            <param id="1" name="Y">random(Layoutheight)</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" inactive="1" sid="9642298604554555" title="Peer">
+        <event-group bookmark="1" collapsed="1" description="" inactive="1" sid="9642298604554555" title="Peer">
             <sub-events>
                 <event-group description="" sid="48844505906105" title="Czat">
                     <sub-events>
@@ -1022,35 +1041,30 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Peer i Host" sid="9395126084642041" title="Both">
+        <event-group bookmark="1" description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
                 <event-group description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
                     <sub-events>
+                        <variable comment="Peername strzelajacego" constant="0" name="peernn" sid="1043216091507957" static="0" type="text"></variable>
                         <event-block any="1" sid="6052376746430917">
                             <conditions>
-                                <condition id="0" name="On click" sid="56868936798167" type="Mouse">
+                                <condition id="2" name="Mouse button is down" sid="56868936798167" type="Mouse">
                                     <param id="0" name="Mouse button">0</param>
-                                    <param id="1" name="Click type">0</param>
-                                </condition>
-                                <condition disabled="1" id="-8" name="Compare two values" sid="5603181222822754" type="System">
-                                    <param id="0" name="First value">getbit(Gracz.Input,4)</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
                                 <event-block sid="9863786322385333">
                                     <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9880521942247259" type="Gracz">
+                                            <param id="0" name="Instance variable">peerid</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">multiplayer.MyID</param>
+                                        </condition>
                                         <condition id="-7" name="Compare instance variable" sid="5418302522662722" type="Gracz">
                                             <param id="0" name="Instance variable">shootcd</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">0</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="6545833815102485" type="Gracz">
-                                            <param id="0" name="Instance variable">peerid</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">multiplayer.MyID</param>
                                         </condition>
                                         <condition id="-14" name="Compare variable" sid="4566502862810484" type="System">
                                             <param id="0" name="Variable">Edit</param>
@@ -1059,111 +1073,60 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="1352987548511831" type="MPSyncFunction">
-                                            <param id="0" name="Name">&quot;strzal&quot;</param>
-                                            <param id="1" name="Parameter {n}">Gracz.PeerName{###}Laser.Angle{###}laser.width + 5{###}gracz.weapon</param>
-                                        </action>
                                         <action id="-10" name="Add to" sid="5830951671751086" type="System">
                                             <param id="0" name="Variable">testy</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
+                                        <action id="-9" name="Set value" sid="6912878269351438" type="System">
+                                            <param id="0" name="Variable">peernn</param>
+                                            <param id="1" name="Value">gracz.PeerName</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="3515397146786727" type="Function">
+                                            <param id="0" name="Name">&quot;shootcont&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
                                     </actions>
-                                    <sub-events>
-                                        <event-block any="1" sid="432573701626638">
-                                            <conditions />
-                                            <actions />
-                                            <sub-events>
-                                                <event-block disabled="1" sid="2522005089253081">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="2455656573963958" type="Gracz">
-                                                            <param id="0" name="Instance variable">weapon</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">1</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="0" name="Spawn another object" sid="425644860687444" type="Laser">
-                                                            <param id="0" name="Object">Sprite</param>
-                                                            <param id="1" name="Layer">&quot;main&quot;</param>
-                                                            <param id="2" name="Image point">0</param>
-                                                        </action>
-                                                        <action id="-8" name="Set angle" sid="9010554776925161" type="Sprite">
-                                                            <param id="0" name="Angle">laser.Angle</param>
-                                                        </action>
-                                                        <action id="-5" name="Set width" sid="7395857204757166" type="Sprite">
-                                                            <param id="0" name="Width">laser.width + 5</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="9526372674292003" type="Gracz">
-                                                            <param id="0" name="Instance variable">shootcd</param>
-                                                            <param id="1" name="Value">20</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block disabled="1" sid="2115173035000597">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="9376241730957648" type="Gracz">
-                                                            <param id="0" name="Instance variable">weapon</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">3</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="0" name="Spawn another object" sid="9820216013812007" type="Laser">
-                                                            <param id="0" name="Object">Sprite</param>
-                                                            <param id="1" name="Layer">&quot;main&quot;</param>
-                                                            <param id="2" name="Image point">0</param>
-                                                        </action>
-                                                        <action id="-8" name="Set angle" sid="8712770007800129" type="Sprite">
-                                                            <param id="0" name="Angle">laser.Angle</param>
-                                                        </action>
-                                                        <action id="-5" name="Set width" sid="8402874760276012" type="Sprite">
-                                                            <param id="0" name="Width">laser.width + 5</param>
-                                                        </action>
-                                                        <action behavior="Bullet" id="5" name="Set enabled" sid="4456025302854585" type="Pocisk">
-                                                            <param id="0" name="State">1</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block disabled="1" sid="7009393570462212">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="2039965900570724" type="Gracz">
-                                                            <param id="0" name="Instance variable">weapon</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">2</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="0" name="Spawn another object" sid="3151765131356455" type="Laser">
-                                                            <param id="0" name="Object">Sprite</param>
-                                                            <param id="1" name="Layer">&quot;main&quot;</param>
-                                                            <param id="2" name="Image point">0</param>
-                                                        </action>
-                                                        <action id="-8" name="Set angle" sid="955406555466434" type="Sprite">
-                                                            <param id="0" name="Angle">laser.Angle</param>
-                                                        </action>
-                                                        <action id="-5" name="Set width" sid="3035920627397224" type="Sprite">
-                                                            <param id="0" name="Width">laser.width + 5</param>
-                                                        </action>
-                                                        <action behavior="Bullet" id="5" name="Set enabled" sid="9781956428840621" type="Pocisk">
-                                                            <param id="0" name="State">1</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="9291243704940941">
-                                                    <conditions>
-                                                        <condition id="1" name="Is overlapping another object" sid="9153303052286038" type="Laser">
-                                                            <param id="0" name="Object">Gracz</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions />
-                                                </event-block>
-                                                <event-block sid="2028553926404624">
-                                                    <conditions />
-                                                    <actions />
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="9718177097968261">
+                            <conditions>
+                                <condition id="0" name="On function" sid="9806661856268958" type="Function">
+                                    <param id="0" name="Name">&quot;shootcont&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9291243704940941">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="9153303052286038" type="Laser">
+                                            <param id="0" name="Object">Gracz</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="8882517553983932" type="Gracz">
+                                            <param id="0" name="Instance variable">PeerName</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">multiplayer.MyID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="1352987548511831" type="MPSyncFunction">
+                                            <param id="0" name="Name">&quot;strzal&quot;</param>
+                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}laser.width + 5{###}gracz.weapon{###}Gracz.PeerName</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8792122902655322">
+                                    <conditions>
+                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="3496953483786034" type="Laser">
+                                            <param id="0" name="Object">Gracz</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="9204162084005683" type="MPSyncFunction">
+                                            <param id="0" name="Name">&quot;strzal&quot;</param>
+                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}laser.width + 5{###}gracz.weapon{###}0</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -1215,7 +1178,11 @@
                                         </action>
                                         <action id="-10" name="Set value" sid="7774720127719102" type="Gracz">
                                             <param id="0" name="Instance variable">shootcd</param>
-                                            <param id="1" name="Value">20</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="4152485554616595" type="Function">
+                                            <param id="0" name="Name">&quot;strzaldmg&quot;</param>
+                                            <param id="1" name="Parameter {n}">10{###}Function.Param(4)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1239,12 +1206,13 @@
                                         <action id="-5" name="Set width" sid="469241072036893" type="Sprite">
                                             <param id="0" name="Width">Function.Param(2)</param>
                                         </action>
-                                        <action behavior="Bullet" disabled="1" id="5" name="Set enabled" sid="1891524830775641" type="Pocisk">
-                                            <param id="0" name="State">1</param>
-                                        </action>
                                         <action id="-10" name="Set value" sid="7629254284146439" type="Gracz">
                                             <param id="0" name="Instance variable">shootcd</param>
-                                            <param id="1" name="Value">20</param>
+                                            <param id="1" name="Value">30</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="9813711154791995" type="Function">
+                                            <param id="0" name="Name">&quot;strzaldmg&quot;</param>
+                                            <param id="1" name="Parameter {n}">33.333{###}Function.Param(4)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1268,12 +1236,38 @@
                                         <action id="-5" name="Set width" sid="2568873312482204" type="Sprite">
                                             <param id="0" name="Width">Function.Param(2)</param>
                                         </action>
-                                        <action behavior="Bullet" disabled="1" id="5" name="Set enabled" sid="5992815931454533" type="Pocisk">
-                                            <param id="0" name="State">1</param>
-                                        </action>
                                         <action id="-10" name="Set value" sid="1981560908608816" type="Gracz">
                                             <param id="0" name="Instance variable">shootcd</param>
-                                            <param id="1" name="Value">20</param>
+                                            <param id="1" name="Value">35</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="8900843388510529" type="Function">
+                                            <param id="0" name="Name">&quot;strzaldmg&quot;</param>
+                                            <param id="1" name="Parameter {n}">50{###}Function.Param(4)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="8285240251428383">
+                            <conditions>
+                                <condition id="0" name="On function" sid="7626563090081769" type="Function">
+                                    <param id="0" name="Name">&quot;strzaldmg&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1954790079359867">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4079390633758523" type="Gracz">
+                                            <param id="0" name="Instance variable">peerid</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Function.Param(2)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="4891354621704924" type="Gracz">
+                                            <param id="0" name="Instance variable">HP</param>
+                                            <param id="1" name="Value">function.param(1)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1281,7 +1275,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="3290773797560824" title="Ganiany">
+                <event-group collapsed="1" description="" sid="3290773797560824" title="Ganiany">
                     <sub-events>
                         <event-block sid="1648070828635365">
                             <conditions />
@@ -1392,7 +1386,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="462107512539607" title="Czaty">
+                <event-group collapsed="1" description="" sid="462107512539607" title="Czaty">
                     <sub-events>
                         <event-block sid="2414182989916798">
                             <conditions>
@@ -1519,7 +1513,7 @@
                         <action id="-9" name="Destroy" sid="9141465432849499" type="Boostbox" />
                     </actions>
                 </event-block>
-                <event-group description="Wyswietlanie nickow" sid="1370833444369854" title="Nicki">
+                <event-group collapsed="1" description="Wyswietlanie nickow" sid="1370833444369854" title="Nicki">
                     <sub-events>
                         <event-block sid="6646990739463017">
                             <conditions>
@@ -1550,7 +1544,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="291881474607767" title="Komendy">
+                <event-group bookmark="1" collapsed="1" description="" sid="291881474607767" title="Komendy">
                     <sub-events>
                         <event-block sid="3941391713268148">
                             <conditions>
@@ -2142,7 +2136,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="3722825918528233" title="Wysylanie mapy">
+                <event-group collapsed="1" description="" sid="3722825918528233" title="Wysylanie mapy">
                     <sub-events>
                         <event-block sid="1513242409803253">
                             <conditions>
@@ -2265,7 +2259,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="2305153252919526" title="Size">
+                <event-group collapsed="1" description="" sid="2305153252919526" title="Size">
                     <sub-events>
                         <event-block sid="9140129871264282">
                             <conditions>
@@ -2366,7 +2360,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="5572666246481299">
+                <event-block collapsed="1" sid="5572666246481299">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="9474874516057616" type="System">
                             <param id="0" name="Variable">Edit</param>
@@ -2474,7 +2468,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-group description="" sid="8463876089156381" title="Zaznaczanie">
+                <event-group collapsed="1" description="" sid="8463876089156381" title="Zaznaczanie">
                     <sub-events>
                         <event-block sid="6657773901320812">
                             <conditions>
@@ -2504,7 +2498,7 @@
                                 <action id="-9" name="Destroy" sid="5037850875367246" type="Check" />
                             </actions>
                         </event-block>
-                        <event-group description="" sid="9847415318349004" title="Zazn">
+                        <event-group collapsed="1" description="" sid="9847415318349004" title="Zazn">
                             <sub-events>
                                 <event-block sid="6432759067081684">
                                     <conditions>
@@ -2749,7 +2743,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-block sid="6486616544514895">
+                <event-block collapsed="1" sid="6486616544514895">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="4651801351358946" type="System">
                             <param id="0" name="Variable">Edit</param>

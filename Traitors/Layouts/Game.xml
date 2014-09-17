@@ -50,6 +50,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <dmg>0</dmg>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -118,8 +121,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <aimX>0</aimX>
-                        <aimY>0</aimY>
+                        <aimX>10000</aimX>
+                        <aimY>10000</aimY>
                         <peerid></peerid>
                         <Input>0</Input>
                         <shootcd>0</shootcd>
@@ -128,6 +131,7 @@
                         <Gania>false</Gania>
                         <recoil>0</recoil>
                         <lasthitby></lasthitby>
+                        <HP>100</HP>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">

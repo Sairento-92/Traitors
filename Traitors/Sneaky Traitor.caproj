@@ -91,7 +91,15 @@
                         <instance-variable name="select" sid="8616842797496267" type="number" />
                     </instance-variables>
                     <animation-folder expanded="1">
-                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7978043530571874" speed="0">
+                        <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7978043530571874" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <collision-poly>
+                                    <point x="0.0625" y="0.0625" />
+                                    <point x="0.9375" y="0.0625" />
+                                    <point x="0.9375" y="0.9375" />
+                                    <point x="0.0625" y="0.9375" />
+                                </collision-poly>
+                            </frame>
                             <frame duration="1" hotspotX="0" hotspotY="0">
                                 <collision-poly>
                                     <point x="0.0625" y="0.0625" />
@@ -170,6 +178,7 @@
                     <instance-variable name="Gania" sid="4240613250711337" type="boolean" />
                     <instance-variable comment="Recoil strzalu gracza" name="recoil" sid="5640352280897837" type="number" />
                     <instance-variable comment="Gracz ktory go ostatnio uderzyl, peerid" name="lasthitby" sid="2395147837106518" type="string" />
+                    <instance-variable name="HP" sid="1745128929561679" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="5670686406564721">
@@ -243,6 +252,9 @@
             </object-type>
             <object-type name="Laser" sid="2144590174856228">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="Obrazenia do graczy" name="dmg" sid="8181330589561594" type="number" />
+                </instance-variables>
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3591143347969149" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0.5">
