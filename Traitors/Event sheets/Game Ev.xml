@@ -1341,13 +1341,13 @@
                                         <condition id="-7" name="Compare instance variable" sid="4079390633758523" type="Gracz">
                                             <param id="0" name="Instance variable">peerid</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">Function.Param(2)</param>
+                                            <param id="2" name="Value">Function.Param(1)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-12" name="Subtract from" sid="4891354621704924" type="Gracz">
                                             <param id="0" name="Instance variable">HP</param>
-                                            <param id="1" name="Value">10</param>
+                                            <param id="1" name="Value">Function.Param(0)</param>
                                         </action>
                                     </actions>
                                 </event-block>
