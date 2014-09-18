@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Ev</name>
     <events>
+        <variable constant="0" name="traf2" sid="9740096058100732" static="0" type="text"></variable>
         <variable constant="0" name="Edit_Size" sid="4614427607518865" static="0" type="number">0</variable>
         <variable constant="0" name="LaserON" sid="5668292505350321" static="0" type="number">1</variable>
         <variable constant="0" name="testy" sid="2866331250706102" static="0" type="number">0</variable>
@@ -1116,81 +1117,83 @@
                                         </action>
                                         <action id="-4" name="Set position to another object" sid="1434152830656902" type="Laser">
                                             <param id="0" name="Object">Gracz</param>
-                                            <param id="1" name="Image point (optional)">0</param>
+                                            <param id="1" name="Image point (optional)">2</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="9403305916532438" type="Laser">
                                             <param id="0" name="Width">1</param>
                                         </action>
                                     </actions>
-                                    <sub-events>
-                                        <event-block sid="4651316894967865">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="682926134357862" type="klocek">
-                                                    <param id="0" name="Instance variable">id</param>
-                                                    <param id="1" name="Comparison">4</param>
-                                                    <param id="2" name="Value">0</param>
-                                                </condition>
-                                                <condition id="-23" name="While" sid="8919846074971771" type="System" />
-                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="1525237396061939" type="Laser">
-                                                    <param id="0" name="Object">klocek</param>
-                                                </condition>
-                                                <condition id="-8" name="Compare two values" sid="2765145220031408" type="System">
-                                                    <param id="0" name="First value">Laser.ImagePointX(1)</param>
-                                                    <param id="1" name="Comparison">4</param>
-                                                    <param id="2" name="Second value">0</param>
-                                                </condition>
-                                                <condition id="-8" name="Compare two values" sid="6765162849389604" type="System">
-                                                    <param id="0" name="First value">Laser.ImagePointX(1)</param>
-                                                    <param id="1" name="Comparison">2</param>
-                                                    <param id="2" name="Second value">LayoutWidth</param>
-                                                </condition>
-                                                <condition id="-8" name="Compare two values" sid="2691118456196586" type="System">
-                                                    <param id="0" name="First value">Laser.ImagePointY(1)</param>
-                                                    <param id="1" name="Comparison">4</param>
-                                                    <param id="2" name="Second value">0</param>
-                                                </condition>
-                                                <condition id="-8" name="Compare two values" sid="932448655392106" type="System">
-                                                    <param id="0" name="First value">Laser.ImagePointY(1)</param>
-                                                    <param id="1" name="Comparison">2</param>
-                                                    <param id="2" name="Second value">LayoutHeight</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-5" name="Set width" sid="8824687329306585" type="Laser">
-                                                    <param id="0" name="Width">Laser.Width+2</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
                                 </event-block>
-                                <event-block sid="9291243704940941">
+                                <event-block sid="4651316894967865">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="9153303052286038" type="Laser">
-                                            <param id="0" name="Object">Gracz</param>
+                                        <condition id="-7" name="Compare instance variable" sid="682926134357862" type="klocek">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="8882517553983932" type="Gracz">
-                                            <param id="0" name="Instance variable">PeerName</param>
-                                            <param id="1" name="Comparison">1</param>
-                                            <param id="2" name="Value">multiplayer.MyID</param>
+                                        <condition id="-23" name="While" sid="8919846074971771" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="2765145220031408" type="System">
+                                            <param id="0" name="First value">Laser.ImagePointX(1)</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="6765162849389604" type="System">
+                                            <param id="0" name="First value">Laser.ImagePointX(1)</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">LayoutWidth</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="2691118456196586" type="System">
+                                            <param id="0" name="First value">Laser.ImagePointY(1)</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="932448655392106" type="System">
+                                            <param id="0" name="First value">Laser.ImagePointY(1)</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">LayoutHeight</param>
+                                        </condition>
+                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="1525237396061939" type="Laser">
+                                            <param id="0" name="Object">klocek</param>
+                                        </condition>
+                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="1778139807993448" type="Laser">
+                                            <param id="0" name="Object">Gracz</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="1352987548511831" type="MPSyncFunction">
-                                            <param id="0" name="Name">&quot;strzal&quot;</param>
-                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}laser.width + 5{###}gracz.weapon{###}Gracz.PeerName</param>
+                                        <action id="-5" name="Set width" sid="8824687329306585" type="Laser">
+                                            <param id="0" name="Width">Laser.Width+2</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="8792122902655322">
+                                <variable constant="0" name="traf" sid="3864746933486399" static="0" type="text"></variable>
+                                <event-block sid="9291243704940941">
                                     <conditions>
-                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="3496953483786034" type="Laser">
+                                        <condition id="-7" name="Compare instance variable" sid="8882517553983932" type="Gracz">
+                                            <param id="0" name="Instance variable">peerid</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">multiplayer.MyID</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="9153303052286038" type="Laser">
                                             <param id="0" name="Object">Gracz</param>
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action disabled="1" id="0" name="Call function" sid="1352987548511831" type="MPSyncFunction">
+                                            <param id="0" name="Name">&quot;strzal&quot;</param>
+                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}laser.width + 5+30{###}gracz.weapon{###}Gracz.PeerName</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="5619637076333853" type="System">
+                                            <param id="0" name="Variable">traf</param>
+                                            <param id="1" name="Value">Gracz.PeerName</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="8792122902655322">
+                                    <conditions />
+                                    <actions>
                                         <action id="0" name="Call function" sid="9204162084005683" type="MPSyncFunction">
                                             <param id="0" name="Name">&quot;strzal&quot;</param>
-                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}laser.width + 5{###}gracz.weapon{###}0</param>
+                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}laser.width + 5+30{###}gracz.weapon{###}traf</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1278,7 +1281,7 @@
                                         </action>
                                         <action id="0" name="Call function" sid="9813711154791995" type="Function">
                                             <param id="0" name="Name">&quot;strzaldmg&quot;</param>
-                                            <param id="1" name="Parameter {n}">33.333{###}Function.Param(4)</param>
+                                            <param id="1" name="Parameter {n}">10/3{###}Function.Param(4)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1320,12 +1323,17 @@
                                     <param id="0" name="Name">&quot;strzaldmg&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="1617672516745085" type="System">
+                                    <param id="0" name="Variable">traf2</param>
+                                    <param id="1" name="Value">Function.Param(1)</param>
+                                </action>
+                            </actions>
                             <sub-events>
                                 <event-block sid="1954790079359867">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="4079390633758523" type="Gracz">
-                                            <param id="0" name="Instance variable">peerid</param>
+                                            <param id="0" name="Instance variable">PeerName</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">Function.Param(1)</param>
                                         </condition>
