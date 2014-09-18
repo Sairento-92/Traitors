@@ -1274,9 +1274,13 @@
                                 <event-block any="1" sid="8792122902655322">
                                     <conditions />
                                     <actions>
+                                        <action id="0" name="Call function" sid="9315197494731486" type="Function">
+                                            <param id="0" name="Name">&quot;strzal&quot;</param>
+                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}Laser.Width+5+30{###}Gracz.weapon{###}traf{###}shootdmg{###}&quot;&quot;</param>
+                                        </action>
                                         <action id="0" name="Call function" sid="9204162084005683" type="MPSyncFunction">
                                             <param id="0" name="Name">&quot;strzal&quot;</param>
-                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}laser.width + 5+30{###}gracz.weapon{###}traf</param>
+                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}laser.width + 5+30{###}gracz.weapon{###}traf{###}shootdmg{###}Multiplayer.MyAlias</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1300,6 +1304,11 @@
                                 <condition id="0" name="On function" sid="8786811147303333" type="Function">
                                     <param id="0" name="Name">&quot;strzal&quot;</param>
                                 </condition>
+                                <condition id="-8" name="Compare two values" sid="6168802067870795" type="System">
+                                    <param id="0" name="First value">Multiplayer.MyAlias</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">Function.Param(6)</param>
+                                </condition>
                                 <condition id="-7" name="Compare instance variable" sid="1882990700059672" type="Gracz">
                                     <param id="0" name="Instance variable">PeerName</param>
                                     <param id="1" name="Comparison">0</param>
@@ -1309,13 +1318,7 @@
                             <actions />
                             <sub-events>
                                 <event-block sid="7801273917365832">
-                                    <conditions>
-                                        <condition id="1" name="Compare parameter" sid="3155140302434092" type="Function">
-                                            <param id="0" name="Index">3</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                    </conditions>
+                                    <conditions />
                                     <actions>
                                         <action id="0" name="Spawn another object" sid="3602020318086233" type="Gracz">
                                             <param id="0" name="Object">Sprite</param>
@@ -1330,59 +1333,7 @@
                                         </action>
                                         <action id="0" name="Call function" sid="6407637124605247" type="Function">
                                             <param id="0" name="Name">&quot;strzaldmg&quot;</param>
-                                            <param id="1" name="Parameter {n}">Function.Param(4)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="3135530997650122">
-                                    <conditions>
-                                        <condition id="1" name="Compare parameter" sid="7391830433208299" type="Function">
-                                            <param id="0" name="Index">3</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">3</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Spawn another object" sid="9928288889346986" type="Gracz">
-                                            <param id="0" name="Object">Sprite</param>
-                                            <param id="1" name="Layer">&quot;main&quot;</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action id="-8" name="Set angle" sid="4980908839951228" type="Sprite">
-                                            <param id="0" name="Angle">Function.Param(1)</param>
-                                        </action>
-                                        <action id="-5" name="Set width" sid="469241072036893" type="Sprite">
-                                            <param id="0" name="Width">Function.Param(2)</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="5765103294655892" type="Function">
-                                            <param id="0" name="Name">&quot;strzaldmg&quot;</param>
-                                            <param id="1" name="Parameter {n}">Function.Param(4)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="4841969651927818">
-                                    <conditions>
-                                        <condition id="1" name="Compare parameter" sid="4666751452430905" type="Function">
-                                            <param id="0" name="Index">3</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">2</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Spawn another object" sid="2569365455225633" type="Gracz">
-                                            <param id="0" name="Object">Sprite</param>
-                                            <param id="1" name="Layer">&quot;main&quot;</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action id="-8" name="Set angle" sid="7866372960938337" type="Sprite">
-                                            <param id="0" name="Angle">Function.Param(1)</param>
-                                        </action>
-                                        <action id="-5" name="Set width" sid="2568873312482204" type="Sprite">
-                                            <param id="0" name="Width">Function.Param(2)</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="8900843388510529" type="Function">
-                                            <param id="0" name="Name">&quot;strzaldmg&quot;</param>
-                                            <param id="1" name="Parameter {n}">Function.Param(4)</param>
+                                            <param id="1" name="Parameter {n}">Function.Param(4){###}Function.Param(5)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1406,13 +1357,13 @@
                                         <condition id="-7" name="Compare instance variable" sid="4079390633758523" type="Gracz">
                                             <param id="0" name="Instance variable">PeerName</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">Function.Param(0)</param>
+                                            <param id="2" name="Value">Function.Param(4)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-12" name="Subtract from" sid="4891354621704924" type="Gracz">
                                             <param id="0" name="Instance variable">HP</param>
-                                            <param id="1" name="Value">shootdmg</param>
+                                            <param id="1" name="Value">Function.Param(5)</param>
                                         </action>
                                     </actions>
                                 </event-block>
