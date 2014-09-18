@@ -1071,6 +1071,11 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">0</param>
                                         </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="2185063573888003" type="Gracz">
+                                            <param id="0" name="Instance variable">weapon</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-10" name="Add to" sid="5830951671751086" type="System">
@@ -1116,9 +1121,6 @@
                                         <action id="-5" name="Set width" sid="9403305916532438" type="Laser">
                                             <param id="0" name="Width">1</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="2951235009830762" type="Laser">
-                                            <param id="0" name="Visibility">0</param>
-                                        </action>
                                     </actions>
                                     <sub-events>
                                         <event-block sid="4651316894967865">
@@ -1128,17 +1130,9 @@
                                                     <param id="1" name="Comparison">4</param>
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
-                                                <condition id="-7" name="Compare instance variable" sid="3861406611545216" type="Gracz">
-                                                    <param id="0" name="Instance variable">peerid</param>
-                                                    <param id="1" name="Comparison">1</param>
-                                                    <param id="2" name="Value">multiplayer.MyID</param>
-                                                </condition>
                                                 <condition id="-23" name="While" sid="8919846074971771" type="System" />
                                                 <condition id="1" inverted="1" name="Is overlapping another object" sid="1525237396061939" type="Laser">
                                                     <param id="0" name="Object">klocek</param>
-                                                </condition>
-                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="2704210698546253" type="Laser">
-                                                    <param id="0" name="Object">Gracz</param>
                                                 </condition>
                                                 <condition id="-8" name="Compare two values" sid="2765145220031408" type="System">
                                                     <param id="0" name="First value">Laser.ImagePointX(1)</param>
@@ -1164,14 +1158,6 @@
                                             <actions>
                                                 <action id="-5" name="Set width" sid="8824687329306585" type="Laser">
                                                     <param id="0" name="Width">Laser.Width+2</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="5826774083562289">
-                                            <conditions />
-                                            <actions>
-                                                <action id="-15" name="Set visible" sid="6148704251199536" type="Laser">
-                                                    <param id="0" name="Visibility">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
