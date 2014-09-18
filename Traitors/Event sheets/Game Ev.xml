@@ -1087,11 +1087,63 @@
                                             <param id="0" name="Variable">peernn</param>
                                             <param id="1" name="Value">gracz.PeerName</param>
                                         </action>
-                                        <action id="0" name="Call function" sid="3515397146786727" type="Function">
-                                            <param id="0" name="Name">&quot;shootcont&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="3796874757837244">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="1302272635085191" type="Gracz">
+                                                    <param id="0" name="Instance variable">weapon</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="2038501938338042" type="Gracz">
+                                                    <param id="0" name="Instance variable">shootcd</param>
+                                                    <param id="1" name="Value">10</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8045583499706076">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2371366348788647" type="Gracz">
+                                                    <param id="0" name="Instance variable">weapon</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="8790686262951404" type="Gracz">
+                                                    <param id="0" name="Instance variable">shootcd</param>
+                                                    <param id="1" name="Value">35</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2090399872101941">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="9981213534286235" type="Gracz">
+                                                    <param id="0" name="Instance variable">weapon</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="4433874497193597" type="Gracz">
+                                                    <param id="0" name="Instance variable">shootcd</param>
+                                                    <param id="1" name="Value">30</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="3649805703862074">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="3515397146786727" type="Function">
+                                                    <param id="0" name="Name">&quot;shootcont&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -1245,10 +1297,6 @@
                                         <action id="-5" name="Set width" sid="751869933536563" type="Sprite">
                                             <param id="0" name="Width">Function.Param(2)</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="7774720127719102" type="Gracz">
-                                            <param id="0" name="Instance variable">shootcd</param>
-                                            <param id="1" name="Value">10</param>
-                                        </action>
                                         <action id="0" name="Call function" sid="4152485554616595" type="Function">
                                             <param id="0" name="Name">&quot;strzaldmg&quot;</param>
                                             <param id="1" name="Parameter {n}">10{###}Function.Param(4)</param>
@@ -1275,13 +1323,9 @@
                                         <action id="-5" name="Set width" sid="469241072036893" type="Sprite">
                                             <param id="0" name="Width">Function.Param(2)</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="7629254284146439" type="Gracz">
-                                            <param id="0" name="Instance variable">shootcd</param>
-                                            <param id="1" name="Value">30</param>
-                                        </action>
                                         <action id="0" name="Call function" sid="9813711154791995" type="Function">
                                             <param id="0" name="Name">&quot;strzaldmg&quot;</param>
-                                            <param id="1" name="Parameter {n}">10/3{###}Function.Param(4)</param>
+                                            <param id="1" name="Parameter {n}">100/3{###}Function.Param(4)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1304,10 +1348,6 @@
                                         </action>
                                         <action id="-5" name="Set width" sid="2568873312482204" type="Sprite">
                                             <param id="0" name="Width">Function.Param(2)</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="1981560908608816" type="Gracz">
-                                            <param id="0" name="Instance variable">shootcd</param>
-                                            <param id="1" name="Value">35</param>
                                         </action>
                                         <action id="0" name="Call function" sid="8900843388510529" type="Function">
                                             <param id="0" name="Name">&quot;strzaldmg&quot;</param>
