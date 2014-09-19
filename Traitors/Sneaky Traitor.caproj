@@ -196,7 +196,7 @@
                     <animation framecount="1" loop="0" name="gania0" pingpong="0" repeatcount="1" repeatto="0" sid="57793966180149" speed="5">
                         <frame duration="1" hotspotX="0.233333" hotspotY="0.555556">
                             <image-point name="Imagepoint 1" x="-0.0333333" y="-0.488889" />
-                            <image-point name="Imagepoint 2" x="0.966667" y="0.555556" />
+                            <image-point name="Imagepoint 2" x="1" y="0.555556" />
                             <collision-poly>
                                 <point x="0" y="0" />
                                 <point x="1" y="0" />
@@ -209,7 +209,7 @@
                     <animation framecount="1" loop="1" name="gania1" pingpong="0" repeatcount="1" repeatto="0" sid="8792784735152009" speed="0">
                         <frame duration="1" hotspotX="0.229508" hotspotY="0.557692">
                             <image-point name="Imagepoint 1" x="-0.0327869" y="-0.480769" />
-                            <image-point name="Imagepoint 2" x="0.967213" y="0.557692" />
+                            <image-point name="Imagepoint 2" x="1" y="0.557692" />
                             <collision-poly>
                                 <point x="0" y="0" />
                                 <point x="1" y="0" />

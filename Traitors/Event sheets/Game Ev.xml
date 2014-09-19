@@ -1044,7 +1044,7 @@
         </event-group>
         <event-group bookmark="1" description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
-                <event-group collapsed="1" description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
+                <event-group description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
                     <sub-events>
                         <variable comment="dlugosc strzalu" constant="0" name="shootlong" sid="680012249550892" static="0" type="number">0</variable>
                         <variable comment="dmg pocisku" constant="0" name="shootdmg" sid="3194761618821443" static="0" type="number">0</variable>
@@ -1276,11 +1276,11 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="9315197494731486" type="Function">
                                             <param id="0" name="Name">&quot;strzal&quot;</param>
-                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}Laser.Width+5+30{###}Gracz.weapon{###}traf{###}shootdmg{###}&quot;&quot;</param>
+                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}Laser.Width+5{###}Gracz.weapon{###}traf{###}shootdmg{###}&quot;&quot;</param>
                                         </action>
                                         <action id="0" name="Call function" sid="9204162084005683" type="MPSyncFunction">
                                             <param id="0" name="Name">&quot;strzal&quot;</param>
-                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}laser.width + 5+30{###}gracz.weapon{###}traf{###}shootdmg{###}Multiplayer.MyAlias</param>
+                                            <param id="1" name="Parameter {n}">peernn{###}Laser.Angle{###}laser.width + 5{###}gracz.weapon{###}traf{###}shootdmg{###}Multiplayer.MyAlias</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1323,7 +1323,7 @@
                                         <action id="0" name="Spawn another object" sid="3602020318086233" type="Gracz">
                                             <param id="0" name="Object">Sprite</param>
                                             <param id="1" name="Layer">&quot;main&quot;</param>
-                                            <param id="2" name="Image point">0</param>
+                                            <param id="2" name="Image point">2</param>
                                         </action>
                                         <action id="-8" name="Set angle" sid="7489805469786807" type="Sprite">
                                             <param id="0" name="Angle">Function.Param(1)</param>
