@@ -2,7 +2,7 @@
 <c2project>
     <name>Sneaky Traitor</name>
     <description></description>
-    <version>3.5</version>
+    <version>4.0</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -24,6 +24,7 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -193,22 +194,22 @@
                 </behaviors>
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="gania0" pingpong="0" repeatcount="1" repeatto="0" sid="57793966180149" speed="5">
-                        <frame duration="1" hotspotX="0.03125" hotspotY="0.5">
-                            <image-point name="Imagepoint 1" x="0" y="-0.375" />
-                            <image-point name="Imagepoint 2" x="1.03125" y="0.5" />
+                        <frame duration="1" hotspotX="0.233333" hotspotY="0.555556">
+                            <image-point name="Imagepoint 1" x="-0.0333333" y="-0.488889" />
+                            <image-point name="Imagepoint 2" x="0.966667" y="0.555556" />
                             <collision-poly>
                                 <point x="0" y="0" />
                                 <point x="1" y="0" />
-                                <point x="0.0625" y="0.5" />
+                                <point x="0.03125" y="0.533333" />
                                 <point x="1" y="1" />
                                 <point x="0" y="1" />
                             </collision-poly>
                         </frame>
                     </animation>
                     <animation framecount="1" loop="1" name="gania1" pingpong="0" repeatcount="1" repeatto="0" sid="8792784735152009" speed="0">
-                        <frame duration="1" hotspotX="0.03125" hotspotY="0.5">
-                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
-                            <image-point name="Imagepoint 2" x="1.03125" y="0.5" />
+                        <frame duration="1" hotspotX="0.229508" hotspotY="0.557692">
+                            <image-point name="Imagepoint 1" x="-0.0327869" y="-0.480769" />
+                            <image-point name="Imagepoint 2" x="0.967213" y="0.557692" />
                             <collision-poly>
                                 <point x="0" y="0" />
                                 <point x="1" y="0" />
@@ -244,8 +245,11 @@
                     <instance-variable name="id" sid="8479166556431876" type="number" />
                 </instance-variables>
                 <animation-folder expanded="1">
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="904146525367862" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="4" loop="0" name="weapon" pingpong="0" repeatcount="0" repeatto="0" sid="904146525367862" speed="0">
+                        <frame duration="0" hotspotX="0.470588" hotspotY="0.4" />
+                        <frame duration="1" hotspotX="0.470588" hotspotY="0.4" />
+                        <frame duration="1" hotspotX="0.421053" hotspotY="0.538462" />
+                        <frame duration="1" hotspotX="0.59375" hotspotY="0.6" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -325,6 +329,10 @@
                     <frame duration="1" hotspotX="-0.0078125" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="28196547957686">
+            <plugin id="TiledBg" />
+            <texture />
         </object-type>
     </object-folder>
     <families>
