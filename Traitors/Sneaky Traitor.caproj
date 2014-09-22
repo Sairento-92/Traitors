@@ -181,6 +181,7 @@
                     <instance-variable comment="Recoil strzalu gracza" name="recoil" sid="5640352280897837" type="number" />
                     <instance-variable comment="Gracz ktory go ostatnio uderzyl, peerid" name="lasthitby" sid="2395147837106518" type="string" />
                     <instance-variable name="HP" sid="1745128929561679" type="number" />
+                    <instance-variable comment="recoil broni" name="weprecoil" sid="8559496330634559" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="5670686406564721">

@@ -186,6 +186,7 @@
                         <recoil>0</recoil>
                         <lasthitby></lasthitby>
                         <HP>100</HP>
+                        <weprecoil>0</weprecoil>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
