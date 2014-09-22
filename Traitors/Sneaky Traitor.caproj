@@ -93,7 +93,10 @@
                         <instance-variable name="select" sid="8616842797496267" type="number" />
                     </instance-variables>
                     <animation-folder expanded="1">
-                        <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7978043530571874" speed="0">
+                        <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7978043530571874" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
                             <frame duration="1" hotspotX="0" hotspotY="0" />
                             <frame duration="1" hotspotX="0" hotspotY="0" />
                             <frame duration="1" hotspotX="0" hotspotY="0" />
@@ -331,6 +334,9 @@
         <object-type name="TiledBackground" sid="28196547957686">
             <plugin id="TiledBg" />
             <texture />
+        </object-type>
+        <object-type name="List" sid="5940915611003513">
+            <plugin id="List" />
         </object-type>
     </object-folder>
     <families>
