@@ -67,7 +67,7 @@
                     <param id="2" name="Precision">2</param>
                     <param id="3" name="Bandwidth">0</param>
                 </action>
-                <action id="11" name="Sync object" sid="5420793639812056" type="Multiplayer">
+                <action disabled="1" id="11" name="Sync object" sid="5420793639812056" type="Multiplayer">
                     <param id="0" name="Object">Boostbox</param>
                     <param id="1" name="Data">3</param>
                     <param id="2" name="Precision">2</param>
@@ -84,7 +84,7 @@
                     <param id="3" name="Max peers">0</param>
                 </action>
                 <action id="-9" name="Destroy" sid="5276511860398541" type="Nick" />
-                <action id="-9" name="Destroy" sid="8358050325399455" type="Check" />
+                <action id="-9" name="Destroy" sid="8358050325399455" type="Check2" />
             </actions>
             <sub-events>
                 <event-block sid="2237696085079543">
@@ -120,7 +120,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
+        <event-group collapsed="1" description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
             <sub-events>
                 <event-block disabled="1" sid="6270828135115465">
                     <conditions>
@@ -298,9 +298,9 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
+                <event-group collapsed="1" description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
                     <sub-events>
-                        <event-group description="Ruch hosta" sid="6275370267556177" title="Hosty">
+                        <event-group collapsed="1" description="Ruch hosta" sid="6275370267556177" title="Hosty">
                             <sub-events>
                                 <event-block sid="389482945461162">
                                     <conditions>
@@ -494,7 +494,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="6011107902282835">
+                <event-block collapsed="1" sid="6011107902282835">
                     <conditions />
                     <actions />
                     <sub-events>
@@ -595,27 +595,92 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="5905954764264581">
-                    <conditions>
-                        <condition id="-19" name="On destroyed" sid="4405683278168245" type="Boostbox" />
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Create object" sid="9122397287774496" type="System">
-                            <param id="0" name="Object to create">Boostbox</param>
-                            <param id="1" name="Layer">&quot;Main&quot;</param>
-                            <param id="2" name="X">random(LayoutWidth)</param>
-                            <param id="3" name="Y">random(LayoutHeight)</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="8125618309432512" type="Boostbox">
-                            <param id="0" name="Instance variable">type</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="1526179776690636" type="Boostbox">
-                            <param id="0" name="Instance variable">wepid</param>
-                            <param id="1" name="Value">int(random(1,3))</param>
-                        </action>
-                    </actions>
-                </event-block>
+                <event-group description="" sid="5897157891240188" title="Boostbox">
+                    <sub-events>
+                        <event-block sid="5905954764264581">
+                            <conditions>
+                                <condition id="5" name="On joined room" sid="4405683278168245" type="Multiplayer" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="tempidb" sid="623330495865097" static="0" type="number">0</variable>
+                                <event-block sid="8519499025756377">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="2636517439066745" type="System">
+                                            <param id="0" name="Object">Boostbox</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="5758162777942696" type="Boostbox">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Value">tempidb</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="5901486474106987" type="System">
+                                            <param id="0" name="Variable">tempidb</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="4931914593696528" type="Boostbox">
+                                            <param id="0" name="Frame number">boostbox.wepid</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="2639389799637725" type="Boostbox">
+                                            <param id="0" name="Angle">random(360)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="1813808742561562">
+                            <conditions>
+                                <condition id="-19" name="On destroyed" sid="7152961682529198" type="Boostbox" />
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="-3" name="Create object" sid="3964965018417104" type="System">
+                                    <param id="0" name="Object to create">Boostbox</param>
+                                    <param id="1" name="Layer">&quot;Main&quot;</param>
+                                    <param id="2" name="X">random(LayoutWidth)</param>
+                                    <param id="3" name="Y">random(LayoutHeight)</param>
+                                </action>
+                                <action disabled="1" id="-10" name="Set value" sid="8966110494096038" type="Boostbox">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action disabled="1" id="-10" name="Set value" sid="3638827567777728" type="Boostbox">
+                                    <param id="0" name="Instance variable">wepid</param>
+                                    <param id="1" name="Value">int(random(1,3))</param>
+                                </action>
+                                <action id="0" name="Call function" sid="3872249460441429" type="MPSyncFunction">
+                                    <param id="0" name="Name">&quot;Bbox_create&quot;</param>
+                                    <param id="1" name="Parameter {n}">random(LayoutWidth){###}random(LayoutHeight){###}Boostbox.Count+1{###}int(random(1,3)){###}1{###}&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-group description="Wysylanie boostboxow do nowych graczy" sid="9923506724924265" title="Wys b">
+                            <sub-events>
+                                <event-block sid="2708053096933087">
+                                    <conditions>
+                                        <condition id="11" name="On peer connected" sid="8955113616174761" type="Multiplayer" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="1882659737207979">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" sid="4579352725491842" type="System">
+                                                    <param id="0" name="Object">Boostbox</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="6458934602159838" type="MPSyncFunction">
+                                                    <param id="0" name="Name">&quot;Bbox_create&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Boostbox.X{###}Boostbox.Y{###}Boostbox.id{###}Boostbox.wepid{###}Boostbox.type{###}Multiplayer.PeerAlias</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
                 <event-block sid="4810923011021065">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="8657989698172166" type="System">
@@ -708,7 +773,7 @@
                     </sub-events>
                 </event-group>
                 <comment>0 - falsz, 1 - prawda&#x0D;&#x0A;0 - w gore&#x0D;&#x0A;1 - w dol&#x0D;&#x0A;2 - w lewo&#x0D;&#x0A;3 - w prawo&#x0D;&#x0A;4 - lmb</comment>
-                <event-block sid="6133589175984286">
+                <event-block collapsed="1" sid="6133589175984286">
                     <conditions>
                         <condition id="17" name="On client update" sid="5666513683723343" type="Multiplayer" />
                         <condition id="-7" name="Compare instance variable" sid="8968518402942169" type="Gracz">
@@ -859,7 +924,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="4757546875917115">
+                <event-block collapsed="1" sid="4757546875917115">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="2483077182694131" type="Gracz">
                             <param id="0" name="Instance variable">peerid</param>
@@ -1044,7 +1109,7 @@
         </event-group>
         <event-group bookmark="1" description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
-                <event-group description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
+                <event-group collapsed="1" description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
                     <sub-events>
                         <variable comment="dlugosc strzalu" constant="0" name="shootlong" sid="680012249550892" static="0" type="number">0</variable>
                         <variable comment="dmg pocisku" constant="0" name="shootdmg" sid="3194761618821443" static="0" type="number">0</variable>
@@ -1948,6 +2013,10 @@
                                                                             <param id="0" name="Variable">Edit</param>
                                                                             <param id="1" name="Value">0</param>
                                                                         </action>
+                                                                        <action id="0" name="Call function" sid="1301843541292736" type="Function">
+                                                                            <param id="0" name="Name">&quot;selclear&quot;</param>
+                                                                            <param id="1" name="Parameter {n}"></param>
+                                                                        </action>
                                                                     </actions>
                                                                 </event-block>
                                                             </sub-events>
@@ -2017,7 +2086,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-block sid="896725387765105">
+                <event-block disabled="1" sid="896725387765105">
                     <conditions>
                         <condition id="-18" name="On created" sid="2535936862355145" type="Boostbox" />
                     </conditions>
@@ -2030,6 +2099,60 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-group description="" sid="4524177200543159" title="Boostbox_z">
+                    <sub-events>
+                        <event-block sid="4170077714225876">
+                            <conditions>
+                                <condition id="0" name="On function" sid="274881975905156" type="MPSyncFunction">
+                                    <param id="0" name="Name">&quot;Bbox_create&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="3026655382537786">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="9166458165429415" type="System">
+                                            <param id="0" name="First value">MPSyncFunction.Param(5)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;&quot;</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="3141521926386477" type="System">
+                                            <param id="0" name="First value">MPSyncFunction.Param(5)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Multiplayer.MyAlias</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="1252935665413308" type="System">
+                                            <param id="0" name="Object to create">Boostbox</param>
+                                            <param id="1" name="Layer">&quot;Main&quot;</param>
+                                            <param id="2" name="X">MPSyncFunction.Param(0)</param>
+                                            <param id="3" name="Y">MPSyncFunction.Param(1)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="7370973095387511" type="Boostbox">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Value">MPSyncFunction.Param(2)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="781927501934633" type="Boostbox">
+                                            <param id="0" name="Instance variable">wepid</param>
+                                            <param id="1" name="Value">MPSyncFunction.Param(3)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="3859499683302702" type="Boostbox">
+                                            <param id="0" name="Instance variable">type</param>
+                                            <param id="1" name="Value">MPSyncFunction.Param(4)</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="2270652451791804" type="Boostbox">
+                                            <param id="0" name="Frame number">boostbox.wepid</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="440197587762092" type="Boostbox">
+                                            <param id="0" name="Angle">random(360)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
         <event-block sid="3468657705524807">
@@ -2478,30 +2601,42 @@
                                 <condition id="0" name="On function" sid="4276856385812727" type="Function">
                                     <param id="0" name="Name">&quot;selclear&quot;</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="9674580422493493" type="klocek">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="3114947639783147" type="klocek">
-                                    <param id="0" name="Instance variable">select</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
                             </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="1765812217361772" type="klocek">
-                                    <param id="0" name="Instance variable">select</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="6873385067699339" type="klocek">
-                                    <param id="0" name="Animation">&quot;noselect&quot;</param>
-                                    <param id="1" name="From">0</param>
-                                </action>
-                                <action id="-9" name="Destroy" sid="5037850875367246" type="Check" />
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1015207302132524">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9674580422493493" type="klocek">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="3114947639783147" type="klocek">
+                                            <param id="0" name="Instance variable">select</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="1765812217361772" type="klocek">
+                                            <param id="0" name="Instance variable">select</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="6873385067699339" type="klocek">
+                                            <param id="0" name="Animation">&quot;noselect&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9077823661110379">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="5037850875367246" type="Check2" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
-                        <event-group collapsed="1" description="" sid="9847415318349004" title="Zazn">
+                        <event-group description="" sid="9847415318349004" title="Zazn">
                             <sub-events>
                                 <event-block sid="6432759067081684">
                                     <conditions>
@@ -2513,7 +2648,7 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="7853144140533304" type="Selector">
+                                        <condition id="-7" name="Compare instance variable" sid="7853144140533304" type="zazn">
                                             <param id="0" name="Instance variable">x1</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">-1</param>
@@ -2524,14 +2659,14 @@
                                         <event-block sid="6241427157405058">
                                             <conditions />
                                             <actions>
-                                                <action id="-15" name="Set visible" sid="1593974445131905" type="Selector">
+                                                <action id="-15" name="Set visible" sid="1593974445131905" type="zazn">
                                                     <param id="0" name="Visibility">1</param>
                                                 </action>
-                                                <action id="-10" name="Set value" sid="594738480712685" type="Selector">
+                                                <action id="-10" name="Set value" sid="594738480712685" type="zazn">
                                                     <param id="0" name="Instance variable">x1</param>
                                                     <param id="1" name="Value">Mouse.X</param>
                                                 </action>
-                                                <action id="-10" name="Set value" sid="1094507304284608" type="Selector">
+                                                <action id="-10" name="Set value" sid="1094507304284608" type="zazn">
                                                     <param id="0" name="Instance variable">y1</param>
                                                     <param id="1" name="Value">Mouse.Y</param>
                                                 </action>
@@ -2549,7 +2684,7 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="2229352326750002" type="Selector">
+                                        <condition id="-7" name="Compare instance variable" sid="2229352326750002" type="zazn">
                                             <param id="0" name="Instance variable">x1</param>
                                             <param id="1" name="Comparison">1</param>
                                             <param id="2" name="Value">-1</param>
@@ -2560,26 +2695,26 @@
                                         <event-block sid="9160998558690505">
                                             <conditions />
                                             <actions>
-                                                <action id="-15" name="Set visible" sid="154399175503082" type="Selector">
+                                                <action id="-15" name="Set visible" sid="2926008556454036" type="zazn">
                                                     <param id="0" name="Visibility">1</param>
                                                 </action>
-                                                <action id="-10" name="Set value" sid="2625451894702476" type="Selector">
+                                                <action id="-10" name="Set value" sid="2625451894702476" type="zazn">
                                                     <param id="0" name="Instance variable">x2</param>
                                                     <param id="1" name="Value">Mouse.X</param>
                                                 </action>
-                                                <action id="-10" name="Set value" sid="7138188306309757" type="Selector">
+                                                <action id="-10" name="Set value" sid="7138188306309757" type="zazn">
                                                     <param id="0" name="Instance variable">y2</param>
                                                     <param id="1" name="Value">Mouse.Y</param>
                                                 </action>
-                                                <action id="-3" name="Set position" sid="6194427205894678" type="Selector">
-                                                    <param id="0" name="X">Selector.x1</param>
-                                                    <param id="1" name="Y">Selector.y1</param>
+                                                <action id="-3" name="Set position" sid="6194427205894678" type="zazn">
+                                                    <param id="0" name="X">min(zazn.x1, zazn.x2)</param>
+                                                    <param id="1" name="Y">min(zazn.y1,zazn.y2)</param>
                                                 </action>
-                                                <action id="-5" name="Set width" sid="6679719098935868" type="Selector">
-                                                    <param id="0" name="Width">Selector.x2-Selector.x1</param>
+                                                <action id="-5" name="Set width" sid="6679719098935868" type="zazn">
+                                                    <param id="0" name="Width">abs(zazn.x2-zazn.x1)</param>
                                                 </action>
-                                                <action id="-6" name="Set height" sid="467695094113879" type="Selector">
-                                                    <param id="0" name="Height">Selector.y2-Selector.y1</param>
+                                                <action id="-6" name="Set height" sid="467695094113879" type="zazn">
+                                                    <param id="0" name="Height">abs(zazn.y2-zazn.y1)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -2587,7 +2722,7 @@
                                 </event-block>
                                 <event-block sid="1719263154700536">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="8720059482181677" type="Selector">
+                                        <condition id="-7" name="Compare instance variable" sid="8720059482181677" type="zazn">
                                             <param id="0" name="Instance variable">x1</param>
                                             <param id="1" name="Comparison">1</param>
                                             <param id="2" name="Value">-1</param>
@@ -2609,8 +2744,8 @@
                                         </event-block>
                                         <event-block sid="8060173457655025">
                                             <conditions>
-                                                <condition id="1" name="Is overlapping another object" sid="4210493010141197" type="Selector">
-                                                    <param id="0" name="Object">klocek</param>
+                                                <condition id="1" name="Is overlapping another object" sid="4210493010141197" type="klocek">
+                                                    <param id="0" name="Object">zazn</param>
                                                 </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="4079055693914306" type="klocek">
                                                     <param id="0" name="Instance variable">id</param>
@@ -2622,15 +2757,15 @@
                                             <sub-events>
                                                 <event-block sid="8256128707874221">
                                                     <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="8138154091584973" type="Selector">
+                                                        <condition id="-7" name="Compare instance variable" sid="8138154091584973" type="zazn">
                                                             <param id="0" name="Instance variable">x1</param>
                                                             <param id="1" name="Comparison">1</param>
-                                                            <param id="2" name="Value">Selector.x2</param>
+                                                            <param id="2" name="Value">zazn.x2</param>
                                                         </condition>
-                                                        <condition id="-7" name="Compare instance variable" sid="6975832281150521" type="Selector">
+                                                        <condition id="-7" name="Compare instance variable" sid="6975832281150521" type="zazn">
                                                             <param id="0" name="Instance variable">y1</param>
                                                             <param id="1" name="Comparison">1</param>
-                                                            <param id="2" name="Value">Selector.y2</param>
+                                                            <param id="2" name="Value">zazn.y2</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
@@ -2639,14 +2774,14 @@
                                                             <param id="1" name="Value">1</param>
                                                         </action>
                                                         <action id="0" name="Spawn another object" sid="3729346989089445" type="klocek">
-                                                            <param id="0" name="Object">Check</param>
+                                                            <param id="0" name="Object">Check2</param>
                                                             <param id="1" name="Layer">klocek.LayerNumber</param>
                                                             <param id="2" name="Image point">0</param>
                                                         </action>
-                                                        <action id="-5" name="Set width" sid="4664643117538269" type="Check">
+                                                        <action id="-5" name="Set width" sid="4664643117538269" type="Check2">
                                                             <param id="0" name="Width">klocek.Width</param>
                                                         </action>
-                                                        <action id="-6" name="Set height" sid="4052379511408002" type="Check">
+                                                        <action id="-6" name="Set height" sid="4052379511408002" type="Check2">
                                                             <param id="0" name="Height">klocek.Height</param>
                                                         </action>
                                                     </actions>
@@ -2664,14 +2799,14 @@
                                                             <param id="1" name="Value">1</param>
                                                         </action>
                                                         <action id="0" name="Spawn another object" sid="262915213575124" type="klocek">
-                                                            <param id="0" name="Object">Check</param>
+                                                            <param id="0" name="Object">Check2</param>
                                                             <param id="1" name="Layer">klocek.LayerNumber</param>
                                                             <param id="2" name="Image point">0</param>
                                                         </action>
-                                                        <action id="-5" name="Set width" sid="303906669474273" type="Check">
+                                                        <action id="-5" name="Set width" sid="303906669474273" type="Check2">
                                                             <param id="0" name="Width">klocek.Width</param>
                                                         </action>
-                                                        <action id="-6" name="Set height" sid="9604111471751656" type="Check">
+                                                        <action id="-6" name="Set height" sid="9604111471751656" type="Check2">
                                                             <param id="0" name="Height">klocek.Height</param>
                                                         </action>
                                                     </actions>
@@ -2681,14 +2816,14 @@
                                         <event-block sid="7764736024824732">
                                             <conditions />
                                             <actions>
-                                                <action id="-15" name="Set visible" sid="2483210427083712" type="Selector">
+                                                <action id="-15" name="Set visible" sid="2483210427083712" type="zazn">
                                                     <param id="0" name="Visibility">0</param>
                                                 </action>
-                                                <action id="-10" name="Set value" sid="4227645971403654" type="Selector">
+                                                <action id="-10" name="Set value" sid="4227645971403654" type="zazn">
                                                     <param id="0" name="Instance variable">x1</param>
                                                     <param id="1" name="Value">-1</param>
                                                 </action>
-                                                <action id="-10" name="Set value" sid="7668009053092444" type="Selector">
+                                                <action id="-10" name="Set value" sid="7668009053092444" type="zazn">
                                                     <param id="0" name="Instance variable">y1</param>
                                                     <param id="1" name="Value">-1</param>
                                                 </action>
@@ -2722,23 +2857,28 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
-                                <condition id="-11" name="For Each" sid="9191187564269858" type="System">
-                                    <param id="0" name="Object">klocek</param>
-                                </condition>
                             </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="5416366216612524" type="MPSyncFunction">
-                                    <param id="0" name="Name">&quot;klocek_zm&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;&quot;{###}&quot;&quot;{###}2{###}klocek.id</param>
-                                </action>
-                            </actions>
+                            <actions />
                             <sub-events>
                                 <event-block sid="683560560150904">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="9191187564269858" type="System">
+                                            <param id="0" name="Object">klocek</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="5416366216612524" type="MPSyncFunction">
+                                            <param id="0" name="Name">&quot;klocek_zm&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;&quot;{###}&quot;&quot;{###}2{###}klocek.id</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1168611880316698">
                                     <conditions />
                                     <actions>
-                                        <action id="-10" name="Set value" sid="1597834560065413" type="Check">
-                                            <param id="0" name="Instance variable">UidCheck</param>
-                                            <param id="1" name="Value">0</param>
+                                        <action id="0" name="Call function" sid="6533892329261192" type="Function">
+                                            <param id="0" name="Name">&quot;selclear&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2770,7 +2910,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-24" name="Move to top" sid="4150804973706464" type="Check" />
+                                <action id="-24" name="Move to top" sid="4150804973706464" type="Check2" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -2803,6 +2943,22 @@
                     <actions />
                     <sub-events>
                         <variable constant="0" name="go" sid="6489081535200705" static="0" type="number">0</variable>
+                        <event-block sid="5498846341556773">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3552144038786351" type="klocek">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                                <condition id="-3" inverted="1" name="Is on-screen" sid="9473349323592876" type="klocek" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9217984664054225" type="System">
+                                    <param id="0" name="Variable">go</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block any="1" sid="2041739297292129">
                             <conditions>
                                 <condition id="1" name="Is overlapping another object" sid="9106987553715891" type="klocek">
@@ -2830,7 +2986,7 @@
                         </event-block>
                         <variable constant="0" name="xtemp" sid="7813807327985571" static="0" type="number">0</variable>
                         <variable constant="0" name="ytemp" sid="4162571535452905" static="0" type="number">0</variable>
-                        <variable constant="0" name="idtemp" sid="5077154560074964" static="0" type="number">0</variable>
+                        <variable constant="0" name="idtemp" sid="5077154560074964" static="0" type="number">1</variable>
                         <variable constant="0" name="klocekidtemp" sid="8857715404216599" static="0" type="number">0</variable>
                         <event-block sid="6198281917241486">
                             <conditions>
@@ -2896,6 +3052,15 @@
                                 <action id="0" name="Call function" sid="9141563488884123" type="MPSyncFunction">
                                     <param id="0" name="Name">&quot;klocek_zm&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;&quot;{###}&quot;&quot;{###}1{###}idtemp+1{###}klocek.klocekid{###}int(klocek.X){###}int(klocek.Y){###}klocek.Width{###}klocek.Height</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6627172770038574">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="9409543677808701" type="Function">
+                                    <param id="0" name="Name">&quot;selclear&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>

@@ -117,6 +117,39 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="zazn" uid="89">
+                    <properties>
+                        <left-margin>6</left-margin>
+                        <right-margin>6</right-margin>
+                        <top-margin>6</top-margin>
+                        <bottom-margin>6</bottom-margin>
+                        <edges>Stretch</edges>
+                        <fill>Stretch</fill>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                        <seams>Overlap</seams>
+                    </properties>
+                    <instance-variables>
+                        <id>0</id>
+                        <x1>-1</x1>
+                        <y1>-1</y1>
+                        <x2>0</x2>
+                        <y2>0</y2>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>238.157241821</x>
+                        <y>-150.178909302</y>
+                        <z>0</z>
+                        <width>74.743591309</width>
+                        <height>81.355300903</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -552,7 +585,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -579,7 +612,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -606,7 +639,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -633,7 +666,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -660,7 +693,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -687,7 +720,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -714,7 +747,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -741,7 +774,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -768,7 +801,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -795,7 +828,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -822,7 +855,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -849,7 +882,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -876,7 +909,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -903,7 +936,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -930,7 +963,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -957,7 +990,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -984,7 +1017,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1011,7 +1044,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1038,7 +1071,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1065,7 +1098,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1092,7 +1125,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1119,7 +1152,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1146,7 +1179,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1173,7 +1206,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1200,7 +1233,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1227,7 +1260,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1254,7 +1287,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1281,7 +1314,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1308,7 +1341,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1335,7 +1368,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1362,7 +1395,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1389,7 +1422,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1416,7 +1449,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1443,7 +1476,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1470,7 +1503,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1497,7 +1530,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1524,7 +1557,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1551,7 +1584,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1578,7 +1611,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>1</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1605,7 +1638,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1632,7 +1665,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1659,7 +1692,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>2</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1686,7 +1719,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1713,7 +1746,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1740,7 +1773,7 @@
                     <instance-variables>
                         <type>1</type>
                         <wepid>3</wepid>
-                        <id>0</id>
+                        <id>-1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1887,8 +1920,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>274.997619629</x>
-                        <y>-23.921340942</y>
+                        <x>366.732818604</x>
+                        <y>-114.00415802</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
@@ -1896,6 +1929,35 @@
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Check2" uid="90">
+                    <properties>
+                        <left-margin>6</left-margin>
+                        <right-margin>6</right-margin>
+                        <top-margin>6</top-margin>
+                        <bottom-margin>6</bottom-margin>
+                        <edges>Stretch</edges>
+                        <fill>Stretch</fill>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                        <seams>Overlap</seams>
+                    </properties>
+                    <instance-variables>
+                        <UidCheck>0</UidCheck>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>564.605285645</x>
+                        <y>-166.708343506</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <opacity>1</opacity>
                     </world>
                 </instance>

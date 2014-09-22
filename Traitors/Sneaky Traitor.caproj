@@ -2,7 +2,7 @@
 <c2project>
     <name>Sneaky Traitor</name>
     <description></description>
-    <version>4.0</version>
+    <version>4.1</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -18,6 +18,7 @@
         <plugin author="Scirra" id="List" version="1">List</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
+        <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
         <plugin author="Rex.Rainbow" id="Rex_CSV" version="1">CSV</plugin>
         <plugin author="Rex.Rainbow" id="Rex_MPsyncfunction" version="0.100000001">MP Sync function</plugin>
         <plugin author="Rex.Rainbow" id="Rex_MPwrap" version="0.100000001">MP wrap</plugin>
@@ -164,6 +165,24 @@
                             <frame duration="1" hotspotX="0" hotspotY="0" />
                         </animation>
                     </animation-folder>
+                </object-type>
+                <object-type name="zazn" sid="1267614130414646">
+                    <plugin id="NinePatch" />
+                    <instance-variables>
+                        <instance-variable name="id" sid="1524063106224284" type="number" />
+                        <instance-variable name="x1" sid="144490045045901" type="number" />
+                        <instance-variable name="y1" sid="4870425394859823" type="number" />
+                        <instance-variable name="x2" sid="5735447463740765" type="number" />
+                        <instance-variable name="y2" sid="724459976099344" type="number" />
+                    </instance-variables>
+                    <texture />
+                </object-type>
+                <object-type name="Check2" sid="4077009156815893">
+                    <plugin id="NinePatch" />
+                    <instance-variables>
+                        <instance-variable name="UidCheck" sid="552270296503119" type="number" />
+                    </instance-variables>
+                    <texture />
                 </object-type>
             </object-folder>
             <object-type name="Gracz" sid="1975657082452686">
