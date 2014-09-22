@@ -94,30 +94,9 @@
                     </instance-variables>
                     <animation-folder expanded="1">
                         <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7978043530571874" speed="0">
-                            <frame duration="1" hotspotX="0" hotspotY="0">
-                                <collision-poly>
-                                    <point x="0.0625" y="0.0625" />
-                                    <point x="0.9375" y="0.0625" />
-                                    <point x="0.9375" y="0.9375" />
-                                    <point x="0.0625" y="0.9375" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0" hotspotY="0">
-                                <collision-poly>
-                                    <point x="0.0625" y="0.0625" />
-                                    <point x="0.9375" y="0.0625" />
-                                    <point x="0.9375" y="0.9375" />
-                                    <point x="0.0625" y="0.9375" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0" hotspotY="0">
-                                <collision-poly>
-                                    <point x="0.0625" y="0.0625" />
-                                    <point x="0.9375" y="0.0625" />
-                                    <point x="0.9375" y="0.9375" />
-                                    <point x="0.0625" y="0.9375" />
-                                </collision-poly>
-                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
                         </animation>
                     </animation-folder>
                 </object-type>
