@@ -2,7 +2,7 @@
 <c2project>
     <name>Sneaky Traitor</name>
     <description></description>
-    <version>4.1</version>
+    <version>5.0</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -187,9 +187,6 @@
                     <behavior-type name="8Direction" sid="5670686406564721">
                         <behavior id="EightDir" />
                     </behavior-type>
-                    <behavior-type name="ScrollTo" sid="6557087968074052">
-                        <behavior id="scrollto" />
-                    </behavior-type>
                     <behavior-type name="BoundToLayout" sid="6664954341351363">
                         <behavior id="bound" />
                     </behavior-type>
@@ -338,6 +335,23 @@
         </object-type>
         <object-type name="List" sid="5940915611003513">
             <plugin id="List" />
+        </object-type>
+        <object-type name="CameraDist" sid="2742340327283992">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="id" sid="632859733338372" type="number" />
+                <instance-variable name="pin" sid="3356783789002628" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="6207993312499651">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7817633424189977" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>

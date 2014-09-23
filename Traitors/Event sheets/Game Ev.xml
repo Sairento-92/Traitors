@@ -1109,12 +1109,13 @@
         </event-group>
         <event-group bookmark="1" description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
-                <event-group description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
+                <variable comment="ilosc obiektow scrollto na bron" constant="0" name="camwep" sid="3624705707496158" static="0" type="number">0</variable>
+                <event-group collapsed="1" description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
                     <sub-events>
                         <variable comment="dlugosc strzalu" constant="0" name="shootlong" sid="680012249550892" static="0" type="number">0</variable>
                         <variable comment="dmg pocisku" constant="0" name="shootdmg" sid="3194761618821443" static="0" type="number">0</variable>
                         <variable comment="Peername strzelajacego" constant="0" name="peernn" sid="1043216091507957" static="0" type="text"></variable>
-                        <event-block any="1" sid="6052376746430917">
+                        <event-block any="1" collapsed="1" sid="6052376746430917">
                             <conditions>
                                 <condition id="2" name="Mouse button is down" sid="56868936798167" type="Mouse">
                                     <param id="0" name="Mouse button">0</param>
@@ -1156,6 +1157,7 @@
                                         </action>
                                     </actions>
                                     <sub-events>
+                                        <comment>1 - karabin&#x0D;&#x0A;2 - shotgun &#x0D;&#x0A;3 - shock rifle (snajper)</comment>
                                         <event-block sid="3796874757837244">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="1302272635085191" type="Gracz">
@@ -1175,13 +1177,24 @@
                                                 </action>
                                                 <action id="-9" name="Set value" sid="7814084169865718" type="System">
                                                     <param id="0" name="Variable">shootlong</param>
-                                                    <param id="1" name="Value">100</param>
-                                                </action>
-                                                <action id="-11" name="Add to" sid="5683906552267444" type="Gracz">
-                                                    <param id="0" name="Instance variable">weprecoil</param>
-                                                    <param id="1" name="Value">10</param>
+                                                    <param id="1" name="Value">400</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="1270304596605848">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="9756610364375649" type="Function">
+                                                            <param id="0" name="Name">&quot;shootcont&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                        <action id="-11" name="Add to" sid="6153367728524233" type="Gracz">
+                                                            <param id="0" name="Instance variable">weprecoil</param>
+                                                            <param id="1" name="Value">20</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="8045583499706076">
                                             <conditions>
@@ -1202,17 +1215,32 @@
                                                 </action>
                                                 <action id="-9" name="Set value" sid="9366540669082184" type="System">
                                                     <param id="0" name="Variable">shootlong</param>
-                                                    <param id="1" name="Value">150</param>
+                                                    <param id="1" name="Value">300</param>
                                                 </action>
                                                 <action id="-10" name="Set value" sid="4995515313990831" type="Gracz">
                                                     <param id="0" name="Instance variable">weprecoil</param>
                                                     <param id="1" name="Value">30</param>
                                                 </action>
-                                                <action id="-11" name="Add to" sid="9146637510515184" type="Gracz">
-                                                    <param id="0" name="Instance variable">weprecoil</param>
-                                                    <param id="1" name="Value">15</param>
-                                                </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="4520111853165651">
+                                                    <conditions>
+                                                        <condition id="-12" name="Repeat" sid="4956409379720517" type="System">
+                                                            <param id="0" name="Count">8</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-11" name="Add to" sid="6768288238410946" type="Gracz">
+                                                            <param id="0" name="Instance variable">weprecoil</param>
+                                                            <param id="1" name="Value">5</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="3420492237462967" type="Function">
+                                                            <param id="0" name="Name">&quot;shootcont&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="2090399872101941">
                                             <conditions>
@@ -1233,28 +1261,30 @@
                                                 </action>
                                                 <action id="-9" name="Set value" sid="1955298311307173" type="System">
                                                     <param id="0" name="Variable">shootlong</param>
-                                                    <param id="1" name="Value">200</param>
-                                                </action>
-                                                <action id="-11" name="Add to" sid="6689685111884377" type="Gracz">
-                                                    <param id="0" name="Instance variable">weprecoil</param>
-                                                    <param id="1" name="Value">5</param>
+                                                    <param id="1" name="Value">500</param>
                                                 </action>
                                             </actions>
-                                        </event-block>
-                                        <event-block sid="3649805703862074">
-                                            <conditions />
-                                            <actions>
-                                                <action id="0" name="Call function" sid="3515397146786727" type="Function">
-                                                    <param id="0" name="Name">&quot;shootcont&quot;</param>
-                                                    <param id="1" name="Parameter {n}"></param>
-                                                </action>
-                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="3018806934941894">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="6569855260154274" type="Function">
+                                                            <param id="0" name="Name">&quot;shootcont&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                        <action id="-11" name="Add to" sid="2729177654676765" type="Gracz">
+                                                            <param id="0" name="Instance variable">weprecoil</param>
+                                                            <param id="1" name="Value">60</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="9718177097968261">
+                        <event-block collapsed="1" sid="9718177097968261">
                             <conditions>
                                 <condition id="0" name="On function" sid="9806661856268958" type="Function">
                                     <param id="0" name="Name">&quot;shootcont&quot;</param>
@@ -1367,7 +1397,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="958029774838605">
+                        <event-block collapsed="1" sid="958029774838605">
                             <conditions>
                                 <condition id="-6" name="Every X seconds" sid="8723337652943503" type="System">
                                     <param id="0" name="Interval (seconds)">0.01</param>
@@ -1391,13 +1421,13 @@
                                     <actions>
                                         <action id="-12" name="Subtract from" sid="9272347774173119" type="Gracz">
                                             <param id="0" name="Instance variable">weprecoil</param>
-                                            <param id="1" name="Value">1 + self.weprecoil * 0.2</param>
+                                            <param id="1" name="Value">0.5 + self.weprecoil * 0.05</param>
                                         </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="2247050907593706">
+                        <event-block collapsed="1" sid="2247050907593706">
                             <conditions>
                                 <condition id="0" name="On function" sid="8786811147303333" type="Function">
                                     <param id="0" name="Name">&quot;strzal&quot;</param>
@@ -1437,7 +1467,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="8285240251428383">
+                        <event-block collapsed="1" sid="8285240251428383">
                             <conditions>
                                 <condition id="0" name="On function" sid="7626563090081769" type="Function">
                                     <param id="0" name="Name">&quot;strzaldmg&quot;</param>
@@ -1462,6 +1492,79 @@
                                         <action id="-12" name="Subtract from" sid="4891354621704924" type="Gracz">
                                             <param id="0" name="Instance variable">HP</param>
                                             <param id="1" name="Value">Function.Param(1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="1473284136818338">
+                            <conditions>
+                                <condition behavior="8Direction" id="0" name="Is moving" sid="7730319698889829" type="Gracz" />
+                                <condition id="-7" name="Compare instance variable" sid="987296899560519" type="Gracz">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.myid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="9110541260240896" type="Gracz">
+                                    <param id="0" name="Instance variable">weprecoil</param>
+                                    <param id="1" name="Value">gracz.8Direction.Speed * 0.005</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9721777297675271">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4856135797832648" type="Gracz">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">multiplayer.MyID</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="7886040297384793">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7782946135639487" type="Gracz">
+                                            <param id="0" name="Instance variable">weapon</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="5080471075472631" type="System">
+                                            <param id="0" name="Variable">camwep</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="141988292861266">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7099864002038152" type="Gracz">
+                                            <param id="0" name="Instance variable">weapon</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="7382320324102264" type="System">
+                                            <param id="0" name="Variable">camwep</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6091197513786327">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2138430091845791" type="Gracz">
+                                            <param id="0" name="Instance variable">weapon</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2553613472153934" type="System">
+                                            <param id="0" name="Variable">camwep</param>
+                                            <param id="1" name="Value">3</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1663,10 +1766,42 @@
                             <param id="0" name="X">mouse.X</param>
                             <param id="1" name="Y">mouse.Y</param>
                         </action>
-                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="8679125371688505" type="Gracz">
-                            <param id="0" name="State">1</param>
-                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="8801381776331454">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="8313060375399821" type="CameraDist">
+                                    <param id="0" name="Instance variable">pin</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="8679125371688505" type="CameraDist">
+                                    <param id="0" name="Object">Gracz</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="2089716953512729" type="CameraDist">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4064541078486649">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="934659318658108" type="CameraDist">
+                                    <param id="0" name="Instance variable">pin</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="2588848940116659" type="CameraDist">
+                                    <param id="0" name="X">Mouse.X</param>
+                                    <param id="1" name="Y">Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Od kogo gracz otrzymal obrazenia</comment>
                 <event-block sid="3802317096073525">
@@ -2186,6 +2321,44 @@
                         </event-block>
                     </sub-events>
                 </event-group>
+                <event-block sid="1877074898854887">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6486198851632263" type="CameraDist">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">camwep</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="7261471411479207" type="CameraDist">
+                            <param id="0" name="Instance variable">pin</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="6397765035505024" type="CameraDist">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5938720814796776">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2826521742424782" type="CameraDist">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">camwep</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1281051708643128" type="CameraDist">
+                            <param id="0" name="Instance variable">pin</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="9712965397325912" type="CameraDist">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-block sid="3468657705524807">
