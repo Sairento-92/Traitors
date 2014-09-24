@@ -2,13 +2,13 @@
 <c2project>
     <name>Sneaky Traitor</name>
     <description></description>
-    <version>5.0</version>
+    <version>5.1</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>1syox27xv6p1i</unique-id>
-    <saved-with-version>18000</saved-with-version>
+    <saved-with-version>18100</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
@@ -26,6 +26,7 @@
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -35,6 +36,7 @@
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
         <effect author="Scirra" id="screen">Screen</effect>
@@ -46,14 +48,14 @@
         <width>800</width>
         <height>600</height>
     </window-size>
-    <pixel-rounding>0</pixel-rounding>
+    <pixel-rounding>1</pixel-rounding>
     <preview-effects>1</preview-effects>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
         <prop name="Downscaling">Medium quality</prop>
         <prop name="Enable WebGL">On</prop>
-        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen in browser">Letterbox integer scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Orientations">Any</prop>
@@ -61,7 +63,7 @@
         <prop name="Physics engine">Box2D web</prop>
         <prop name="Preload sounds">Yes</prop>
         <prop name="Preview browser">(default)</prop>
-        <prop name="Sampling">Linear</prop>
+        <prop name="Sampling">Point</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder expanded="1">
@@ -90,14 +92,24 @@
                     <instance-variables>
                         <instance-variable name="id" sid="8179943301171509" type="number" />
                         <instance-variable name="klocekid" sid="179748493287424" type="number" />
+                        <instance-variable name="klocekanim" sid="4274830398605621" type="string" />
                         <instance-variable name="select" sid="8616842797496267" type="number" />
                     </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Solid" sid="3456263215999528">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
                     <animation-folder expanded="1">
-                        <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7978043530571874" speed="0">
+                        <animation framecount="2" loop="0" name="Sciany" pingpong="0" repeatcount="1" repeatto="0" sid="4221350598148346" speed="0">
                             <frame duration="1" hotspotX="0" hotspotY="0" />
                             <frame duration="1" hotspotX="0" hotspotY="0" />
+                        </animation>
+                        <animation framecount="2" loop="0" name="Podloga" pingpong="0" repeatcount="1" repeatto="0" sid="2416276731692725" speed="0">
                             <frame duration="1" hotspotX="0" hotspotY="0" />
                             <frame duration="1" hotspotX="0" hotspotY="0" />
+                        </animation>
+                        <animation framecount="2" loop="0" name="Mechanizmy" pingpong="0" repeatcount="1" repeatto="0" sid="3838854217780777" speed="0">
                             <frame duration="1" hotspotX="0" hotspotY="0" />
                             <frame duration="1" hotspotX="0" hotspotY="0" />
                         </animation>
@@ -165,6 +177,15 @@
                         <instance-variable name="UidCheck" sid="552270296503119" type="number" />
                     </instance-variables>
                     <texture />
+                </object-type>
+                <object-type name="Grupa" sid="2749131636847426">
+                    <plugin id="List" />
+                </object-type>
+                <object-type name="Itemy" sid="5940915611003513">
+                    <plugin id="List" />
+                </object-type>
+                <object-type name="ItemyList" sid="8987913618628738">
+                    <plugin id="List" />
                 </object-type>
             </object-folder>
             <object-type name="Gracz" sid="1975657082452686">
@@ -333,9 +354,6 @@
             <plugin id="TiledBg" />
             <texture />
         </object-type>
-        <object-type name="List" sid="5940915611003513">
-            <plugin id="List" />
-        </object-type>
         <object-type name="CameraDist" sid="2742340327283992">
             <plugin id="Sprite" />
             <instance-variables>
@@ -352,6 +370,11 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="Tilemap" sid="5010854722412285">
+            <plugin id="Tilemap" />
+            <texture />
+            <tiles />
         </object-type>
     </object-folder>
     <families>
