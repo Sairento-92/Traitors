@@ -270,7 +270,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group bookmark="1" collapsed="1" description="" inactive="1" sid="3011960123564868" title="Host">
+        <event-group bookmark="1" description="" inactive="1" sid="3011960123564868" title="Host">
             <sub-events>
                 <event-group collapsed="1" description="" sid="8985332030257512" title="Czat2">
                     <sub-events>
@@ -715,25 +715,6 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="9825125132587985">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="6701223361371158" type="Gracz">
-                            <param id="0" name="Instance variable">HP</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="1255659898627095" type="Gracz">
-                            <param id="0" name="Instance variable">HP</param>
-                            <param id="1" name="Value">100</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="2438398164497474" type="Gracz">
-                            <param id="0" name="X">random(LayoutWidth)</param>
-                            <param id="1" name="Y">random(Layoutheight)</param>
-                        </action>
-                    </actions>
-                </event-block>
             </sub-events>
         </event-group>
         <event-group bookmark="1" collapsed="1" description="" inactive="1" sid="9642298604554555" title="Peer">
@@ -1111,7 +1092,7 @@
         <event-group bookmark="1" description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
                 <variable comment="ilosc obiektow scrollto na bron" constant="0" name="camwep" sid="3624705707496158" static="0" type="number">0</variable>
-                <event-group collapsed="1" description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
+                <event-group description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
                     <sub-events>
                         <variable comment="dlugosc strzalu" constant="0" name="shootlong" sid="680012249550892" static="0" type="number">0</variable>
                         <variable comment="dmg pocisku" constant="0" name="shootdmg" sid="3194761618821443" static="0" type="number">0</variable>
@@ -1285,7 +1266,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block collapsed="1" sid="9718177097968261">
+                        <event-block sid="9718177097968261">
                             <conditions>
                                 <condition id="0" name="On function" sid="9806661856268958" type="Function">
                                     <param id="0" name="Name">&quot;shootcont&quot;</param>
@@ -1428,7 +1409,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block collapsed="1" sid="2247050907593706">
+                        <event-block sid="2247050907593706">
                             <conditions>
                                 <condition id="0" name="On function" sid="8786811147303333" type="Function">
                                     <param id="0" name="Name">&quot;strzal&quot;</param>
@@ -1462,13 +1443,13 @@
                                         </action>
                                         <action id="0" name="Call function" sid="6407637124605247" type="Function">
                                             <param id="0" name="Name">&quot;strzaldmg&quot;</param>
-                                            <param id="1" name="Parameter {n}">Function.Param(4){###}Function.Param(5)</param>
+                                            <param id="1" name="Parameter {n}">Function.Param(4){###}Function.Param(5){###}Function.Param(0)</param>
                                         </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block collapsed="1" sid="8285240251428383">
+                        <event-block sid="8285240251428383">
                             <conditions>
                                 <condition id="0" name="On function" sid="7626563090081769" type="Function">
                                     <param id="0" name="Name">&quot;strzaldmg&quot;</param>
@@ -1495,6 +1476,45 @@
                                             <param id="1" name="Value">Function.Param(1)</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="3814368146736523">
+                                            <conditions>
+                                                <condition id="10" name="Is host" sid="4331117950255927" type="Multiplayer" />
+                                                <condition id="-7" name="Compare instance variable" sid="4667087582758154" type="Gracz">
+                                                    <param id="0" name="Instance variable">HP</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="3694750306598014" type="Gracz">
+                                                    <param id="0" name="Instance variable">HP</param>
+                                                    <param id="1" name="Value">100</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="6365757550789874" type="Gracz">
+                                                    <param id="0" name="X">random(LayoutWidth)</param>
+                                                    <param id="1" name="Y">random(Layoutheight)</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="4976121304045294" type="Gracz">
+                                                    <param id="0" name="Instance variable">death</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="6170041283521742" type="MPSyncFunction">
+                                                    <param id="0" name="Name">&quot;d_pos&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Gracz.PeerName{###}Gracz.X{###}Gracz.Y{###}Gracz.death{###}MPSyncFunction.Param(2)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="5315025238968151">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="6030630390528055" type="MPSyncFunction">
+                                                    <param id="0" name="Name">&quot;d_hp&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Gracz.PeerName{###}Gracz.HP</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -1514,7 +1534,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="9721777297675271">
+                        <event-block collapsed="1" sid="9721777297675271">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="4856135797832648" type="Gracz">
                                     <param id="0" name="Instance variable">peerid</param>
@@ -1570,6 +1590,80 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                        <event-block sid="2266805549142985">
+                            <conditions>
+                                <condition id="0" name="On function" sid="7489512262421139" type="MPSyncFunction">
+                                    <param id="0" name="Name">&quot;d_pos&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="p1" sid="543791264915915" static="0" type="text"></variable>
+                                <variable constant="0" name="p2" sid="7195644555862289" static="0" type="text"></variable>
+                                <event-block sid="3383063343486855">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="8498059670192681" type="Gracz">
+                                            <param id="0" name="Instance variable">PeerName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">MPSyncFunction.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="9697839260235471" type="Gracz">
+                                            <param id="0" name="X">MPSyncFunction.Param(1)</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" sid="6254565714668114" type="Gracz">
+                                            <param id="0" name="Y">MPSyncFunction.Param(2)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="5177949165724209" type="Gracz">
+                                            <param id="0" name="Instance variable">death</param>
+                                            <param id="1" name="Value">MPSyncFunction.Param(3)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="7827029553787121" type="System">
+                                            <param id="0" name="Variable">p1</param>
+                                            <param id="1" name="Value">Gracz.PeerName</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6343968563547286">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7559691531652799" type="Gracz">
+                                            <param id="0" name="Instance variable">PeerName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">MPSyncFunction.Param(4)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="9423254680598471" type="Gracz">
+                                            <param id="0" name="Instance variable">kills</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="2184051301088183" type="Function">
+                                            <param id="0" name="Name">&quot;chat&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Gracz &quot;&amp;Gracz.PeerName&amp;&quot; zabil gracza &quot;&amp;p1&amp;&quot;.&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="2812491115156207">
+                            <conditions>
+                                <condition id="0" name="On function" sid="6979759392884042" type="MPSyncFunction">
+                                    <param id="0" name="Name">&quot;d_hp&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="7313748281622684" type="Gracz">
+                                    <param id="0" name="Instance variable">PeerName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">MPSyncFunction.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="766972728053055" type="Gracz">
+                                    <param id="0" name="Instance variable">HP</param>
+                                    <param id="1" name="Value">MPSyncFunction.Param(1)</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
@@ -1754,7 +1848,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="7121044135488576">
+                <event-block collapsed="1" sid="7121044135488576">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="3461431782096944" type="Gracz">
                             <param id="0" name="Instance variable">peerid</param>
@@ -2374,7 +2468,7 @@
                 <action id="8" name="Set unfocused" sid="932969200768215" type="EdytorText" />
             </actions>
         </event-block>
-        <event-group description="" sid="3896803300090272" title="Edit">
+        <event-group collapsed="1" description="" sid="3896803300090272" title="Edit">
             <sub-events>
                 <variable constant="0" name="change" sid="2668722481981235" static="0" type="number">0</variable>
                 <variable constant="0" name="klocekid" sid="4312598279193724" static="0" type="number">0</variable>

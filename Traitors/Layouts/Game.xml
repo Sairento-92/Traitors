@@ -222,6 +222,8 @@
                         <lasthitby></lasthitby>
                         <HP>100</HP>
                         <weprecoil>0</weprecoil>
+                        <kills>0</kills>
+                        <death>0</death>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -2103,8 +2105,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-43.133022308</x>
-                        <y>-83.080833435</y>
+                        <x>-86.108612061</x>
+                        <y>-81.427825928</y>
                         <z>0</z>
                         <width>4</width>
                         <height>4</height>
@@ -2796,6 +2798,13 @@
             <properties>
                 <delimiter>,</delimiter>
                 <eval-mode>No</eval-mode>
+            </properties>
+        </instance>
+        <instance type="Tabela_arr" uid="106">
+            <properties>
+                <width>10</width>
+                <height>1</height>
+                <depth>1</depth>
             </properties>
         </instance>
     </nonworld-instances>

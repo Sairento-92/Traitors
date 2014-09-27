@@ -8,7 +8,7 @@
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>1syox27xv6p1i</unique-id>
-    <saved-with-version>18100</saved-with-version>
+    <saved-with-version>18200</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
@@ -203,6 +203,8 @@
                     <instance-variable comment="Gracz ktory go ostatnio uderzyl, peerid" name="lasthitby" sid="2395147837106518" type="string" />
                     <instance-variable name="HP" sid="1745128929561679" type="number" />
                     <instance-variable comment="recoil broni" name="weprecoil" sid="8559496330634559" type="number" />
+                    <instance-variable name="kills" sid="5465593582832196" type="number" />
+                    <instance-variable name="death" sid="3275545900289684" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="5670686406564721">
@@ -291,6 +293,9 @@
             </object-type>
             <object-type name="Nick" sid="1394294591820917">
                 <plugin id="Text" />
+            </object-type>
+            <object-type global="1" name="Tabela_arr" sid="3150690343208177">
+                <plugin id="Arr" />
             </object-type>
         </object-folder>
         <object-type name="Multiplayer" sid="5798874729658294">
