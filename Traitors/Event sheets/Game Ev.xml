@@ -1483,7 +1483,9 @@
                                     <actions />
                                     <sub-events>
                                         <event-block sid="1954790079359867">
-                                            <conditions />
+                                            <conditions>
+                                                <condition id="10" name="Is host" sid="9019470727378856" type="Multiplayer" />
+                                            </conditions>
                                             <actions>
                                                 <action id="-12" name="Subtract from" sid="4891354621704924" type="Gracz">
                                                     <param id="0" name="Instance variable">HP</param>
@@ -1491,32 +1493,30 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block sid="3814368146736523">
+                                                <event-block sid="1575500500703521">
                                                     <conditions>
-                                                        <condition id="10" name="Is host" sid="4331117950255927" type="Multiplayer" />
-                                                        <condition id="-7" name="Compare instance variable" sid="4667087582758154" type="Gracz">
+                                                        <condition id="-7" name="Compare instance variable" sid="843827690800858" type="Gracz">
                                                             <param id="0" name="Instance variable">HP</param>
                                                             <param id="1" name="Comparison">3</param>
                                                             <param id="2" name="Value">0</param>
                                                         </condition>
-                                                        <condition id="-4" name="Trigger once while true" sid="8758725768890442" type="System" />
                                                     </conditions>
                                                     <actions>
-                                                        <action id="-10" name="Set value" sid="3694750306598014" type="Gracz">
-                                                            <param id="0" name="Instance variable">HP</param>
-                                                            <param id="1" name="Value">100</param>
-                                                        </action>
-                                                        <action id="-3" name="Set position" sid="6365757550789874" type="Gracz">
-                                                            <param id="0" name="X">random(LayoutWidth)</param>
-                                                            <param id="1" name="Y">random(Layoutheight)</param>
-                                                        </action>
-                                                        <action id="-11" name="Add to" sid="4976121304045294" type="Gracz">
+                                                        <action id="-11" name="Add to" sid="240575142958543" type="Gracz">
                                                             <param id="0" name="Instance variable">death</param>
                                                             <param id="1" name="Value">1</param>
                                                         </action>
-                                                        <action id="0" name="Call function" sid="6170041283521742" type="MPSyncFunction">
+                                                        <action id="0" name="Call function" sid="5503161854071616" type="MPSyncFunction">
                                                             <param id="0" name="Name">&quot;d_pos&quot;</param>
                                                             <param id="1" name="Parameter {n}">Gracz.PeerName{###}Gracz.X{###}Gracz.Y{###}Gracz.death{###}Function.Param(2)</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="8886380773102295" type="Gracz">
+                                                            <param id="0" name="Instance variable">HP</param>
+                                                            <param id="1" name="Value">100</param>
+                                                        </action>
+                                                        <action id="-3" name="Set position" sid="2970018178104233" type="Gracz">
+                                                            <param id="0" name="X">random(LayoutWidth)</param>
+                                                            <param id="1" name="Y">random(Layoutheight)</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
