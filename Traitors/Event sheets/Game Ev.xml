@@ -1865,7 +1865,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" sid="7121044135488576">
+                <event-block sid="7121044135488576">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="3461431782096944" type="Gracz">
                             <param id="0" name="Instance variable">peerid</param>
@@ -2033,19 +2033,19 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">3</param>
                                 </condition>
-                                <condition id="0" inverted="1" name="Compare text" sid="6105892160361388" type="TextBox">
+                                <condition id="0" inverted="1" name="Compare text" sid="6105892160361388" type="Chatbox">
                                     <param id="0" name="Text">&quot;&quot;</param>
                                     <param id="1" name="Case">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="8" name="Set unfocused" sid="2080580569820928" type="TextBox" />
+                                <action id="8" name="Set unfocused" sid="2080580569820928" type="Chatbox" />
                             </actions>
                             <sub-events>
                                 <event-block sid="3731938404470995">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="6594219871411868" type="System">
-                                            <param id="0" name="First value">left(textbox.text,1)</param>
+                                            <param id="0" name="First value">left(Chatbox.text,1)</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Second value">&quot;/&quot;</param>
                                         </condition>
@@ -2053,7 +2053,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="2775558825648978" type="Function">
                                             <param id="0" name="Name">&quot;komendy&quot;</param>
-                                            <param id="1" name="Parameter {n}">TextBox.Text</param>
+                                            <param id="1" name="Parameter {n}">Chatbox.Text</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -2074,7 +2074,7 @@
                                                             <param id="0" name="Delimiter">&quot; &quot;</param>
                                                         </action>
                                                         <action id="1" name="Load table" sid="6998557188632158" type="CSV">
-                                                            <param id="0" name="CSV string">TextBox.Text</param>
+                                                            <param id="0" name="CSV string">Chatbox.Text</param>
                                                         </action>
                                                         <action id="-9" name="Set value" sid="7083364577587625" type="System">
                                                             <param id="0" name="Variable">colcount</param>
@@ -2310,7 +2310,7 @@
                                 <event-block sid="2964668974586195">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="9480950338306594" type="System">
-                                            <param id="0" name="First value">left(textbox.text,1)</param>
+                                            <param id="0" name="First value">left(Chatbox.text,1)</param>
                                             <param id="1" name="Comparison">1</param>
                                             <param id="2" name="Second value">&quot;/&quot;</param>
                                         </condition>
@@ -2318,7 +2318,7 @@
                                     <actions>
                                         <action id="0" name="Call function" sid="4367356093215953" type="MPSyncFunction">
                                             <param id="0" name="Name">&quot;chat&quot;</param>
-                                            <param id="1" name="Parameter {n}">multiplayer.MyAlias &amp;&quot; : &quot; &amp;textbox.Text</param>
+                                            <param id="1" name="Parameter {n}">multiplayer.MyAlias &amp;&quot; : &quot; &amp;Chatbox.Text</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -2330,7 +2330,7 @@
                                                 <action id="8" name="Send message" sid="7515000811304017" type="Multiplayer">
                                                     <param id="0" name="Peer ID">&quot;&quot;</param>
                                                     <param id="1" name="Tag">&quot;chatmess&quot;</param>
-                                                    <param id="2" name="Message">multiplayer.MyAlias &amp;&quot; : &quot; &amp;textbox.Text</param>
+                                                    <param id="2" name="Message">multiplayer.MyAlias &amp;&quot; : &quot; &amp;Chatbox.Text</param>
                                                     <param id="3" name="Mode">0</param>
                                                 </action>
                                             </actions>
@@ -2342,12 +2342,12 @@
                                             <actions>
                                                 <action id="0" name="Call function" sid="1906940366905144" type="Function">
                                                     <param id="0" name="Name">&quot;chat&quot;</param>
-                                                    <param id="1" name="Parameter {n}">multiplayer.MyAlias &amp;&quot; : &quot; &amp;textbox.Text</param>
+                                                    <param id="1" name="Parameter {n}">multiplayer.MyAlias &amp;&quot; : &quot; &amp;Chatbox.Text</param>
                                                 </action>
                                                 <action id="9" name="Broadcast message" sid="5346403952405708" type="Multiplayer">
                                                     <param id="0" name="From ID">&quot;&quot;</param>
                                                     <param id="1" name="Tag">&quot;chatget&quot;</param>
-                                                    <param id="2" name="Message">multiplayer.MyAlias &amp;&quot; : &quot; &amp;textbox.Text</param>
+                                                    <param id="2" name="Message">multiplayer.MyAlias &amp;&quot; : &quot; &amp;Chatbox.Text</param>
                                                     <param id="3" name="Mode">0</param>
                                                 </action>
                                             </actions>
@@ -2357,7 +2357,7 @@
                                 <event-block sid="2047167937769659">
                                     <conditions />
                                     <actions>
-                                        <action id="0" name="Set text" sid="5378701478396131" type="TextBox">
+                                        <action id="0" name="Set text" sid="5378701478396131" type="Chatbox">
                                             <param id="0" name="Text">&quot;&quot;</param>
                                         </action>
                                     </actions>
@@ -2446,11 +2446,31 @@
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="6397765035505024" type="CameraDist">
-                            <param id="0" name="State">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9775579441963925">
+                            <conditions>
+                                <condition id="2" name="Mouse button is down" sid="9970897097043262" type="Mouse">
+                                    <param id="0" name="Mouse button">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="6397765035505024" type="CameraDist">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5589226310823386">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="95077810291683" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="9657282475035575" type="CameraDist">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="5938720814796776">
                     <conditions>
@@ -2471,6 +2491,81 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="4324570491873214">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="3328665550241788" type="Keyboard">
+                            <param id="0" name="Key">112 (F1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Clear" sid="820418109641061" type="Scoreboard" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4774233931396495">
+                            <conditions>
+                                <condition id="-24" name="For Each (ordered)" sid="2292884809382372" type="System">
+                                    <param id="0" name="Object">Gracz</param>
+                                    <param id="1" name="Expression">gracz.kills - gracz.death</param>
+                                    <param id="2" name="Order">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1462890969684746">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3582525659814946" type="Gracz">
+                                            <param id="0" name="Instance variable">death</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="3131082040131421" type="Gracz">
+                                            <param id="0" name="Instance variable">kills</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Add item" sid="2063799273975763" type="Scoreboard">
+                                            <param id="0" name="Text">Gracz.PeerName &amp;&quot; &quot; &amp;Gracz.Kills &amp;&quot; / &quot; &amp;Gracz.death &amp;&quot; KD: &quot; &amp; round(100 * (Gracz.kills / gracz.death))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="856508173791088">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="2210141037953676" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Add item" sid="530775577277704" type="Scoreboard">
+                                            <param id="0" name="Text">Gracz.PeerName &amp;&quot; &quot; &amp;Gracz.Kills &amp;&quot; / &quot; &amp;Gracz.death</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="4816665411349356">
+                            <conditions />
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="8422475086563239" type="System">
+                                    <param id="0" name="Layer">&quot;Scoreboard&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2563096591321156">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="5240031568217752" type="Keyboard">
+                            <param id="0" name="Key">112 (F1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="3838135659736895" type="System">
+                            <param id="0" name="Layer">&quot;Scoreboard&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-block sid="3468657705524807">
@@ -2481,7 +2576,7 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="8" name="Set unfocused" sid="1256296056692011" type="TextBox" />
+                <action id="8" name="Set unfocused" sid="1256296056692011" type="Chatbox" />
                 <action id="8" name="Set unfocused" sid="932969200768215" type="EdytorText" />
             </actions>
         </event-block>

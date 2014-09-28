@@ -83,7 +83,7 @@
                         <y>-32</y>
                         <z>0</z>
                         <width>10</width>
-                        <height>6</height>
+                        <height>2</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1939,9 +1939,9 @@
                         <behavior-instance type="Fade">
                             <properties>
                                 <active-at-start>Yes</active-at-start>
-                                <fade-in-time>0</fade-in-time>
+                                <fade-in-time>0.01</fade-in-time>
                                 <wait-time>0</wait-time>
-                                <fade-out-time>0.5</fade-out-time>
+                                <fade-out-time>0.1</fade-out-time>
                                 <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
@@ -2439,8 +2439,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>56</x>
-                        <y>8</y>
+                        <x>324</x>
+                        <y>4</y>
                         <z>0</z>
                         <width>328</width>
                         <height>56</height>
@@ -2451,7 +2451,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="TextBox" uid="67">
+                <instance type="Chatbox" uid="67">
                     <properties>
                         <text></text>
                         <placeholder>/clear - czysci czat </placeholder>
@@ -2777,6 +2777,48 @@
                         <z>0</z>
                         <width>150</width>
                         <height>22</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="Scoreboard" sid="8653468010238087">
+            <initially-visible>0</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="Scoreboard" uid="107">
+                    <properties>
+                        <items>Test;cycki</items>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <type>List box</type>
+                        <multi-select>No</multi-select>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>248</x>
+                        <y>8</y>
+                        <z>0</z>
+                        <width>248</width>
+                        <height>284</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
