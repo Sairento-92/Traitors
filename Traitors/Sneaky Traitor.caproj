@@ -79,7 +79,7 @@
             </object-type>
         </object-folder>
         <object-folder expanded="1" name="Game">
-            <object-folder expanded="0" name="Edytor">
+            <object-folder expanded="1" name="Edytor">
                 <object-type name="EdytorText" sid="7903070800613441">
                     <plugin id="TextBox" />
                     <instance-variables>
@@ -186,6 +186,76 @@
                 </object-type>
                 <object-type name="ItemyList" sid="8987913618628738">
                     <plugin id="List" />
+                </object-type>
+                <object-type name="klocek_lot" sid="8897298635625007">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="id" sid="811977975732369" type="number" />
+                        <instance-variable name="klocekid" sid="8745524474324721" type="number" />
+                        <instance-variable name="klocekanim" sid="1576113306877443" type="string" />
+                        <instance-variable name="select" sid="5703870429700692" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Solid" sid="93948803190399">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder expanded="1">
+                        <animation framecount="2" loop="0" name="Sciany" pingpong="0" repeatcount="1" repeatto="0" sid="9704698388546491" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <collision-poly>
+                                    <point x="0.0003125" y="0.0003125" />
+                                    <point x="0.999687" y="0.0003125" />
+                                    <point x="0.999687" y="0.999687" />
+                                    <point x="0.0003125" y="0.999687" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <collision-poly>
+                                    <point x="0.0003125" y="0.0003125" />
+                                    <point x="0.999687" y="0.0003125" />
+                                    <point x="0.999687" y="0.999687" />
+                                    <point x="0.0003125" y="0.999687" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="0" name="Podloga" pingpong="0" repeatcount="1" repeatto="0" sid="5345072085930788" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <collision-poly>
+                                    <point x="0.000625" y="0.000625" />
+                                    <point x="0.999687" y="0.000625" />
+                                    <point x="0.999687" y="0.999687" />
+                                    <point x="0.000625" y="0.999687" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <collision-poly>
+                                    <point x="0.00015625" y="0.00015625" />
+                                    <point x="0.999844" y="0.00015625" />
+                                    <point x="0.999844" y="0.999844" />
+                                    <point x="0.00015625" y="0.999844" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="0" name="Mechanizmy" pingpong="0" repeatcount="1" repeatto="0" sid="6433841051915368" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <collision-poly>
+                                    <point x="0.0003125" y="0.0003125" />
+                                    <point x="0.999687" y="0.0003125" />
+                                    <point x="0.999687" y="0.999687" />
+                                    <point x="0.0003125" y="0.999687" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <collision-poly>
+                                    <point x="0.0003125" y="0.0003125" />
+                                    <point x="0.999687" y="0.0003125" />
+                                    <point x="0.999687" y="0.999687" />
+                                    <point x="0.0003125" y="0.999687" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
                 </object-type>
             </object-folder>
             <object-type name="Gracz" sid="1975657082452686">

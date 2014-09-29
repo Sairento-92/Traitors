@@ -1092,7 +1092,7 @@
         <event-group bookmark="1" description="Peer i Host" sid="9395126084642041" title="Both">
             <sub-events>
                 <variable comment="ilosc obiektow scrollto na bron" constant="0" name="camwep" sid="3624705707496158" static="0" type="number">0</variable>
-                <event-group description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
+                <event-group collapsed="1" description="nie dokonczone" sid="7074375720562819" title="Strzelanie">
                     <sub-events>
                         <variable comment="dlugosc strzalu" constant="0" name="shootlong" sid="680012249550892" static="0" type="number">0</variable>
                         <variable comment="dmg pocisku" constant="0" name="shootdmg" sid="3194761618821443" static="0" type="number">0</variable>
@@ -1985,7 +1985,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group bookmark="1" collapsed="1" description="" sid="291881474607767" title="Komendy">
+                <event-group bookmark="1" description="" sid="291881474607767" title="Komendy">
                     <sub-events>
                         <event-block sid="3941391713268148">
                             <conditions>
@@ -2580,11 +2580,11 @@
                 <action id="8" name="Set unfocused" sid="932969200768215" type="EdytorText" />
             </actions>
         </event-block>
-        <event-group collapsed="1" description="" sid="3896803300090272" title="Edit">
+        <event-group description="" sid="3896803300090272" title="Edit">
             <sub-events>
                 <variable constant="0" name="change" sid="2668722481981235" static="0" type="number">0</variable>
                 <variable constant="0" name="klocekid" sid="4312598279193724" static="0" type="number">0</variable>
-                <event-group description="" sid="2627094084663457" title="Grupy">
+                <event-group collapsed="1" description="" sid="2627094084663457" title="Grupy">
                     <sub-events>
                         <event-block any="1" sid="1308965321073101">
                             <conditions>
@@ -2655,6 +2655,21 @@
                                             <param id="0" name="Animation">klocek.klocekanim</param>
                                             <param id="1" name="From">0</param>
                                         </action>
+                                        <action id="-10" name="Set value" sid="6850041732184976" type="klocek_lot">
+                                            <param id="0" name="Instance variable">klocekid</param>
+                                            <param id="1" name="Value">Itemy.SelectedIndex</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="8930099862819781" type="klocek_lot">
+                                            <param id="0" name="Instance variable">klocekanim</param>
+                                            <param id="1" name="Value">Grupa.SelectedText</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="2666486956604307" type="klocek_lot">
+                                            <param id="0" name="Frame number">klocek_lot.klocekid</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="3325995029647372" type="klocek_lot">
+                                            <param id="0" name="Animation">klocek_lot.klocekanim</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -2674,6 +2689,21 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="8602450426016728">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4269383424557559" type="System">
+                                    <param id="0" name="Variable">Edit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="5237280582539699" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="9153843549295925" type="klocek_lot">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block collapsed="1" sid="5572666246481299">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="9474874516057616" type="System">
@@ -2681,26 +2711,25 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="9680919310611487" type="klocek">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">-1</param>
-                                </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="3847459278287487" type="klocek">
+                                <action id="-10" name="Set value" sid="1679067510865674" type="klocek">
                                     <param id="0" name="Instance variable">klocekid</param>
-                                    <param id="1" name="Value">klocekid</param>
+                                    <param id="1" name="Value">Itemy.SelectedIndex</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="2308228126885969" type="klocek">
+                                <action id="-10" name="Set value" sid="958658129231729" type="klocek">
+                                    <param id="0" name="Instance variable">klocekanim</param>
+                                    <param id="1" name="Value">Grupa.SelectedText</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="2308228126885969" type="klocek_lot">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="9851313383448909" type="klocek">
-                                    <param id="0" name="Animation">klocek.klocekanim</param>
+                                <action id="4" name="Set animation" sid="9851313383448909" type="klocek_lot">
+                                    <param id="0" name="Animation">klocek_lot.klocekanim</param>
                                     <param id="1" name="From">0</param>
                                 </action>
-                                <action id="5" name="Set frame" sid="3463849073740008" type="klocek">
-                                    <param id="0" name="Frame number">klocek.klocekid</param>
+                                <action id="5" name="Set frame" sid="3463849073740008" type="klocek_lot">
+                                    <param id="0" name="Frame number">klocek_lot.klocekid</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -2710,14 +2739,9 @@
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Index">0</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="2009100789781408" type="klocek">
-                                            <param id="0" name="Instance variable">id</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">-1</param>
-                                        </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Set position" sid="7107328423926995" type="klocek">
+                                        <action id="-3" name="Set position" sid="7107328423926995" type="klocek_lot">
                                             <param id="0" name="X">int(Mouse.X)</param>
                                             <param id="1" name="Y">int(Mouse.Y)</param>
                                         </action>
@@ -2730,14 +2754,9 @@
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Index">1</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="7861682529568495" type="klocek">
-                                            <param id="0" name="Instance variable">id</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">-1</param>
-                                        </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Set position" sid="103940587920894" type="klocek">
+                                        <action id="-3" name="Set position" sid="103940587920894" type="klocek_lot">
                                             <param id="0" name="X">int(int(Mouse.X/16)*16)</param>
                                             <param id="1" name="Y">int(int(Mouse.Y/16)*16)</param>
                                         </action>
@@ -2750,14 +2769,9 @@
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Index">2</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="2258127414936023" type="klocek">
-                                            <param id="0" name="Instance variable">id</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">-1</param>
-                                        </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Set position" sid="6483213948877743" type="klocek">
+                                        <action id="-3" name="Set position" sid="6483213948877743" type="klocek_lot">
                                             <param id="0" name="X">int(int(Mouse.X/32)*32)</param>
                                             <param id="1" name="Y">int(int(Mouse.Y/32)*32)</param>
                                         </action>
@@ -2770,16 +2784,11 @@
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Index">3</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="4894979187655402" type="klocek">
-                                            <param id="0" name="Instance variable">id</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">-1</param>
-                                        </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Set position" sid="9417466550050518" type="klocek">
-                                            <param id="0" name="X">int(Mouse.X/klocek.Width)*klocek.Width</param>
-                                            <param id="1" name="Y">int(Mouse.Y/klocek.Height)*klocek.Height</param>
+                                        <action id="-3" name="Set position" sid="9417466550050518" type="klocek_lot">
+                                            <param id="0" name="X">int(Mouse.X/klocek_lot.Width)*klocek_lot.Width</param>
+                                            <param id="1" name="Y">int(Mouse.Y/klocek_lot.Height)*klocek_lot.Height</param>
                                         </action>
                                         <action id="8" name="Set unfocused" sid="4718702883699158" type="GridCheck" />
                                     </actions>
@@ -2799,6 +2808,9 @@
                     </conditions>
                     <actions>
                         <action behavior="Solid" id="0" name="Set enabled" sid="2440903145839813" type="klocek">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="8035157047491201" type="klocek_lot">
                             <param id="0" name="State">0</param>
                         </action>
                     </actions>
@@ -2927,7 +2939,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="3722825918528233" title="Wysylanie mapy">
+                <event-group collapsed="1" description="" sid="3722825918528233" title="Wysylanie mapy">
                     <sub-events>
                         <event-block sid="1513242409803253">
                             <conditions>
@@ -3074,7 +3086,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group collapsed="1" description="" sid="2305153252919526" title="Size">
+                <event-group description="" sid="2305153252919526" title="Size">
                     <sub-events>
                         <event-block sid="9140129871264282">
                             <conditions>
@@ -3088,15 +3100,9 @@
                             </actions>
                             <sub-events>
                                 <event-block sid="7079014782221371">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="5565453782360086" type="klocek">
-                                            <param id="0" name="Instance variable">id</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">-1</param>
-                                        </condition>
-                                    </conditions>
+                                    <conditions />
                                     <actions>
-                                        <action id="9" name="Set scale" sid="9865803774886386" type="klocek">
+                                        <action id="9" name="Set scale" sid="9865803774886386" type="klocek_lot">
                                             <param id="0" name="Scale">Edit_Size/100</param>
                                         </action>
                                     </actions>
@@ -3120,15 +3126,9 @@
                             </actions>
                             <sub-events>
                                 <event-block sid="6954389210325557">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="4355747534067816" type="klocek">
-                                            <param id="0" name="Instance variable">id</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">-1</param>
-                                        </condition>
-                                    </conditions>
+                                    <conditions />
                                     <actions>
-                                        <action id="9" name="Set scale" sid="4558745837478751" type="klocek">
+                                        <action id="9" name="Set scale" sid="4558745837478751" type="klocek_lot">
                                             <param id="0" name="Scale">Edit_Size/100</param>
                                         </action>
                                     </actions>
@@ -3478,12 +3478,7 @@
                         <variable constant="0" name="go" sid="6489081535200705" static="0" type="number">0</variable>
                         <event-block sid="5498846341556773">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="3552144038786351" type="klocek">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">-1</param>
-                                </condition>
-                                <condition id="-3" inverted="1" name="Is on-screen" sid="9473349323592876" type="klocek" />
+                                <condition id="-3" inverted="1" name="Is on-screen" sid="9473349323592876" type="klocek_lot" />
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="9217984664054225" type="System">
@@ -3494,20 +3489,14 @@
                         </event-block>
                         <event-block any="1" sid="2041739297292129">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="9106987553715891" type="klocek">
+                                <condition id="1" name="Is overlapping another object" sid="9106987553715891" type="klocek_lot">
                                     <param id="0" name="Object">klocek</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
                                 <event-block sid="9190390211239149">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="5936247397944277" type="klocek">
-                                            <param id="0" name="Instance variable">id</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">-1</param>
-                                        </condition>
-                                    </conditions>
+                                    <conditions />
                                     <actions>
                                         <action id="-9" name="Set value" sid="1094923901066402" type="System">
                                             <param id="0" name="Variable">go</param>
@@ -3528,24 +3517,19 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="237879041231038" type="klocek">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">-1</param>
-                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="2656646714794269" type="System">
                                     <param id="0" name="Variable">xtemp</param>
-                                    <param id="1" name="Value">klocek.x</param>
+                                    <param id="1" name="Value">klocek_lot.x</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="1205837151311952" type="System">
                                     <param id="0" name="Variable">ytemp</param>
-                                    <param id="1" name="Value">klocek.y</param>
+                                    <param id="1" name="Value">klocek_lot.y</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="2942301414088352" type="System">
                                     <param id="0" name="Variable">klocekidtemp</param>
-                                    <param id="1" name="Value">klocek.klocekid</param>
+                                    <param id="1" name="Value">klocek_lot.klocekid</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -3575,16 +3559,11 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="3895148433273383" type="klocek">
-                                    <param id="0" name="Instance variable">id</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">-1</param>
-                                </condition>
                             </conditions>
                             <actions>
                                 <action id="0" name="Call function" sid="9141563488884123" type="MPSyncFunction">
                                     <param id="0" name="Name">&quot;klocek_zm&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;&quot;{###}&quot;&quot;{###}1{###}idtemp+1{###}klocek.klocekid{###}int(klocek.X){###}int(klocek.Y){###}klocek.Width{###}klocek.Height{###}klocek.klocekanim</param>
+                                    <param id="1" name="Parameter {n}">&quot;&quot;{###}&quot;&quot;{###}1{###}idtemp+1{###}klocek_lot.klocekid{###}int(klocek_lot.X){###}int(klocek_lot.Y){###}klocek_lot.Width{###}klocek_lot.Height{###}klocek_lot.klocekanim</param>
                                 </action>
                             </actions>
                         </event-block>
