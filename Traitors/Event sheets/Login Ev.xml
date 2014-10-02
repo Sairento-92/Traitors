@@ -3,6 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Login Ev</name>
     <events>
+        <variable comment="dmg * [ten var]" constant="0" name="DMGMulti" sid="6303299691327617" static="0" type="number">1</variable>
+        <variable comment="hp * [ten var]" constant="0" name="HPMulti" sid="390666225873975" static="0" type="number">1</variable>
+        <variable constant="0" name="GAME_MAXPLAYERS" sid="7735953277978601" static="0" type="number">0</variable>
+        <variable comment="Haslo" constant="0" name="Password" sid="2715523283790768" static="0" type="text"></variable>
         <variable comment="Nazwa gry / nie zmieniac" constant="1" name="GAME_NAME" sid="7260834246364596" static="0" type="text">rexu-sneakytraitor</variable>
         <variable comment="Instancja, przed room" constant="1" name="GAME_INSTANCE" sid="8908236026876263" static="0" type="text">main</variable>
         <variable comment="Najmniejszy podzial" constant="0" name="GAME_ROOM" sid="8515977161225578" static="0" type="text">ganiany</variable>
@@ -134,6 +138,159 @@
             <actions>
                 <action id="-2" name="Go to layout" sid="8778027990815567" type="System">
                     <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6851460554909103">
+            <conditions>
+                <condition id="0" name="On clicked" sid="236434468098161" type="Button" />
+                <condition id="-7" name="Compare instance variable" sid="5815840893608602" type="Button">
+                    <param id="0" name="Instance variable">tag</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2771800841816302">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="470705894820201" type="TextBox">
+                            <param id="0" name="Instance variable">tag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="0" inverted="1" name="Compare text" sid="6659885857031597" type="TextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3686957378708312" type="System">
+                            <param id="0" name="Variable">GAME_ROOM</param>
+                            <param id="1" name="Value">TextBox.Text</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="977494657001097">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8149465301248072" type="TextBox">
+                            <param id="0" name="Instance variable">tag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="0" inverted="1" name="Compare text" sid="6158770387859953" type="TextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7163530197575647" type="System">
+                            <param id="0" name="Variable">GAME_MAXPLAYERS</param>
+                            <param id="1" name="Value">TextBox.Text</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9358579741910365">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7541795349723356" type="TextBox">
+                            <param id="0" name="Instance variable">tag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="0" inverted="1" name="Compare text" sid="5246037662175179" type="TextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1574510805091236" type="System">
+                            <param id="0" name="Variable">Password</param>
+                            <param id="1" name="Value">TextBox.Text</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2442632722142891">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6595993237710567" type="TextBox">
+                            <param id="0" name="Instance variable">tag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                        <condition id="0" inverted="1" name="Compare text" sid="1239548405766025" type="TextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="639142283374959" type="System">
+                            <param id="0" name="Variable">DMGMulti</param>
+                            <param id="1" name="Value">TextBox.Text</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8764909097242045">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8441049610768212" type="TextBox">
+                            <param id="0" name="Instance variable">tag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                        <condition id="0" inverted="1" name="Compare text" sid="7095924285272774" type="TextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4227181479854642" type="System">
+                            <param id="0" name="Variable">HPMulti</param>
+                            <param id="1" name="Value">TextBox.Text</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7320428202328371">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5318262315955947" type="TextBox">
+                            <param id="0" name="Instance variable">tag</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">6</param>
+                        </condition>
+                        <condition id="0" inverted="1" name="Compare text" sid="3779781344057571" type="TextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="5231402769440053">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="5145724025581844" type="System">
+                            <param id="0" name="Variable">Myname</param>
+                            <param id="1" name="Value">trim(MynameBox.Text)</param>
+                        </action>
+                        <action id="1" name="Connect" sid="3529058769093239" type="Multiplayer">
+                            <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5956784038081009">
+            <conditions>
+                <condition id="0" name="On clicked" sid="6883854783857585" type="Button" />
+                <condition id="-7" name="Compare instance variable" sid="7190000126763438" type="Button">
+                    <param id="0" name="Instance variable">tag</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="5241990152621495" type="Button">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="847040483420656" type="System">
+                    <param id="0" name="Layer">&quot;Server&quot;</param>
+                    <param id="1" name="Visibility">1</param>
                 </action>
             </actions>
         </event-block>

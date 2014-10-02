@@ -82,7 +82,7 @@
                     <param id="0" name="Game">GAME_NAME</param>
                     <param id="1" name="Instance">GAME_INSTANCE</param>
                     <param id="2" name="Room">GAME_ROOM</param>
-                    <param id="3" name="Max peers">0</param>
+                    <param id="3" name="Max peers">GAME_MAXPLAYERS</param>
                 </action>
                 <action id="-9" name="Destroy" sid="5276511860398541" type="Nick" />
                 <action id="-9" name="Destroy" sid="8358050325399455" type="Check2" />
@@ -121,8 +121,26 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group collapsed="1" description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
+        <event-group description="Sygnałowanie, logowanie na serwerze" sid="6806957315798569" title="Signalling">
             <sub-events>
+                <event-block sid="254404510353043">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="2548818371705462" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;passwordcheckprove&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="6272599770646815" type="Function">
+                            <param id="0" name="Name">&quot;chat&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Dolaczono do pokoju jako peer, alias: &quot; &amp;multiplayer.MyAlias</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="1011681316397561" type="System">
+                            <param id="0" name="Group name">&quot;Peer&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="4191910454277098" type="joindestr" />
+                    </actions>
+                </event-block>
                 <event-block disabled="1" sid="6270828135115465">
                     <conditions>
                         <condition id="2" name="On connected" sid="5697153594844503" type="Multiplayer" />
@@ -241,15 +259,12 @@
                                 <condition id="10" inverted="1" name="Is host" sid="15933177712766" type="Multiplayer" />
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="7679772599809676" type="Function">
-                                    <param id="0" name="Name">&quot;chat&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;Dolaczono do pokoju jako peer, alias: &quot; &amp;multiplayer.MyAlias</param>
+                                <action id="8" name="Send message" sid="4184873257605091" type="Multiplayer">
+                                    <param id="0" name="Peer ID">&quot;&quot;</param>
+                                    <param id="1" name="Tag">&quot;passwordcheck&quot;</param>
+                                    <param id="2" name="Message">Password</param>
+                                    <param id="3" name="Mode">0</param>
                                 </action>
-                                <action id="-12" name="Set group active" sid="6689301689991077" type="System">
-                                    <param id="0" name="Group name">&quot;Peer&quot;</param>
-                                    <param id="1" name="State">1</param>
-                                </action>
-                                <action id="-9" name="Destroy" sid="6887843430496935" type="joindestr" />
                             </actions>
                             <sub-events>
                                 <event-block sid="2469308996906073">
@@ -272,36 +287,9 @@
         </event-group>
         <event-group bookmark="1" description="" inactive="1" sid="3011960123564868" title="Host">
             <sub-events>
-                <event-group collapsed="1" description="" sid="8985332030257512" title="Czat2">
-                    <sub-events>
-                        <event-block disabled="1" sid="7700588824405324">
-                            <conditions>
-                                <condition id="15" name="On peer message" sid="2354828635272247" type="Multiplayer">
-                                    <param id="0" name="Tag">&quot;chatmess&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action disabled="1" id="9" name="Broadcast message" sid="5948949542983065" type="Multiplayer">
-                                    <param id="0" name="From ID">&quot;&quot;</param>
-                                    <param id="1" name="Tag">&quot;chatget&quot;</param>
-                                    <param id="2" name="Message">Multiplayer.Message</param>
-                                    <param id="3" name="Mode">0</param>
-                                </action>
-                                <action disabled="1" id="0" name="Call function" sid="2221711699933783" type="Function">
-                                    <param id="0" name="Name">&quot;chat&quot;</param>
-                                    <param id="1" name="Parameter {n}">Multiplayer.Message</param>
-                                </action>
-                                <action id="0" name="Call function" sid="2285890287010372" type="MPSyncFunction">
-                                    <param id="0" name="Name">&quot;chat&quot;</param>
-                                    <param id="1" name="Parameter {n}">Multiplayer.Message</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
                 <event-group collapsed="1" description="Przetwarzanie inputow" sid="3475179535277555" title="Ruch">
                     <sub-events>
-                        <event-group collapsed="1" description="Ruch hosta" sid="6275370267556177" title="Hosty">
+                        <event-group description="Ruch hosta" sid="6275370267556177" title="Hosty">
                             <sub-events>
                                 <event-block sid="389482945461162">
                                     <conditions>
@@ -466,34 +454,69 @@
                 </event-group>
                 <event-block sid="3797964670126116">
                     <conditions>
-                        <condition id="11" name="On peer connected" sid="8301668725243685" type="Multiplayer" />
+                        <condition id="15" name="On peer message" sid="8301668725243685" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;passwordcheck&quot;</param>
+                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="-3" name="Create object" sid="1584353909267468" type="System">
-                            <param id="0" name="Object to create">Gracz</param>
-                            <param id="1" name="Layer">&quot;Main&quot;</param>
-                            <param id="2" name="X">50</param>
-                            <param id="3" name="Y">50</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="6205407216498941" type="Gracz">
-                            <param id="0" name="Instance variable">peerid</param>
-                            <param id="1" name="Value">Multiplayer.PeerID</param>
-                        </action>
-                        <action id="13" name="Associate object with peer" sid="8427513241266863" type="Multiplayer">
-                            <param id="0" name="Object">Gracz</param>
-                            <param id="1" name="Peer ID">Multiplayer.PeerID</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="7731879902522471" type="Gracz">
-                            <param id="0" name="Instance variable">PeerName</param>
-                            <param id="1" name="Value">Multiplayer.PeerAlias</param>
-                        </action>
-                        <action id="9" name="Broadcast message" sid="7417499857839062" type="Multiplayer">
-                            <param id="0" name="From ID">&quot;&quot;</param>
-                            <param id="1" name="Tag">&quot;Gania&quot;</param>
-                            <param id="2" name="Message">&quot;&quot;&amp;Gania</param>
-                            <param id="3" name="Mode">0</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1018257583485094">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4901542735571442" type="System">
+                                    <param id="0" name="Variable">Password</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.Message</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="8" name="Send message" sid="6751146737903603" type="Multiplayer">
+                                    <param id="0" name="Peer ID">Multiplayer.PeerID</param>
+                                    <param id="1" name="Tag">&quot;passwordcheckprove&quot;</param>
+                                    <param id="2" name="Message">&quot;Come in&quot;</param>
+                                    <param id="3" name="Mode">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="1584353909267468" type="System">
+                                    <param id="0" name="Object to create">Gracz</param>
+                                    <param id="1" name="Layer">&quot;Main&quot;</param>
+                                    <param id="2" name="X">50</param>
+                                    <param id="3" name="Y">50</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="6205407216498941" type="Gracz">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Value">Multiplayer.PeerID</param>
+                                </action>
+                                <action id="13" name="Associate object with peer" sid="8427513241266863" type="Multiplayer">
+                                    <param id="0" name="Object">Gracz</param>
+                                    <param id="1" name="Peer ID">Multiplayer.PeerID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="7731879902522471" type="Gracz">
+                                    <param id="0" name="Instance variable">PeerName</param>
+                                    <param id="1" name="Value">Multiplayer.PeerAlias</param>
+                                </action>
+                                <action id="9" name="Broadcast message" sid="7417499857839062" type="Multiplayer">
+                                    <param id="0" name="From ID">&quot;&quot;</param>
+                                    <param id="1" name="Tag">&quot;Gania&quot;</param>
+                                    <param id="2" name="Message">&quot;&quot;&amp;Gania</param>
+                                    <param id="3" name="Mode">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5706009191049493">
+                            <conditions>
+                                <condition id="-14" inverted="1" name="Compare variable" sid="7985274414616155" type="System">
+                                    <param id="0" name="Variable">Password</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Multiplayer.Message</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="21" name="Kick peer" sid="7977140588851088" type="Multiplayer">
+                                    <param id="0" name="Peer ID">Multiplayer.PeerID</param>
+                                    <param id="1" name="Reason">&quot;Wrong password&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block collapsed="1" sid="6011107902282835">
                     <conditions />
@@ -717,7 +740,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group bookmark="1" collapsed="1" description="" inactive="1" sid="9642298604554555" title="Peer">
+        <event-group bookmark="1" description="" inactive="1" sid="9642298604554555" title="Peer">
             <sub-events>
                 <event-group description="" sid="48844505906105" title="Czat">
                     <sub-events>
@@ -1097,7 +1120,7 @@
                         <variable comment="dlugosc strzalu" constant="0" name="shootlong" sid="680012249550892" static="0" type="number">0</variable>
                         <variable comment="dmg pocisku" constant="0" name="shootdmg" sid="3194761618821443" static="0" type="number">0</variable>
                         <variable comment="Peername strzelajacego" constant="0" name="peernn" sid="1043216091507957" static="0" type="text"></variable>
-                        <event-block any="1" collapsed="1" sid="6052376746430917">
+                        <event-block any="1" sid="6052376746430917">
                             <conditions>
                                 <condition id="2" name="Mouse button is down" sid="56868936798167" type="Mouse">
                                     <param id="0" name="Mouse button">0</param>
@@ -1155,7 +1178,7 @@
                                                 </action>
                                                 <action id="-9" name="Set value" sid="7301559069774564" type="System">
                                                     <param id="0" name="Variable">shootdmg</param>
-                                                    <param id="1" name="Value">20</param>
+                                                    <param id="1" name="Value">20 * DMGMulti</param>
                                                 </action>
                                                 <action id="-9" name="Set value" sid="7814084169865718" type="System">
                                                     <param id="0" name="Variable">shootlong</param>
@@ -1193,7 +1216,7 @@
                                                 </action>
                                                 <action id="-9" name="Set value" sid="1220264523210258" type="System">
                                                     <param id="0" name="Variable">shootdmg</param>
-                                                    <param id="1" name="Value">30</param>
+                                                    <param id="1" name="Value">30 * DMGMulti</param>
                                                 </action>
                                                 <action id="-9" name="Set value" sid="9366540669082184" type="System">
                                                     <param id="0" name="Variable">shootlong</param>
@@ -1239,7 +1262,7 @@
                                                 </action>
                                                 <action id="-9" name="Set value" sid="9038707496526842" type="System">
                                                     <param id="0" name="Variable">shootdmg</param>
-                                                    <param id="1" name="Value">35</param>
+                                                    <param id="1" name="Value">35 * DMGMulti</param>
                                                 </action>
                                                 <action id="-9" name="Set value" sid="1955298311307173" type="System">
                                                     <param id="0" name="Variable">shootlong</param>
@@ -1512,7 +1535,7 @@
                                                         </action>
                                                         <action id="-10" name="Set value" sid="8886380773102295" type="Gracz">
                                                             <param id="0" name="Instance variable">HP</param>
-                                                            <param id="1" name="Value">100</param>
+                                                            <param id="1" name="Value">100 * HPMulti</param>
                                                         </action>
                                                         <action id="-3" name="Set position" sid="2970018178104233" type="Gracz">
                                                             <param id="0" name="X">random(LayoutWidth)</param>
@@ -1795,7 +1818,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group collapsed="1" description="" sid="462107512539607" title="Czaty">
+                <event-group description="" sid="462107512539607" title="Czaty">
                     <sub-events>
                         <event-block sid="2414182989916798">
                             <conditions>
@@ -1985,7 +2008,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group bookmark="1" description="" sid="291881474607767" title="Komendy">
+                <event-group bookmark="1" collapsed="1" description="" sid="291881474607767" title="Komendy">
                     <sub-events>
                         <event-block sid="3941391713268148">
                             <conditions>
@@ -2580,7 +2603,7 @@
                 <action id="8" name="Set unfocused" sid="932969200768215" type="EdytorText" />
             </actions>
         </event-block>
-        <event-group description="" sid="3896803300090272" title="Edit">
+        <event-group collapsed="1" description="" sid="3896803300090272" title="Edit">
             <sub-events>
                 <variable constant="0" name="change" sid="2668722481981235" static="0" type="number">0</variable>
                 <variable constant="0" name="klocekid" sid="4312598279193724" static="0" type="number">0</variable>

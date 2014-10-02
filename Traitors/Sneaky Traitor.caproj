@@ -454,6 +454,18 @@
             <texture />
             <tiles />
         </object-type>
+        <object-type name="TextBox" sid="6493894405512699">
+            <plugin id="TextBox" />
+            <instance-variables>
+                <instance-variable name="tag" sid="8179938578495387" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="Button" sid="1490693689304085">
+            <plugin id="Button" />
+            <instance-variables>
+                <instance-variable name="tag" sid="4517852002551337" type="number" />
+            </instance-variables>
+        </object-type>
     </object-folder>
     <families>
         <family name="joindestr" plugin-id="Sprite" sid="1081447628885826">
