@@ -8,7 +8,7 @@
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>1syox27xv6p1i</unique-id>
-    <saved-with-version>18200</saved-with-version>
+    <saved-with-version>18300</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
@@ -66,8 +66,8 @@
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="1">
-        <object-folder expanded="1" name="Login">
+    <object-folder>
+        <object-folder name="Login">
             <object-type name="LoginButton" sid="4816300478550558">
                 <plugin id="Button" />
                 <instance-variables>
@@ -78,8 +78,8 @@
                 <plugin id="TextBox" />
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Game">
-            <object-folder expanded="1" name="Edytor">
+        <object-folder name="Game">
+            <object-folder name="Edytor">
                 <object-type name="EdytorText" sid="7903070800613441">
                     <plugin id="TextBox" />
                     <instance-variables>
@@ -100,7 +100,7 @@
                             <behavior id="solid" />
                         </behavior-type>
                     </behaviors>
-                    <animation-folder expanded="1">
+                    <animation-folder>
                         <animation framecount="2" loop="0" name="Sciany" pingpong="0" repeatcount="1" repeatto="0" sid="4221350598148346" speed="0">
                             <frame duration="1" hotspotX="0" hotspotY="0" />
                             <frame duration="1" hotspotX="0" hotspotY="0" />
@@ -117,7 +117,7 @@
                 </object-type>
                 <object-type name="BackgroundEdit" sid="9691233938035467">
                     <plugin id="Sprite" />
-                    <animation-folder expanded="1">
+                    <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1782328589304137" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
@@ -131,7 +131,7 @@
                     <instance-variables>
                         <instance-variable name="UidCheck" sid="1016829104187075" type="number" />
                     </instance-variables>
-                    <animation-folder expanded="1">
+                    <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7461984623488022" speed="5">
                             <frame duration="1" hotspotX="0" hotspotY="0" />
                         </animation>
@@ -154,7 +154,7 @@
                         <instance-variable name="x2" sid="6453030983762473" type="number" />
                         <instance-variable name="y2" sid="2095786536594495" type="number" />
                     </instance-variables>
-                    <animation-folder expanded="1">
+                    <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7495333864847177" speed="5">
                             <frame duration="1" hotspotX="0" hotspotY="0" />
                         </animation>
@@ -200,7 +200,7 @@
                             <behavior id="solid" />
                         </behavior-type>
                     </behaviors>
-                    <animation-folder expanded="1">
+                    <animation-folder>
                         <animation framecount="2" loop="0" name="Sciany" pingpong="0" repeatcount="1" repeatto="0" sid="9704698388546491" speed="0">
                             <frame duration="1" hotspotX="0" hotspotY="0">
                                 <collision-poly>
@@ -284,7 +284,7 @@
                         <behavior id="bound" />
                     </behavior-type>
                 </behaviors>
-                <animation-folder expanded="1">
+                <animation-folder>
                     <animation framecount="1" loop="0" name="gania0" pingpong="0" repeatcount="1" repeatto="0" sid="57793966180149" speed="5">
                         <frame duration="1" hotspotX="0.233333" hotspotY="0.555556">
                             <image-point name="Imagepoint 1" x="-0.0333333" y="-0.488889" />
@@ -323,7 +323,7 @@
                         <behavior id="destroy" />
                     </behavior-type>
                 </behaviors>
-                <animation-folder expanded="1">
+                <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3812723870168" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
@@ -336,7 +336,7 @@
                     <instance-variable name="wepid" sid="7474165661899121" type="number" />
                     <instance-variable name="id" sid="8479166556431876" type="number" />
                 </instance-variables>
-                <animation-folder expanded="1">
+                <animation-folder>
                     <animation framecount="4" loop="0" name="weapon" pingpong="0" repeatcount="0" repeatto="0" sid="904146525367862" speed="0">
                         <frame duration="0" hotspotX="0.470588" hotspotY="0.4" />
                         <frame duration="1" hotspotX="0.470588" hotspotY="0.4" />
@@ -353,7 +353,7 @@
                 <instance-variables>
                     <instance-variable comment="Obrazenia do graczy" name="dmg" sid="8181330589561594" type="number" />
                 </instance-variables>
-                <animation-folder expanded="1">
+                <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3591143347969149" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0.5">
                             <image-point name="Imagepoint 1" x="1" y="0.5" />
@@ -381,7 +381,7 @@
                         <behavior id="scrollto" />
                     </behavior-type>
                 </behaviors>
-                <animation-folder expanded="1">
+                <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7817633424189977" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
@@ -439,7 +439,7 @@
                     <effect id="screen" />
                 </effect-type>
             </effects>
-            <animation-folder expanded="1">
+            <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6978649207103551" speed="5">
                     <frame duration="1" hotspotX="-0.0078125" hotspotY="0.5" />
                 </animation>
@@ -476,11 +476,11 @@
             </members>
         </family>
     </families>
-    <layout-folder expanded="1">
+    <layout-folder>
         <layout>Login.xml</layout>
         <layout>Game.xml</layout>
     </layout-folder>
-    <event-folder expanded="1">
+    <event-folder>
         <event-sheet>Login Ev.xml</event-sheet>
         <event-sheet>Game Ev.xml</event-sheet>
     </event-folder>
@@ -499,10 +499,10 @@
         </global-instance>
         <global-instance type="MPWrap" uid="83" />
     </global-instances>
-    <sounds-folder expanded="1" />
-    <music-folder expanded="1" />
-    <files-folder expanded="1">
-        <file-folder expanded="1" name="Icons">
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
             <file name="icon-16.png" />
             <file name="icon-32.png" />
             <file name="icon-114.png" />
